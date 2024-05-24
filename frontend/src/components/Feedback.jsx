@@ -67,7 +67,7 @@ const Feedback = () => {
             </table>
 
             {selectedItem && (
-                <div className="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50">
+                <div className="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 cursor-pointer">
                     <div className="bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-1/2">
                         <h2 className="text-2xl font-bold mb-4">Details</h2>
                         <p><strong>Name:</strong> {selectedItem.name}</p>
