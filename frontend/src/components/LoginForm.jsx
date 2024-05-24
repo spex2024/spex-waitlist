@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Fetch from "../hooks/Fetch.jsx";
 import spexbg from "../assets/pack.jpg";
+import {Link} from "react-router-dom";
 
 function LoginForm() {
     // State variables to store form input values
@@ -24,15 +25,11 @@ function LoginForm() {
     };
 
     return (
-        <div className="flex justify-center items-center  text-[#333] h-full min-h-screen p-6  bg-cover bg-center"
-             style={{
-                     backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                     backgroundImage: `url(${spexbg})`,
-                     backgroundBlendMode: 'multiply'
-                 }}
+        <div className="w-full flex flex-col justify-center items-center  text-[#333] h-full min-h-screen p-6  bg-cover bg-center"
+
            >
             <div className="max-w-md w-full mx-auto">
-                <form className="   px-8 h-[50%] space-y-24 py-16" onSubmit={handleSubmit}>
+                <form className="   px-8 h-[50%] space-y-16 py-16" onSubmit={handleSubmit}>
                     <div className="mb-24">
                         <h3 className="text-3xl text-center font-extrabold text-white ">Dashboard Login</h3>
                     </div>
@@ -68,7 +65,11 @@ function LoginForm() {
                     </div>
 
                 </form>
+
             </div>
+            <Link to={'/'}>
+                <button className={'px-5 py-3 rounded-full font-bold inset-3 bg-white text-black mt-10 '}> back to main site</button>
+            </Link>
         </div>
     );
 }

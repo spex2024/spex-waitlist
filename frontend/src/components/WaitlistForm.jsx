@@ -91,7 +91,7 @@ export default function WaitlistForm() {
                                 announcements.
                             </p>
                             <button
-                                onClick={() => setIsThankYouVisible(false)}
+                                onClick={() => setShowSuccessMessage(false)}
                                 className="w-[50%] text-white bg-green-700 font-medium rounded-full text-md px-5 py-2.5 text-center mt-4"
                                 type="button"
                             >
