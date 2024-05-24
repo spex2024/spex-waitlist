@@ -4,6 +4,7 @@ import home from '../assets/home.jpg'
 import spex from "../assets/spex-logo.webp";
 import WaitlistForm from "./WaitlistForm.jsx";
 import {IoGridSharp} from "react-icons/io5";
+import {AiOutlineLogin} from "react-icons/ai";
 
 function Hero(props) {
     return (
@@ -15,7 +16,7 @@ function Hero(props) {
                 <ul className="lg:flex text-md  hidden items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
                     <li><a href="#about">About Spex</a></li>
                     <li><a href="#cta">Get in Touch</a></li>
-                    <Link to={'/dashboard'}><li className={`flex gap-2 py-2 px-3 bg-green-700 items-center justify-center text-white`}><IoGridSharp />dashboard</li></Link>
+                    <Link to={'/dashboard'}><li className={`flex gap-2 py-2 px-5 rounded-full   bg-green-700 items-center justify-center text-white`}>login <AiOutlineLogin /></li></Link>
                 </ul>
             </header>
             <section className="w-full h-auto lg:h-[300px]  grid grid-cols-1 md:grid-cols-2 gap-6 py-2">

@@ -52,12 +52,12 @@ function Footer(props) {
                 </ul>
             </div>
             <div
-                className="w-full max-w-4xl flex flex-col items-center sm:flex-row justify-between py-5 mt-10 sm:mt-36 border-t  px-2">
+                className="w-full max-w-6xl flex flex-col items-center sm:flex-row justify-between py-5 mt-10 sm:mt-36 border-t  px-2">
                 <div className="flex items-center font-semibold text-sm sm:text-lg font-serif">
                     <p>Spex &copy; {currentYear}, All Rights Reserved.</p>
                 </div>
                 <div className="flex items-center mt-5 sm:mt-0">
-                    <ul className="flex items-center gap-5 sm:gap-10 text-slate-600 font-semibold font-serif">
+                    <ul className="flex items-center text-sm gap-5 sm:gap-10 text-slate-600 font-semibold font-serif">
                         <Link to={'/login'}>
                             <li className="list-none">Dashboard</li>
                         </Link>
