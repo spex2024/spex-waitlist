@@ -58,7 +58,7 @@ function Footer(props) {
                 </div>
                 <div className="flex items-center mt-5 sm:mt-0">
                     <ul className="flex items-center gap-5 sm:gap-10 text-slate-600 font-semibold font-serif">
-                        <Link to={'/dashboard'}>
+                        <Link to={'/login'}>
                             <li className="list-none">Dashboard</li>
                         </Link>
                         <Link to={'/'}>
