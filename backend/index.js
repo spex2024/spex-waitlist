@@ -17,8 +17,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cors({
-    origin: true,
-    credentials :true,
+    origin: 'https://spex-waitlist.vercel.app',
+    credentials :true
 
 }));
 app.use(cookieParser());

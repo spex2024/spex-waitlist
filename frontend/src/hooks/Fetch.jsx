@@ -15,7 +15,7 @@ export const Fetch = () => {
     const {setContent} = useContext(FeedbackContext)
 
     const register = async (formdata) => {
-        const response = await fetch(`http://localhost:8000/api/register`, {
+        const response = await fetch(`https://spex-waitlist.onrender.com/api/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ export const Fetch = () => {
     };
 
     const login = async (formdata) => {
-        const response = await fetch(`http://localhost:8000/api/login`, {
+        const response = await fetch(`https://spex-waitlist.onrender.com/api/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -68,7 +68,7 @@ export const Fetch = () => {
 
     const profile = async () => {
         try {
-            const response = await fetch(`http://localhost:8000/api/profile`, {
+            const response = await fetch(`https://spex-waitlist.onrender.com/api/profile`, {
                 credentials: "include",
             });
 
@@ -89,7 +89,7 @@ export const Fetch = () => {
     const logout = async (e) =>{
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:8000/api/logout`, {
+            const response = await fetch(`https://spex-waitlist.onrender.com/api/logout`, {
                 method: 'POST',
                 credentials: "include",
             });
@@ -108,7 +108,7 @@ export const Fetch = () => {
 
     const createFeedback = async ( formData) =>{
         try {
-            const response = await fetch(`http://localhost:8000/api/create`, {
+            const response = await fetch(`https://spex-waitlist.onrender.com/api/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -133,7 +133,7 @@ export const Fetch = () => {
 
     const getFeedback =  async () => {
         try {
-            const response = await fetch(`http://localhost:8000/api/feedback`, {
+            const response = await fetch(`https://spex-waitlist.onrender.com/api/feedback`, {
 
             });
 
