@@ -16,7 +16,7 @@ function Approach(props) {
         {
             id: 'accordion-flush-body-2',
             steps: 2,
-            title: 'Streamlined Smartpack Delivery',
+            title: 'Streamlined Smart Pack Delivery',
             content: [
                 ' Restaurants/food Vendors receive Take-out food orders from Enterprises / Users on the SPEX platform and then prepare the order in Smartpacks for bulk or individual delivery to Users.'
             ],
@@ -25,7 +25,7 @@ function Approach(props) {
         {
             id: 'accordion-flush-body-3',
             steps: 3,
-            title: 'Smartpack Takeout Solution',
+            title: 'Smart Pack Takeout Solution',
             content: [
                 '  Enterprises / Users access take-out meals on the Spex Platform from their preferred food vendor/restaurant and receive their meals in Smartpacks'
             ],
@@ -34,7 +34,7 @@ function Approach(props) {
         {
             id: 'accordion-flush-body-4',
             steps: 4,
-            title: 'Seamless Smartpack Cycle',
+            title: 'Seamless Smart Pack Cycle',
             content: [
                 'Partnered Couriers deliver take-out meals in smartpacks to Users, and pick up used packs back to Spex Hygienic Center where they are machine-washed, sterilized, and returned to food vendors for Reuse.'
             ],
