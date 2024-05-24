@@ -74,6 +74,9 @@ const Feedback = () => {
                         <p><strong>Email:</strong> {selectedItem.email}</p>
                         <p><strong>Phone:</strong> {selectedItem.phone}</p>
                         <p><strong>Company:</strong> {selectedItem.company}</p>
+                        <p><strong>Company:</strong> {selectedItem.answer1}</p>
+                        <p><strong>Company:</strong> {selectedItem.answer2}</p>
+                        <p><strong>Company:</strong> {selectedItem.answer3}</p>
                         <button
                             className="mt-4 bg-green-700 text-white px-4 py-2 rounded"
                             onClick={closeModal}
