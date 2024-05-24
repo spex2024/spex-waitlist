@@ -67,8 +67,8 @@ const Feedback = () => {
             </table>
 
             {selectedItem && (
-                <div className="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 cursor-pointer">
-                    <div className=" flex-col bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-[30%] lg:h-[40%] py-10 px-12">
+                <div className=" fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 cursor-pointer">
+                    <div className=" flex-col bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-[60vw] lg:h-[70vh] py-10 px-12">
                         <h2 className="text-2xl font-bold mb-4">Feedback Details</h2>
                         <h4>What is your name ?</h4>
                         <p> {selectedItem.name}</p>
@@ -80,14 +80,14 @@ const Feedback = () => {
                         <p><strong>Phone:</strong> {selectedItem.phone}</p>
 
                         <h4>Where do you work ?</h4>
-                        <p><strong>Company:</strong> {selectedItem.company}</p>
+                        <p> {selectedItem.company}</p>
 
                         <h4>>What is your biggest challenge with current food packaging and delivery?</h4>
-                        <p><strong>Company:</strong> {selectedItem.answer1}</p>
-                        <h4>>How interested are you in a smart reusable packaging system?</h4>
-                        <p><strong>Company:</strong> {selectedItem.answer2}</p>
+                        <p> {selectedItem.answer1}</p>
+                        <h4>How interested are you in a smart reusable packaging system?</h4>
+                        <p> {selectedItem.answer2}</p>
                         <h4>What ideas or suggestions do you have for making a smart reusable packaging system successful in your organization or food delivery service?</h4>
-                        <p><strong>Company:</strong> {selectedItem.answer3}</p>
+                        <p>{selectedItem.answer3}</p>
                         <button
                             className="mt-4 bg-green-700 text-white px-4 py-2 rounded"
                             onClick={closeModal}
