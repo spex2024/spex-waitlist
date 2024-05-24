@@ -68,26 +68,45 @@ const Feedback = () => {
 
             {selectedItem && (
                 <div className=" fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 cursor-pointer">
-                    <div className=" flex-col bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-[60vw] lg:h-[70vh] py-10 px-12">
+                    <div className=" flex  flex-col gap-10 items-center justify-center gapbg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-[60vw] lg:h-[80vh] py-10 px-12">
                         <h2 className="text-2xl font-bold mb-4">Feedback Details</h2>
-                        <h4>What is your name ?</h4>
-                        <p> {selectedItem.name}</p>
+                        <div>
+                            <h4>What is your name ?</h4>
+                            <p> {selectedItem.name}</p>
+                        </div>
 
-                        <h4>What is your email ?</h4>
-                        <p><strong>Email:</strong> {selectedItem.email}</p>
+                        <div>
+                            <h4>What is your email ?</h4>
+                            <p> {selectedItem.email}</p>
+                        </div>
 
-                        <h4>What is your phone number ?</h4>
-                        <p><strong>Phone:</strong> {selectedItem.phone}</p>
+                        <div>
+                            <h4>What is your phone number ?</h4>
+                            <p> {selectedItem.phone}</p>
+                        </div>
 
-                        <h4>Where do you work ?</h4>
-                        <p> {selectedItem.company}</p>
+                        <div>
+                            <h4>Where do you work ?</h4>
+                            <p> {selectedItem.company}</p>
+                        </div>
 
-                        <h4>>What is your biggest challenge with current food packaging and delivery?</h4>
-                        <p> {selectedItem.answer1}</p>
-                        <h4>How interested are you in a smart reusable packaging system?</h4>
-                        <p> {selectedItem.answer2}</p>
-                        <h4>What ideas or suggestions do you have for making a smart reusable packaging system successful in your organization or food delivery service?</h4>
-                        <p>{selectedItem.answer3}</p>
+                        <div>
+                            <h4>>What is your biggest challenge with current food packaging and delivery?</h4>
+                            <p> {selectedItem.answer1}</p>
+                        </div>
+
+                        <div>
+                            <h4>How interested are you in a smart reusable packaging system?</h4>
+                            <p> {selectedItem.answer2}</p>
+                        </div>
+
+                        <div>
+                            <h4>What ideas or suggestions do you have for making a smart reusable packaging system
+                                successful in your organization or food delivery service?</h4>
+                            <p>{selectedItem.answer3}</p>
+
+                        </div>
+
                         <button
                             className="mt-4 bg-green-700 text-white px-4 py-2 rounded"
                             onClick={closeModal}
