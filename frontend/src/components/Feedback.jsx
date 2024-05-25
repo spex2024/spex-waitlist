@@ -32,7 +32,15 @@ const Feedback = () => {
         setSelectedItem(null);
     };
 
-    console.log(content);
+    const modalDetails = selectedItem ? [
+        { question: "What is your name?", answer: selectedItem.name },
+        { question: "What is your email?", answer: selectedItem.email },
+        { question: "What is your phone number?", answer: selectedItem.phone },
+        { question: "Where do you work?", answer: selectedItem.company },
+        { question: "What is your biggest challenge with current food packaging and delivery?", answer: selectedItem.answer1 },
+        { question: "How interested are you in a smart reusable packaging system?", answer: selectedItem.answer2 },
+        { question: "What ideas or suggestions do you have for making a smart reusable packaging system successful in your organization or food delivery service?", answer: selectedItem.answer3 }
+    ] : [];
 
     return (
         <div className="w-[80%] relative overflow-x-auto shadow-sm sm:rounded-lg mt-16 mx-auto">
@@ -67,46 +75,15 @@ const Feedback = () => {
             </table>
 
             {selectedItem && (
-                <div className=" fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 cursor-pointer">
-                    <div className=" flex flex-col gap-5 mx-auto  bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-[60vw] lg:h-[80vh] py-10  overflow-scroll">
+                <div className="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 cursor-pointer">
+                    <div className="flex flex-col gap-5 mx-auto bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-[60vw] lg:h-[80vh] py-10 overflow-scroll">
                         <h2 className="text-2xl font-bold mb-4">Feedback Details</h2>
-                        <div>
-                            <h4>What is your name ?</h4>
-                            <p> {selectedItem.name}</p>
-                        </div>
-
-                        <div>
-                            <h4>What is your email ?</h4>
-                            <p> {selectedItem.email}</p>
-                        </div>
-
-                        <div>
-                            <h4>What is your phone number ?</h4>
-                            <p> {selectedItem.phone}</p>
-                        </div>
-
-                        <div>
-                            <h4>Where do you work ?</h4>
-                            <p> {selectedItem.company}</p>
-                        </div>
-
-                        <div>
-                            <h4>What is your biggest challenge with current food packaging and delivery?</h4>
-                            <p> {selectedItem.answer1}</p>
-                        </div>
-
-                        <div>
-                            <h4>How interested are you in a smart reusable packaging system?</h4>
-                            <p> {selectedItem.answer2}</p>
-                        </div>
-
-                        <div>
-                            <h4>What ideas or suggestions do you have for making a smart reusable packaging system
-                                successful in your organization or food delivery service?</h4>
-                            <p>{selectedItem.answer3}</p>
-
-                        </div>
-
+                        {modalDetails.map((detail, index) => (
+                            <div key={index}>
+                                <h4>{detail.question}</h4>
+                                <p>{detail.answer}</p>
+                            </div>
+                        ))}
                         <button
                             className="mt-4 bg-green-700 text-white px-4 py-2 rounded"
                             onClick={closeModal}
