@@ -79,8 +79,8 @@ const Feedback = () => {
                     <div className="flex flex-col gap-5 mx-auto bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-[60vw] lg:h-[80vh] py-10 overflow-scroll">
                         <h2 className="text-2xl font-bold mb-4">Feedback Details</h2>
                         {modalDetails.map((detail, index) => (
-                            <div key={index}>
-                                <h4>{detail.question}</h4>
+                            <div key={index} className={`flex flex-col gap-2`}>
+                                <h4 className={`flex flex-col gap-2 font-semibold`}>{detail.question}</h4>
                                 <p>{detail.answer}</p>
                             </div>
                         ))}
