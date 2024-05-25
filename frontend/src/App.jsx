@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom
 import Home from './pages/Home';
 import Dashboard from "./pages/Dashboard.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
-import HomePrivate from "./pages/HomePrivate.jsx";
 import HomePublic from "./pages/HomePublic.jsx";
 import { useContext } from "react";
 import { UserContext } from "./context/userContext.jsx";
