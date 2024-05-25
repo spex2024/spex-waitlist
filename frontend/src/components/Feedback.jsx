@@ -68,7 +68,7 @@ const Feedback = () => {
 
             {selectedItem && (
                 <div className=" fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 cursor-pointer">
-                    <div className=" flex flex-col gap-5 mx-auto  bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-[60vw] lg:h-[80vh] py-10 px-12">
+                    <div className=" flex flex-col gap-5 mx-auto  bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-[60vw] lg:h-[80vh] py-10  overflow-scroll">
                         <h2 className="text-2xl font-bold mb-4">Feedback Details</h2>
                         <div>
                             <h4>What is your name ?</h4>
