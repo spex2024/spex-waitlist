@@ -9,7 +9,7 @@ import {
     TEModalFooter,
 } from "tw-elements-react";
 import MultiStepForm from "./MultiStepForm.jsx";
-import { AiFillCloseCircle } from "react-icons/ai";
+import {AiFillCloseCircle} from "react-icons/ai";
 
 export default function WaitlistForm() {
     const [showModalTopRight, setShowModalTopRight] = useState(false);
@@ -22,7 +22,7 @@ export default function WaitlistForm() {
                 <TERipple rippleColor="white">
                     <button
                         type="button"
-                        className="inline-block px-5 py-2 outline outline-1 outline-slate-900 text-black mt-5"
+                        className="inline-block px-5 py-2 outline outline-1 outline-white text-white mt-5 font-nunito "
                         onClick={() => setShowModalTopRight(true)}
                     >
                         Join the waitlist

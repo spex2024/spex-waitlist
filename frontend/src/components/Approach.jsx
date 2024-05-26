@@ -49,12 +49,12 @@ function Approach(props) {
 
         <div className={`w-full h-auto flex flex-col justify-center items-center mt-28 py-16`}>
             <header className={`w-[90%] lg:w-[70%] h-auto py-5 mb-10 text-black flex flex-col items-center justify-center `}>
-                <h1 className={`font-bold font-serif text-2xl lg:text-5xl mb-5 text-center`}>Our step-by-step approach </h1>
-                <p className={'font-sans'}>-How Its Works-</p>
+                <h1 className={`font-bold font-sora text-2xl lg:text-5xl mb-5 text-center`}>Our step-by-step approach </h1>
+                <p className={'font-nunito'}>-How Its Works-</p>
 
             </header>
 
-            <div className={` w-[100%] lg:w-[50%] h-[ 300px]  flex flex-col justify-center items-center py-20 rounded`}>
+            <div className={` w-[100%] lg:w-[50%] h-[ 300px]  flex flex-col justify-center items-center py-10 rounded`}>
 
                 {accordionData.map(step => (
                     <Steps

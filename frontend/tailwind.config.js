@@ -7,7 +7,23 @@ module.exports = {
   ],
   theme: {
     extend: {},
-  },
-  darkMode: "class",
-  plugins: [require("tw-elements-react/dist/plugin.cjs")]
+    fontFamily: {
+      nunito: ["Nunito Sans", "sans-serif"],
+      cormorant: ["Cormorant", "serif"],
+      sora: ["Sora", "serif"],
+      hanmlet: ["Hahmlet", "serif"],
+    },
+    fontWeight: {
+      'extra-light': 200,
+      light: 300,
+      normal: 400,
+      medium: 500,
+      'semi-bold' : 600,
+      bold : 700,
+      'extra-bold':800,
+      black :900
+},
+},
+darkMode: "class",
+    plugins: [require("tw-elements-react/dist/plugin.cjs")]
 }

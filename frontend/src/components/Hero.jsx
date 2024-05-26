@@ -1,40 +1,69 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import home from '../assets/home.jpg'
+
 import spex from "../assets/spex-logo.webp";
 import WaitlistForm from "./WaitlistForm.jsx";
 import {IoGridSharp} from "react-icons/io5";
 import {AiOutlineLogin} from "react-icons/ai";
+import spexbg from "../assets/pack.jpg";
+import {RiScrollToBottomLine} from "react-icons/ri";
 
 function Hero(props) {
     return (
-        <div className="w-full text-center lg:text-start min-h-screen px-4 sm:px-8 md:px-16 lg:px-36  py-5 overflow-hidden">
-            <header className="w-full flex items-center justify-between h-[80px] ">
+        <div className="w-full flex flex-col justify-between  lg:text-start min-h-screen px-4 lg:px-5  py-5 overflow-hidden bg-cover bg-center rounded-b-3xl font-nunito"   style={{
+            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            backgroundImage: `url(${spexbg})`,
+            backgroundBlendMode: 'multiply'
+        }} >
+            <header className="w-full flex items-center lg:justify-between justify-center  h-[80px] px-10 ">
                 <div>
                     <img src={spex}/>
                 </div>
-                <ul className="lg:flex text-md  hidden items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
+                <ul className="lg:flex text-md  hidden items-center justify-center gap-4  lg:gap-10 text-white lowercase ">
                     <li><a href="#about">About Spex</a></li>
                     <li><a href="#cta">Get in Touch</a></li>
-                    <Link to={'/dashboard'}><li className={`flex gap-2 py-2 px-5 rounded-full   bg-green-700 items-center justify-center text-white`}>login <AiOutlineLogin /></li></Link>
+                    <Link to={'/dashboard'}><li className={`flex gap-2 py-2 px-5    border items-center justify-center text-white`}>login <AiOutlineLogin /></li></Link>
                 </ul>
             </header>
-            <section className="w-full h-auto lg:h-[300px]  grid grid-cols-1 md:grid-cols-2 gap-6 py-2">
-                <div className="w-full h-full flex flex-col justify-center gap-5 text-center lg:text-start">
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">Smart Pack Exchange</h1>
-                    <div className="w-full flex items-center justify-center lg:justify-start gap-5 text-sm  sm:text-xl">
+            {/*<section className="w-full h-auto lg:h-[150px]  grid grid-cols-1  font-black text-black lg:text-8xl place-items-center  py-2 ">*/}
+            {/*    /!*<div className="w-full h-full flex flex-col justify-center gap-5 text-center lg:text-start">*!/*/}
+            {/*    /!*    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">Smart Pack Exchange</h1>*!/*/}
+            {/*    /!*    <div className="w-full flex items-center justify-center lg:justify-start gap-5 text-sm  sm:text-xl">*!/*/}
+            {/*    /!*        <span>Eat</span>*!/*/}
+            {/*    /!*        <span>Swap</span>*!/*/}
+            {/*    /!*        <span>Reuse</span>*!/*/}
+            {/*    /!*    </div>*!/*/}
+            {/*    /!*</div>*!/*/}
+            {/*    /!*<div className="w-full h-full flex flex-col justify-center gap-5 px-4 md:px-8 py-5">*!/*/}
+            {/*    /!*    <p className="font-medium text-base sm:text-lg">SPEX is a packaging solution that leverages web to connect restaurants / vendors to users seeking sustainable packaging.</p>*!/*/}
+
+            {/*    /!*<WaitlistForm />*!/*/}
+            {/*    /!*</div>*!/*/}
+            {/*    <h1>SMART PACK EXCHANGE</h1>*/}
+            {/*</section>*/}
+            <section className="w-full flex  flex-col lg:flex-row justify-between h-[400px]  lg:h-[300px] rounded-2xl bg-cover  lg:px-20 gap-3 lg:mb-20 "  >
+
+                <div className={`lg:w-[80%]`}>
+
+                    <div
+                        className=" w-[150px] h-[30px] flex lowercase items-center lg:items-center justify-center  bg-[#04BF8A] rounded-full gap-3 text-blacke text-md font-nunito font-md mb-3">
                         <span>Eat</span>
                         <span>Swap</span>
                         <span>Reuse</span>
                     </div>
-                </div>
-                <div className="w-full h-full flex flex-col justify-center gap-5 px-4 md:px-8 py-5">
-                    <p className="font-medium text-base sm:text-lg">SPEX is a packaging solution that leverages web to connect restaurants / vendors to users seeking sustainable packaging.</p>
+                    <div className={`w-full lg:w-[60%]  text-white lg:pe-10 space-y-4 mb-5`}>
 
-                <WaitlistForm />
+                        <h1 className={`font-extra-bold text-2xl lg:text-7xl capitalize font-sora`}>smart pack exchange</h1>
+                        <p className={` text-lg font-nunito font-thin pe-10`}>SPEX is a packaging solution that leverages web to connect
+                            restaurants / vendors to users seeking sustainable packaging.</p>
+                    </div>
+                    <WaitlistForm/>
+
                 </div>
-            </section>
-            <section className="w-full bg-black h-[300px] sm:h-[400px] md:h-[500px] lg:h-[800px] rounded-2xl bg-cover bg-center" style={{ backgroundImage: `url(${home})`,}} >
+                <div className={`lg:w-[20%]  flex flex-col items-center justify-end`}>
+                  <p className={`text-white text-lg font-thin font-nunito`}>scroll down</p>
+                <RiScrollToBottomLine size={30} className={`text-white animate-pulse mt-5`} />
+                </div>
 
             </section>
         </div>
