@@ -4,7 +4,6 @@ import About from "../components/About.jsx";
 import Approach from "../components/Approach.jsx";
 import Cta from "../components/CTA.jsx";
 import Footer from "../components/Footer.jsx";
-import bgImage from '../assets/body.jpg'
 
 
 function HomePublic(props) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import WaitlistForm from "./WaitlistForm.jsx";
-import bgImage from "../assets/body-3.jpg";
+
 
 function Cta(props) {
     return (
