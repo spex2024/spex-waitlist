@@ -4,10 +4,12 @@ import About from "../components/About.jsx";
 import Approach from "../components/Approach.jsx";
 import Cta from "../components/CTA.jsx";
 import Footer from "../components/Footer.jsx";
+import bgImage from '../assets/body.jpg'
+
 
 function HomePublic(props) {
     return (
-        <div className={'min-h-screen max-w-full '}>
+        <div className={'min-h-screen max-w-full bg-center bg-cover ' }   >
           <Hero/>
             <About />
             <Approach />

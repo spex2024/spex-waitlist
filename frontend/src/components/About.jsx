@@ -8,11 +8,13 @@ function About(props) {
 
 
     return (
-        <div id='about' className={`w-full h-auto  flex flex-col gap-10  mt-32 font-nunito `}>
-             <header className={`w-full px-5 h-[100px] flex flex-col  items-center justify-center  mb-20`}>
-                 <h2 className={`text-3xl text-center lg:text-5xl font-extra-bold px-5 font-sora mb-5`}>Here's what sets us apart</h2>
-                 <p className={` px-5 text-center text-sm  font-nunito`} > - Reducing your packaging cost and waste while linking you to eco-centric users -</p>
-             </header>
+        <div id='about' className={`w-full h-auto  flex flex-col gap-10  mt-32 font-nunito `} >
+            <header className={`w-full px-5 h-[100px] flex flex-col  items-center justify-center  mb-20`}>
+                <p className={` px-5 text-center text-lg  font-nunito font-bold mb-3`}> - Reduce Cost & Waste -</p>
+                <h2 className={`text-3xl text-center lg:text-5xl font-extra-bold px-5 font-sora mb-5`}>Here's what sets
+                    us apart</h2>
+
+            </header>
             <section className={`w-full   grid grid-cols-1 lg:grid-cols-2  gap-10`}>
                 <div className={`w-full h-full  px-10 py-16`}>
                     <div

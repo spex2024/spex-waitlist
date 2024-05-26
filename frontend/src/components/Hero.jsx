@@ -10,7 +10,7 @@ import {RiScrollToBottomLine} from "react-icons/ri";
 
 function Hero(props) {
     return (
-        <div className="w-full flex flex-col justify-between  lg:text-start min-h-screen px-4 lg:px-5  py-5 overflow-hidden bg-cover bg-center rounded-b-3xl font-nunito"   style={{
+        <div className="w-full flex flex-col lg:justify-between justify-around lg:text-start min-h-screen px-4 lg:px-5  py-5 overflow-hidden bg-cover bg-center rounded-b-3xl font-nunito"   style={{
             backgroundColor: 'rgba(0, 0, 0, 0.7)',
             backgroundImage: `url(${spexbg})`,
             backgroundBlendMode: 'multiply'
@@ -46,7 +46,7 @@ function Hero(props) {
                 <div className={`lg:w-[80%]`}>
 
                     <div
-                        className=" w-[150px] h-[30px] flex lowercase font-semi-bold items-center lg:items-center justify-center text-white  bg-[#04BF8A] rounded-full gap-3 text-blacke text-md font-nunito font-md mb-3">
+                        className=" w-[150px] h-[30px] flex lowercase font-semi-bold items-center lg:items-center justify-center text-white  bg-[#57ba46] rounded-full gap-3 text-blacke text-md font-nunito font-md mb-3">
                         <span>Eat</span>
                         <span>Swap</span>
                         <span>Reuse</span>
@@ -57,7 +57,7 @@ function Hero(props) {
                         <p className={` text-lg font-nunito font-thin pe-10`}>SPEX is a packaging solution that leverages web to connect
                             restaurants / vendors to users seeking sustainable packaging.</p>
                     </div>
-                    <WaitlistForm/>
+                    <WaitlistForm color={`outline-white`} text={`text-white`}/>
 
                 </div>
                 <div className={`lg:w-[20%]  flex flex-col items-center justify-end`}>

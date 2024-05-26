@@ -11,7 +11,7 @@ import {
 import MultiStepForm from "./MultiStepForm.jsx";
 import {AiFillCloseCircle} from "react-icons/ai";
 
-export default function WaitlistForm() {
+export default function WaitlistForm({color ,text}) {
     const [showModalTopRight, setShowModalTopRight] = useState(false);
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
@@ -22,7 +22,7 @@ export default function WaitlistForm() {
                 <TERipple rippleColor="white">
                     <button
                         type="button"
-                        className="inline-block px-5 py-2 outline outline-1 outline-white text-white mt-5 font-nunito "
+                        className={`inline-block px-5 py-2 outline outline-1 ${color} ${text} mt-5 font-nunito `}
                         onClick={() => setShowModalTopRight(true)}
                     >
                         Join the waitlist

@@ -42,7 +42,7 @@ function Problem(props) {
             {accordionData.map(data => (
                 <div className="w-full flex flex-col md:flex-row gap-5 items-center mt-10 text-white" key={data.id}>
                     <div className=" w-full lg:w-44 h-40 bg-green-700 bg-cover bg-center rounded-lg" style={{ backgroundImage: `url(${data.image})` }}></div>
-                    <div className=" w-full lg:w-[90%] flex flex-col lg:justify-start gap-3 p-5 text-black shadow-lg  rounded-lg h-[220px] lg:h-40 bg-[#04BF8A]">
+                    <div className=" w-full lg:w-[90%] flex flex-col lg:justify-start gap-3 p-5 text-white shadow-lg  rounded-lg h-[220px] lg:h-40 bg-[#57ba46]">
                         <h2 className="font-bold text-md font-sora ">{data.title}</h2>
                         <span className="text-sm font-nunito ">{data.content}</span>
                     </div>
