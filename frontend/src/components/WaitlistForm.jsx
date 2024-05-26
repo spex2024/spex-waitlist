@@ -10,6 +10,7 @@ import {
 } from "tw-elements-react";
 import MultiStepForm from "./MultiStepForm.jsx";
 import {AiFillCloseCircle} from "react-icons/ai";
+import {GrClose} from "react-icons/gr";
 
 export default function WaitlistForm({color ,text}) {
     const [showModalTopRight, setShowModalTopRight] = useState(false);
@@ -53,7 +54,7 @@ export default function WaitlistForm({color ,text}) {
                                 onClick={() => setShowModalTopRight(false)}
                                 aria-label="Close"
                             >
-                                <AiFillCloseCircle size={25} />
+                                <GrClose size={25} />
                             </button>
                         </div>
 

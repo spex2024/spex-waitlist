@@ -175,30 +175,44 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                 {currentStep === 5 && (
                     <div>
                         <label htmlFor="step5" className="text-sm">What is your biggest challenge with current food packaging and delivery?</label>
-                        <textarea
+                        <select
                             id="step5"
                             name="answer1"
                             value={formData.answer1}
                             onChange={handleChange}
                             className="mt-2 p-2 border-b border-black w-full focus:outline-none"
-                        />
+                        >
+                            <option value="" disabled>Select your biggest challenge</option>
+                            <option value="cost">High cost</option>
+                            <option value="waste">Plastic waste</option>
+                            <option value="quality">Poor quality</option>
+                            <option value="availability">Limited availability</option>
+                            <option value="other">Other</option>
+                        </select>
                         {errors.answer1 && <p className="text-red-500 text-sm mt-3">{errors.answer1}</p>}
                     </div>
                 )}
                 {currentStep === 6 && (
                     <div>
                         <label htmlFor="step6" className="text-sm">How interested are you in a smart reusable packaging system?</label>
-                        <input
-                            type="text"
+                        <select
                             id="step6"
                             name="answer2"
                             value={formData.answer2}
                             onChange={handleChange}
                             className="mt-2 p-2 border-b border-black w-full focus:outline-none"
-                        />
+                        >
+                            <option value="" disabled>Select your interest level</option>
+                            <option value="very_interested">Very interested</option>
+                            <option value="interested">Interested</option>
+                            <option value="neutral">Neutral</option>
+                            <option value="not_interested">Not interested</option>
+                            <option value="very_not_interested">Very not interested</option>
+                        </select>
                         {errors.answer2 && <p className="text-red-500 text-sm mt-3">{errors.answer2}</p>}
                     </div>
                 )}
+
                 {currentStep === 7 && (
                     <div>
                         <label htmlFor="step7" className="text-sm">Anything else you'd like to share?</label>
