@@ -19,10 +19,10 @@ function Hero(props) {
                 <div>
                     <img src={spex}/>
                 </div>
-                <ul className="lg:flex text-md  hidden items-center justify-center gap-4  lg:gap-10 text-white lowercase ">
+                <ul className="lg:flex text-md  hidden items-center justify-center gap-4  lg:gap-10 text-white lowercase  ">
                     <li><a href="#about">About Spex</a></li>
                     <li><a href="#cta">Get in Touch</a></li>
-                    <Link to={'/dashboard'}><li className={`flex gap-2 py-2 px-5    border items-center justify-center text-white`}>login <AiOutlineLogin /></li></Link>
+                    <Link to={'/login'}><li className={`flex gap-2 py-2 px-5    border items-center justify-center text-white`}>login <AiOutlineLogin /></li></Link>
                 </ul>
             </header>
             {/*<section className="w-full h-auto lg:h-[150px]  grid grid-cols-1  font-black text-black lg:text-8xl place-items-center  py-2 ">*/}
@@ -46,7 +46,7 @@ function Hero(props) {
                 <div className={`lg:w-[80%]`}>
 
                     <div
-                        className=" w-[150px] h-[30px] flex lowercase items-center lg:items-center justify-center  bg-[#04BF8A] rounded-full gap-3 text-blacke text-md font-nunito font-md mb-3">
+                        className=" w-[150px] h-[30px] flex lowercase font-semi-bold items-center lg:items-center justify-center text-white  bg-[#04BF8A] rounded-full gap-3 text-blacke text-md font-nunito font-md mb-3">
                         <span>Eat</span>
                         <span>Swap</span>
                         <span>Reuse</span>

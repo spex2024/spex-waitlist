@@ -17,7 +17,7 @@ function Steps({key,title,content , image , steps}) {
                 <div className="flex  gap-5">
                     <div
                         className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700 ru">
-                        <div className="relative z-10 size-8 flex justify-center items-center bg-[#252526] rounded-full text-white">
+                        <div className="relative z-10 size-8 flex justify-center items-center bg-[#252526] rounded-full text-white font-nunito ">
                             {steps}
                         </div>
                     </div>
