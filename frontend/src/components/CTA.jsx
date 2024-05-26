@@ -8,7 +8,7 @@ function Cta(props) {
             <div className="w-full max-w-4xl h-auto flex flex-col items-center text-center px-4 text-white">
                 <h1 className="font-serif font-bold text-2xl sm:text-3xl mb-3 font-nunito">Waitlist</h1>
                 <h1 className="font-bold text-2xl sm:text-4xl md:text-6xl mb-5 font-serif text-center font-sora">Embrace Smart Pack!</h1>
-                <p className="font-bold text-2xl sm:text-4xl md:text-5xl font-sora">Join the Waitlist</p>
+                <p className="font-bold text-2xl sm:text-4xl md:text-5xl font-sora capitalize">Join the Waitlist</p>
             </div>
 
             <div className="w-full max-w-lg h-[200px] flex flex-col justify-center items-center lg:mt-10 py-5 px-4 ">
