@@ -11,7 +11,7 @@ import {RiScrollToBottomLine} from "react-icons/ri";
 function Hero(props) {
     return (
         <div className="w-full flex flex-col lg:justify-between justify-around lg:text-start min-h-screen px-4 lg:px-5  py-5 overflow-hidden bg-cover bg-center rounded-b-3xl font-nunito"   style={{
-            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
             backgroundImage: `url(${spexbg})`,
             backgroundBlendMode: 'multiply'
         }} >
