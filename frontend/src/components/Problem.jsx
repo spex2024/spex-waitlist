@@ -15,7 +15,7 @@ function Problem(props) {
             id: 'accordion-flush-body-2',
             title: 'Single-Use Plastic Costs African Food Industry 10%',
             content: [
-                'Single-use plastic packaging costs food businesses up to 10% of their revenues, translating to $0.20 - $0.30 per takeout meal. Managing the resulting plastic waste costs at least $5 billion annually in Africa.'
+                'Single-use plastic packaging costs food businesses up to 10% of their revenues, or $0.20-$0.30 per takeout meal. Managing plastic waste costs at least $5 billion annually in Africa..'
             ],
             image:'spu.jpeg'
         },
