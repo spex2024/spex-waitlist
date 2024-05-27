@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import spex from "../assets/spex-logo.webp";
+import spex from "../assets/spex-logo.png";
 import WaitlistForm from "./WaitlistForm.jsx";
 import { AiOutlineLogin } from "react-icons/ai";
 import spexbg from "../assets/pack.jpg";
@@ -28,7 +28,7 @@ function Hero(props) {
              data-aos-anchor-placement="top-center"
         >
             <header className="w-full flex items-center lg:justify-between justify-center h-[80px] px-10 ">
-                <div>
+                <div className={` h-80 w-80  lg:h-44 lg:w-44`}>
                     <img src={spex} />
                 </div>
                 <ul className="lg:flex text-md hidden items-center justify-center gap-4 lg:gap-10 text-white lowercase  ">

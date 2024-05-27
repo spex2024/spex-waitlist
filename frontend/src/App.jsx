@@ -7,6 +7,7 @@ import HomePublic from "./pages/HomePublic.jsx";
 import { UserContext } from "./context/userContext.jsx";
 import Register from "./pages/Register.jsx";
 import {ClimbingBoxLoader, ClipLoader, GridLoader} from "react-spinners";
+import spexbg from "./assets/spex-logo.png";
 
 function App() {
     const { userInfo } = useContext(UserContext);
@@ -28,10 +29,12 @@ function App() {
     return (
         <Router>
             {loading ? ( // Conditionally render the preloader
-                <div className="bg-gray-300 h-screen flex flex-col justify-center items-center">
+                <div className="bg-gray-100 h-screen flex flex-col justify-center items-center bg-cover ">
+
+                    <img src={spexbg} className=" h-64 w-64" />
                     <GridLoader
 
-                        size={15}
+                        size={10}
                         color={"#57ba46"}
                         loading={loading}
 
