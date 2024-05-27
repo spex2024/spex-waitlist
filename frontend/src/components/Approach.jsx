@@ -52,7 +52,7 @@ function Approach(props) {
     ];
 
     return (
-        <div className={`w-full h-auto flex flex-col justify-center items-center mt-28 py-16 `}  style={{
+        <div className={`w-full h-auto flex flex-col justify-center items-center mt-28 py-16 xl:py-20 `}  style={{
             backgroundImage: `url(${bgImage})`,
         }} >
             <header
@@ -62,7 +62,7 @@ function Approach(props) {
                     approach</h1>
 
             </header>
-            <div className={` w-[100%] lg:w-[50%] h-[950px] flex flex-col justify-center items-center py-10 rounded`}>
+            <div className={` w-[100%] lg:w-[50%] h-[950px] flex flex-col justify-center items-center py-10 lg:my-16`}>
                 <Process accordionData={accordionData} />
             </div>
         </div>

@@ -18,7 +18,7 @@ function About(props) {
             <section className={`w-full   grid grid-cols-1 lg:grid-cols-2  gap-10`}>
                 <div className={`w-full h-full  px-10 py-16`}>
                     <div
-                        className={`w-[50%] lg:w-[25%] py-2 px-2 bg-black  text-white flex justify-center items-center gap-3 font-semibold text-xl rounded mb-5`}>
+                        className={`w-[50%] lg:w-[35%] py-2 px-2 bg-black  text-white flex justify-center items-center gap-3 font-semibold text-xl rounded mb-5`}>
                         <img src={problem} className={'lg:w-8 lg:h-8 w-5 h-5'}/>
                         <h2 className={`lg:text-md text-sm font-sora font-semibold`}>The Problem</h2>
                     </div>
@@ -37,7 +37,7 @@ function About(props) {
                          backgroundBlendMode: 'multiply'
                      }}>
                     <div
-                        className={`w-[50%] lg:w-[25%] py-2 px-2 bg-white rounded  text-black flex justify-center gap-2 items-center font-bold text-xl mb-5`}>
+                        className={`w-[50%] lg:w-[35%] py-2 px-2 bg-white rounded  text-black flex justify-center gap-2 items-center font-bold text-xl mb-5`}>
                         <img src={solution} className={'lg:w-8 lg:h-8 w-5 h-5'}/>
                         <h2 className={`lg:text-md text-sm font-sora font-semibold`}>The Solution</h2>
                     </div>
