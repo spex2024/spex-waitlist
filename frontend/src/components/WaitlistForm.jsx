@@ -93,10 +93,10 @@ export default function WaitlistForm({color ,text}) {
                             </p>
                             <button
                                 onClick={() => setShowSuccessMessage(false)}
-                                className="w-[50%] text-white bg-green-700 font-medium rounded-full text-md px-5 py-2.5 text-center mt-4"
+                                className="w-[50%] text-white bg-green-700 font-medium  text-md px-5 py-2.5 text-center mt-4"
                                 type="button"
                             >
-                                Close
+                                Go Back
                             </button>
                         </div>
                     </div>

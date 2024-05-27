@@ -4,6 +4,16 @@ import spex from "../assets/spex.jpg";
 function Solution(props) {
 
     const accordionData = [
+
+        {
+            id: 'accordion-flush-body-4',
+            title: ' Food Ordering Made Easy',
+            content: [
+                'Simplify meal planning for your team. With Spex, you can conveniently order food for your organization and have it delivered in our smart, reusable packs, ensuring both convenience and sustainability.'
+            ],
+            image: 'delivery.png'
+        },
+
         {
             id: 'accordion-flush-body-1',
             title: ' Smart Pack Exchange',
@@ -28,14 +38,7 @@ function Solution(props) {
             ],
             image: 'cedis.png'
         },
-        {
-            id: 'accordion-flush-body-4',
-            title: ' Food Ordering Made Easy',
-            content: [
-                'Simplify meal planning for your team. With Spex, you can conveniently order food for your organization and have it delivered in our smart, reusable packs, ensuring both convenience and sustainability.'
-            ],
-            image: 'delivery.png'
-        },
+
     ];
 
     return (
