@@ -44,9 +44,9 @@ export default function WaitlistForm({color ,text}) {
                         hidden: "translate-x-[100%] opacity-0",
                     }}
                 >
-                    <TEModalContent className="h-[95vh] xl:h-[100vh] px-5 rounded-md flex flex-col justify-center xl:py-10">
+                    <TEModalContent className="h-[95vh] xl:h-[100vh] px-5 rounded-md flex flex-col justify-center my-5">
                         {/* <!--Modal title--> */}
-                        <div className={`flex items-center justify-end h-[70px] py-5 px-10`}>
+                        <div className={`flex items-center justify-end h-[70px] py-3 px-10`}>
                             {/* <!--Close button--> */}
                             <button
                                 type="button"
@@ -58,7 +58,7 @@ export default function WaitlistForm({color ,text}) {
                             </button>
                         </div>
 
-                        <div className={`mt-8 flex flex-col items-start justify-start h-[50px]  px-10 xl:h-[30px]`}>
+                        <div className={`mt- flex flex-col items-start justify-start h-[50px]  px-5 `}>
                             <h5 className="text-lg  xl:text-md leading-normal font-semibold text-center">
                                 Embrace Smart Pack!
                             </h5>
@@ -68,7 +68,7 @@ export default function WaitlistForm({color ,text}) {
                         </div>
 
                         {/* <!--Modal body--> */}
-                        <TEModalBody className={`mt-20 xl:mt-10`}>
+                        <TEModalBody className={`mt-10 xl:mt-10`}>
                             <MultiStepForm
                                 setShowModal={setShowModalTopRight}
                                 setShowSuccessMessage={setShowSuccessMessage}

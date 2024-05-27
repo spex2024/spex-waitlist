@@ -37,8 +37,8 @@ function Hero(props) {
                     </div>
                     <div className={`w-full lg:w-[60%] text-white lg:pe-10 space-y-4 mb-5`}>
 
-                        <h1 className={`font-extra-bold xl:text-5xl text-2xl lg:text-7xl md:5xl capitalize font-sora`}>smart pack exchange</h1>
-                        <p className={`text-lg font-nunito font-thin pe-10`}>SPEX is a packaging solution that leverages web to connect
+                        <h1 className={`font-extra-bold  text-2xl lg:text-7xl md:5xl capitalize font-sora`}>smart pack exchange</h1>
+                        <p className={`text-lg font-nunito font-thin pe-10 `}>SPEX is a packaging solution that leverages web to connect
                             restaurants / vendors to users seeking sustainable packaging.</p>
                     </div>
                     <WaitlistForm color={`outline-white`} text={`text-white`} style={{ width: "100%" }} />

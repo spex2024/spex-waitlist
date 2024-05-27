@@ -125,10 +125,10 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
     };
 
     return (
-        <div className="w-full max-w-lg mx-auto mt-10">
+        <div className="w-full max-w-lg mx-auto mt-5">
             <div className="flex justify-start items-center">
                 <div className="text-center p-2">
-                    <div className="flex items-center text-gray-500 text-sm font-thin italic mb-5">
+                    <div className="flex items-center text-gray-500 text-sm font-thin italic mb-2">
                         {currentStep} <MdOutlineHorizontalRule /> {steps.length}
                     </div>
                 </div>
