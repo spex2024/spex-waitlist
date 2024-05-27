@@ -57,7 +57,7 @@ function Footer(props) {
                 <ul className="flex gap-5  flex-wrap justify-center">
                     {social.map((social) => (
                         <Link key={social.link} to={social.link}>
-                            <li className="text-md text-white bg-[#252526] p-2 rounded-full">{social.steps}</li>
+                            <li className="text-md text-white bg-[#252526] p-2 rounded-full hover:bg-[#71bc44] hover:text-black  hover: transition-colors 3s">{social.steps}</li>
                         </Link>
                     ))}
                 </ul>

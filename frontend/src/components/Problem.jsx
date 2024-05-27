@@ -51,8 +51,8 @@ function Problem(props) {
                      // data-aos-once="false"
                      // data-aos-anchor-placement="top-center"
                 >
-                    <div className=" w-full lg:w-44 h-44 bg-green-700 bg-cover bg-center " style={{ backgroundImage: `url(${data.image})` }}></div>
-                    <div className=" w-full lg:w-[90%] flex flex-col lg:justify-start gap-3 p-5 text-white shadow-lg   h-[220px] lg:h-44 bg-[#57ba46]">
+                    <div className=" w-full lg:w-44 h-44  bg-cover bg-center " style={{ backgroundImage: `url(${data.image})` }}></div>
+                    <div className=" w-full lg:w-[90%] flex flex-col lg:justify-start gap-3 p-5 text-white shadow-lg   h-[220px] lg:h-44 bg-[#71bc44]">
                         <h2 className="font-bold text-md font-sora xl:text-sm xl:font-semi-bold">{data.title}</h2>
                         <span className="text-sm font-nunito ">{data.content}</span>
                     </div>

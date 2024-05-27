@@ -42,7 +42,7 @@ function Hero(props) {
                 <div className={`lg:w-[80%]`}>
 
                     <div
-                        className="w-[150px] h-[30px] flex lowercase font-semi-bold items-center lg:items-center justify-center text-white  bg-[#57ba46] rounded-full gap-3 text-blacke text-md font-nunito font-md mb-3">
+                        className="w-[150px] h-[30px] flex lowercase font-semi-bold items-center lg:items-center justify-center text-white  bg-[#71bc44] rounded-full gap-3 text-blacke text-md font-nunito font-md mb-3">
                         <span>Eat</span>
                         <span>Swap</span>
                         <span>Reuse</span>
