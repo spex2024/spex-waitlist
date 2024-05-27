@@ -30,7 +30,7 @@ function About(props) {
             <section className={`w-full   grid grid-cols-1 lg:grid-cols-2  gap-10`}>
                 <div className={`w-full h-full  px-10 py-16`}>
                     <div
-                        className={`w-[50%] lg:w-[35%] py-2 px-2 bg-black  text-white flex justify-center items-center gap-3 font-semibold text-xl rounded mb-5`}
+                        className={`w-[50%] lg:w-[30%] py-2 px-2 bg-black  text-white flex justify-start items-center gap-3 font-semibold text-xl rounded mb-5`}
                         data-aos="fade-in"
                         data-aos-offset="200"
                         data-aos-delay="50"
@@ -38,7 +38,7 @@ function About(props) {
                         data-aos-easing="ease-in-out"
 
                     >
-                        <img src={problem} className={'lg:w-8 lg:h-8 w-5 h-5'}/>
+                        <img src={problem} className={'lg:w-6 lg:h-6 w-5 h-5'}/>
                         <h2 className={`lg:text-md text-sm font-sora font-semibold`}
 
                         >The Problem</h2>
@@ -67,14 +67,14 @@ function About(props) {
 
                 >
                     <div
-                        className={`w-[50%] lg:w-[35%] py-2 px-2 bg-white rounded  text-black flex justify-center gap-2 items-center font-bold text-xl mb-5`}
+                        className={`w-[50%] lg:w-[30%] py-2 px-2 bg-white rounded  text-black flex justify-start gap-2 items-center font-bold text-xl mb-5`}
                         data-aos="fade-in"
                         data-aos-offset="200"
                         data-aos-delay="50"
                         data-aos-duration="500"
                         data-aos-easing="ease-in-out"
                     >
-                        <img src={solution} className={'lg:w-8 lg:h-8 w-5 h-5'}/>
+                        <img src={solution} className={'lg:w-6 lg:h-6 w-5 h-5'}/>
                         <h2 className={`lg:text-md text-sm font-sora font-semibold`}>The Solution</h2>
                     </div>
                     <p className={`font-medium text-md my-10 text-white`}

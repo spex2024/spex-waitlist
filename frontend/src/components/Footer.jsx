@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {FaXTwitter , FaInstagram,FaFacebookF,FaTiktok} from "react-icons/fa6";
+import {FaXTwitter, FaInstagram, FaFacebookF, FaTiktok, FaLinkedin} from "react-icons/fa6";
 import {Link} from "react-router-dom";
-import bgImage from "../assets/spex-logo.webp";
+import bgImage from "../assets/spex-logo.png";
 
 
 // import spex from '../assets/spex-logo.webp'
@@ -13,27 +13,27 @@ function Footer(props) {
             id: 'IG',
             name:"instagram",
             steps: <FaInstagram />,
-            link:'/'
+            link:'https://www.instagram.com/spex_africa?igsh=MWE4bDkzaXQzZ2w2cA'
 
         },
         {
             id: 'FB',
             name:"facebook",
             steps: <FaFacebookF/>,
-            link:'/'
+            link:'https://www.facebook.com/share/rwdLMHF8Hr14Bq4p/?mibextid=qi2Omg'
 
         },
         {
             id: 'X',
             name:"X",
             steps: <FaXTwitter  />,
-            link:'/'
+            link:'https://x.com/Spex_Africa?t=b3TmU_Xdfnt8WFdV8yWBdQ&s=09'
 
         },  {
             id: 'X',
-            name:"TikTok",
-            steps: <FaTiktok />,
-            link:'/'
+            name:"linkedin",
+            steps: <FaLinkedin />,
+            link:'https://www.linkedin.com/company/spex-africa'
 
         },
 
@@ -52,12 +52,12 @@ function Footer(props) {
              data-aos-once="false"
 
         >
-            <div className="w-full max-w-xl h-auto flex flex-col justify-center items-center gap-10  py-10">
-               <img src={bgImage} width={200}/>
+            <div className="w-full max-w-xl h-auto flex flex-col justify-center items-center   py-5">
+               <img src={bgImage} className={`lg:h-64 lg:w-64`}/>
                 <ul className="flex gap-5  flex-wrap justify-center">
                     {social.map((social) => (
                         <Link key={social.link} to={social.link}>
-                            <li className="text-lg text-white bg-[#252526] p-2 rounded-full">{social.steps}</li>
+                            <li className="text-md text-white bg-[#252526] p-2 rounded-full">{social.steps}</li>
                         </Link>
                     ))}
                 </ul>
