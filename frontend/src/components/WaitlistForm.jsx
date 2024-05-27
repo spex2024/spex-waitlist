@@ -44,7 +44,7 @@ export default function WaitlistForm({color ,text}) {
                         hidden: "translate-x-[100%] opacity-0",
                     }}
                 >
-                    <TEModalContent className="h-[95vh] px-5 rounded-md flex flex-col justify-center">
+                    <TEModalContent className="h-[95vh] xl:h-[100vh] px-5 rounded-md flex flex-col justify-center xl:py-10">
                         {/* <!--Modal title--> */}
                         <div className={`flex items-center justify-end h-[70px] py-5 px-10`}>
                             {/* <!--Close button--> */}
@@ -54,21 +54,21 @@ export default function WaitlistForm({color ,text}) {
                                 onClick={() => setShowModalTopRight(false)}
                                 aria-label="Close"
                             >
-                                <GrClose size={25} />
+                                <GrClose size={20} />
                             </button>
                         </div>
 
-                        <div className={`mt-8 flex flex-col items-start justify-start h-[50px] py-2 px-10`}>
-                            <h5 className="text-lg leading-normal font-semibold text-center">
+                        <div className={`mt-8 flex flex-col items-start justify-start h-[50px]  px-10 xl:h-[30px]`}>
+                            <h5 className="text-lg  xl:text-md leading-normal font-semibold text-center">
                                 Embrace Smart Pack!
                             </h5>
-                            <h5 className="text-4xl leading-normal font-semibold text-center">
+                            <h5 className="text-4xl xl:text-2xl leading-normal font-semibold text-center">
                                 Join the Waitlist
                             </h5>
                         </div>
 
                         {/* <!--Modal body--> */}
-                        <TEModalBody className={`mt-20`}>
+                        <TEModalBody className={`mt-20 xl:mt-10`}>
                             <MultiStepForm
                                 setShowModal={setShowModalTopRight}
                                 setShowSuccessMessage={setShowSuccessMessage}

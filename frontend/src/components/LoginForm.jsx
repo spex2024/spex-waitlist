@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Fetch from "../hooks/Fetch.jsx";
-import spexbg from "../assets/pack.jpg";
 import {Link} from "react-router-dom";
 
 function LoginForm() {
