@@ -37,10 +37,14 @@ const Feedback = () => {
         { question: "What is your email?", answer: selectedItem.email },
         { question: "What is your phone number?", answer: selectedItem.phone },
         { question: "Where do you work?", answer: selectedItem.company },
-        { question: "What is your biggest challenge with current food packaging and delivery?", answer: selectedItem.answer1 },
-        { question: "How interested are you in a smart reusable packaging system?", answer: selectedItem.answer2 },
-        { question: "What ideas or suggestions do you have for making a smart reusable packaging system successful in your organization or food delivery service?", answer: selectedItem.answer3 }
+        { question: "What is the most important factor for you when it comes to food packaging?", answer: selectedItem.answer1 },
+        { question: "How much on average would you budget for a lunch meal on a working day?", answer: selectedItem.answer6 },
+        { question: "How often do you order lunch at work?", answer: selectedItem.answer2 },
+        { question: "How important is it for you to have the option to customize your meal?", answer: selectedItem.answer3 },
+        { question: "Would you prefer a lunch paid for by your company, yourself, or Hybrid?", answer: selectedItem.answer4 },
+        { question: "How long will it take for you to return a used lunch pack to a designated place in your office after eating?", answer: selectedItem.answer5 }
     ] : [];
+
 
     return (
         <div className="w-[80%] relative overflow-x-auto shadow-sm sm:rounded-lg mt-16 mx-auto">
