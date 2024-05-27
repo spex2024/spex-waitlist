@@ -41,7 +41,17 @@ function Footer(props) {
 
     ];
     return (
-        <div id={"footer"} className="w-full h-auto flex flex-col items-center justify-center py-10  text-black font-nunito bg-cover bg-center"   >
+        <div id={"footer"} className="w-full h-auto flex flex-col items-center justify-center py-10  text-black font-nunito bg-cover bg-center"
+
+             data-aos="fade-zoom-in"
+             data-aos-offset="200"
+             data-aos-delay="50"
+             data-aos-duration="1000"
+             data-aos-easing="ease-in-out"
+             data-aos-mirror="true"
+             data-aos-once="false"
+
+        >
             <div className="w-full max-w-xl h-auto flex flex-col justify-center items-center gap-10  py-10">
                <img src={bgImage} width={200}/>
                 <ul className="flex gap-5  flex-wrap justify-center">

@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
 import spex from "../assets/spex-logo.webp";
 import WaitlistForm from "./WaitlistForm.jsx";
-import { IoGridSharp } from "react-icons/io5";
 import { AiOutlineLogin } from "react-icons/ai";
 import spexbg from "../assets/pack.jpg";
 import { RiScrollToBottomLine } from "react-icons/ri";
+
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+
+AOS.init();
 
 function Hero(props) {
     return (
@@ -14,7 +17,16 @@ function Hero(props) {
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
             backgroundImage: `url(${spexbg})`,
             backgroundBlendMode: 'multiply'
-        }}>
+        }}
+             data-aos="fade-zoom-in"
+             data-aos-offset="200"
+             data-aos-delay="50"
+             data-aos-duration="1000"
+             data-aos-easing="ease-in-out"
+             data-aos-mirror="true"
+             data-aos-once="false"
+             data-aos-anchor-placement="top-center"
+        >
             <header className="w-full flex items-center lg:justify-between justify-center h-[80px] px-10 ">
                 <div>
                     <img src={spex} />

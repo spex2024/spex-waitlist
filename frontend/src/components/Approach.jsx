@@ -57,8 +57,26 @@ function Approach(props) {
         }} >
             <header
                 className={`w-[90%] lg:w-[70%] h-auto py-5 mb-10 text-black flex flex-col items-center justify-center `}>
-                <p className={'font-nunito font-bold text-lg mb-3'}>- How It Works -</p>
-                <h1 className={`font-bold font-sora text-2xl lg:text-5xl mb-5 text-center`}>Our step-by-step
+                <p className={'font-nunito font-bold text-lg mb-3'}
+                    data-aos="fade-in"
+                    data-aos-offset="200"
+                    data-aos-delay="50"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out"
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+
+                >- How It Works -</p>
+                <h1 className={`font-bold font-sora text-2xl lg:text-5xl mb-5 text-center`}
+                    data-aos="fade-up"
+                    data-aos-offset="200"
+                    data-aos-delay="50"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out"
+                    data-aos-mirror="true"
+                    data-aos-once="false"
+
+                >Our step-by-step
                     approach</h1>
 
             </header>

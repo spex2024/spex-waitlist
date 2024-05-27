@@ -10,6 +10,11 @@ function Process({ accordionData }) {
                             <div
                                 key={step.id}
                                 className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
+                                data-aos="zoom-out"
+                                data-aos-offset="200"
+                                data-aos-delay="50"
+                                data-aos-duration="1000"
+                                data-aos-easing="ease-in-out"
                             >
                                 <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-[#57ba46] group-[.is-active]:bg-emerald-500 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
                                     <svg className="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="12" height="10">
