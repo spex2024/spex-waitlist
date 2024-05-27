@@ -83,9 +83,9 @@ const Feedback = () => {
                     <div className="flex flex-col items-start justify-center gap-5 bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-[60vw] lg:h-[90vh] py-10 overflow-y-auto">
                         <h2 className="text-2xl font-bold mb-4">Feedback Details</h2>
                         {modalDetails.map((detail, index) => (
-                            <div key={index} className={` w-full items-center justify-center flex flex-col gap-5`}>
-                                <h4 className={`flex flex-col items-center gap-2 font-semibold font-sora text-sm` }> <span>Question: </span> : {detail.question}</h4>
-                                <p className={`flex flex-col items-center gap-2 font-light font-nunito text-sm` } ><span>Answer: </span>{detail.answer}</p>
+                            <div key={index} className={` w-full items-center  flex flex-col gap-5`}>
+                                <h4 className={`flex  items-center gap-2 font-semibold font-sora text-sm` }> <span>Question: </span> : {detail.question}</h4>
+                                <p className={`flex  items-center gap-2 font-light font-nunito text-sm` } ><span>Answer: </span>{detail.answer}</p>
                             </div>
                         ))}
                         <button
