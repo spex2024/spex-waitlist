@@ -61,7 +61,7 @@ function Dashboard() {
                     Download CSV <AiFillFileExcel size={20} />
                 </button>
             </div>
-            <div className="w-[80%] min-h-screen">
+            <div className="w-[90%] min-h-screen">
                 <Feedback />
             </div>
         </div>

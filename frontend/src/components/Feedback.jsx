@@ -47,7 +47,7 @@ const Feedback = () => {
 
 
     return (
-        <div className="w-[80%] relative overflow-x-auto shadow-sm sm:rounded-lg mt-16 mx-auto">
+        <div className="w-[90%] relative overflow-x-auto shadow-sm sm:rounded-lg mt-16 mx-auto">
             <table className="w-full text-sm text-left rtl:text-right text-white">
                 <thead className="text-xs text-white uppercase bg-green-700">
                 <tr>
@@ -80,16 +80,16 @@ const Feedback = () => {
 
             {selectedItem && (
                 <div className="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 cursor-pointer">
-                    <div className="flex flex-col gap-5 mx-auto bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-[60vw] lg:h-[80vh] py-10 overflow-y-auto">
+                    <div className="flex flex-col gap-5 mx-auto bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-[60vw] lg:h-[90vh] py-10 overflow-y-auto">
                         <h2 className="text-2xl font-bold mb-4">Feedback Details</h2>
                         {modalDetails.map((detail, index) => (
-                            <div key={index} className={`flex flex-col gap-2`}>
+                            <div key={index} className={`flex flex-col gap-5`}>
                                 <h4 className={`flex flex-col gap-2 font-semibold`}>{detail.question}</h4>
                                 <p>{detail.answer}</p>
                             </div>
                         ))}
                         <button
-                            className="mt-4 bg-green-700 text-white px-4 py-2 rounded"
+                            className=" w-[40%] mt-4 bg-green-700 text-white px-4 py-2 rounded"
                             onClick={closeModal}
                         >
                             Close
