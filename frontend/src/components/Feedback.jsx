@@ -89,7 +89,7 @@ const Feedback = () => {
                             </div>
                         ))}
                         <button
-                            className=" w-[40%] mt-4 bg-green-700 text-white px-4 py-2 rounded"
+                            className=" w-[20%] mt-4 bg-green-700 text-white px-4 py-2 rounded"
                             onClick={closeModal}
                         >
                             Close
