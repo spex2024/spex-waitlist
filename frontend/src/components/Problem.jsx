@@ -33,16 +33,16 @@ function Problem(props) {
             content: [
                 'These Waste pollutes Marine lives, affect the Climate and livelihoods, especially families living around coastal Areas.'
             ],
-            image:'sea.jpg'
+            image:'fish-plastic2.jpg'
         }
     ];
 
     return (
-        <div className="w-full h-full flex flex-col gap-4 lg:p-4">
+        <div className="w-full h-full flex flex-col gap-4 lg:p-2">
             {accordionData.map(data => (
                 <div className="w-full flex flex-col md:flex-row gap-5 items-center mt-10 text-white" key={data.id}>
-                    <div className=" w-full lg:w-44 h-40 bg-green-700 bg-cover bg-center rounded-lg" style={{ backgroundImage: `url(${data.image})` }}></div>
-                    <div className=" w-full lg:w-[90%] flex flex-col lg:justify-start gap-3 p-5 text-white shadow-lg  rounded-lg h-[220px] lg:h-44 bg-[#57ba46]">
+                    <div className=" w-full lg:w-44 h-44 bg-green-700 bg-cover bg-center " style={{ backgroundImage: `url(${data.image})` }}></div>
+                    <div className=" w-full lg:w-[90%] flex flex-col lg:justify-start gap-3 p-5 text-white shadow-lg   h-[220px] lg:h-44 bg-[#57ba46]">
                         <h2 className="font-bold text-md font-sora xl:text-sm xl:font-semi-bold">{data.title}</h2>
                         <span className="text-sm font-nunito ">{data.content}</span>
                     </div>
