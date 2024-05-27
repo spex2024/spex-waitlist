@@ -64,7 +64,7 @@ function Approach(props) {
                     data-aos-duration="1000"
                     data-aos-easing="ease-in-out"
                     data-aos-mirror="true"
-                    data-aos-once="false"
+                    data-aos-once="true"
 
                 >- How It Works -</p>
                 <h1 className={`font-bold font-sora text-2xl lg:text-5xl mb-5 text-center`}
@@ -74,7 +74,7 @@ function Approach(props) {
                     data-aos-duration="1000"
                     data-aos-easing="ease-in-out"
                     data-aos-mirror="true"
-                    data-aos-once="false"
+                    data-aos-once="true"
 
                 >Our step-by-step
                     approach</h1>
