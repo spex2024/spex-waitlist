@@ -8,55 +8,40 @@ function Approach(props) {
         {
             id: 'accordion-flush-body-1',
             steps: 1,
-            title: ' Delivering Reusable Containers',
+            title: 'Placing Orders in Smart Packs',
             content: [
-                'At Spex, we deliver durable reusable food containers (Smart packs) to restaurants / food Vendors at a subscription fee on behalf of Enterprise Clients/Partners'
+                'Enterprise clients and their users place take-out food orders from their preferred food vendors/restaurants on the SPEX platform, selecting the option for delivery in durable, reusable Smart packs.'
             ],
             image: 'reusable.png'
         },
         {
             id: 'accordion-flush-body-2',
             steps: 2,
-            title: 'Streamlined Smart Pack Delivery',
+            title: 'Smart Pack Delivery',
             content: [
-                'Restaurants/food Vendors receive Take-out food orders from Enterprises / Users on the SPEX platform and then prepare the order in Smart packs for bulk or individual delivery to Users.'
+                'Partnered couriers deliver the take-out meals in Smart packs to Enterprise users, ensuring a streamlined and eco-friendly delivery process.'
             ],
             image: 'restaurant.png'
-        }, {
+        },
+        {
             id: 'accordion-flush-body-3',
             steps: 3,
-            title: 'In Transit',
+            title: 'Returning Packs for Recycling',
             content: [
-                'Partnered Couriers deliver take-out meals in smart packs to Users,'
-            ],
-            image: 'restaurant.png'
-        },
-        {
-            id: 'accordion-flush-body-3',
-            steps: 4,
-            title: 'Smart Pack Takeout Solution',
-            content: [
-                'Enterprises / Users access take-out meals on the Spex Platform from their preferred food vendor/restaurant and receive their meals in Smart packs'
-            ],
-            image: 'box.png'
-        } ,
-        {
-            id: 'accordion-flush-body-4',
-            steps: 5,
-            title: 'Seamless Smart Pack Cycle',
-            content: [
-                'Partnered Couriers  pick up used packs back to Spex Hygienic Center where they are machine-washed, sterilized, and returned to food vendors for Reuse.'
+                'Used Smart packs are picked up by partnered couriers and returned to the Spex Hygienic Center, where they are machine-washed, sterilized, and prepared for reuse by food vendors for Enterprise clients.'
             ],
             image: 'recycle.png'
-        },
+        }
     ];
 
+
+
     return (
-        <div className={`w-full h-auto flex flex-col justify-center items-center mt-28 py-16 xl:py-20 `}  style={{
+        <div className={`w-full h-auto flex flex-col justify-center items-center mt-20 py-16 xl:py-20 `}  style={{
             backgroundImage: `url(${bgImage})`,
         }} >
             <header
-                className={`w-[90%] lg:w-[70%] h-auto py-5 mb-10 text-black flex flex-col items-center justify-center `}>
+                className={`w-[90%] lg:w-[60%] h-auto py-5 mb-10 text-black flex flex-col items-center justify-center `}>
                 <p className={'font-nunito font-bold text-lg mb-3'}
                     data-aos="fade-in"
                     data-aos-offset="200"
@@ -80,7 +65,7 @@ function Approach(props) {
                     approach</h1>
 
             </header>
-            <div className={` w-[100%] lg:w-[50%] h-[950px] flex flex-col justify-center items-center py-10 lg:my-16`}>
+            <div className={` w-[100%] lg:w-[50%] h-[850px] flex flex-col justify-center items-center py-10 lg:my-10`}>
                 <Process accordionData={accordionData} />
             </div>
         </div>

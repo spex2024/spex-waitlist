@@ -22,10 +22,10 @@ function Process({ accordionData }) {
                                     </svg>
                                 </div>
                                 <div className="w-[calc(100%-4rem)] md:w-[calc(50%-4rem)] bg-[#c7b72f]  p-4 rounded border-4 border-white shadow">
-                                    <div className="flex items-center justify-between space-x-2 mb-1">
-                                        <div className="font-medium text-sm text-slate-900 font-sora">{step.title}</div>
-                                    </div>
+                                    <div className="flex flex-col gap-2 justify-between  mb-1 ">
+                                        <div className=" font-medium text-sm text-slate-900 font-sora">{step.title}</div>
                                     <div className="text-black font-nunito text-sm ">{step.content}</div>
+                                    </div>
                                 </div>
                             </div>
                         ))}

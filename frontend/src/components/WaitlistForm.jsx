@@ -58,11 +58,11 @@ export default function WaitlistForm({color ,text}) {
                             </button>
                         </div>
 
-                        <div className={`mt- flex flex-col items-start justify-start h-[50px]  px-5 `}>
-                            <h5 className="text-lg  xl:text-md leading-normal font-semibold text-center">
+                        <div className={`mt- flex flex-col items-start justify-start h-[50px]  px-5 font-sora `}>
+                            <h5 className="text-lg  xl:text-md leading-normal font-light text-center">
                                 Embrace Smart Pack!
                             </h5>
-                            <h5 className="text-4xl xl:text-2xl leading-normal font-semibold text-center">
+                            <h5 className="text-4xl xl:text-2xl leading-normal font-light text-center">
                                 Join the Waitlist
                             </h5>
                         </div>

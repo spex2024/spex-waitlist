@@ -4,7 +4,7 @@ import WaitlistForm from "./WaitlistForm.jsx";
 
 function Cta(props) {
     return (
-        <div id={"cta"} className="w-full flex flex-col lg:gap-5 items-center justify-around  min-h-[600px] py-10 lg:py-20 bg-[#1C2026]" >
+        <div id={"cta"} className="w-full flex flex-col lg:gap-5 items-center justify-around  min-h-[600px] py-10 lg:py-20 bg-[#1C2026] font-nunito" >
             <div className="w-full max-w-4xl h-auto flex flex-col items-center text-center px-4 text-white"
                  data-aos="fade-up"
                  data-aos-offset="200"
@@ -24,7 +24,7 @@ function Cta(props) {
                  data-aos-duration="1000"
                  data-aos-easing="ease-in-out"
             >
-                <p className="font-serif text-md sm:text-xl md:text-2xl text-center mb-5 font-nunito text-white">
+                <p className="  text-md sm:text-xl md:text-2xl text-center mb-5 font-nunito text-white">
                     Be part of the sustainable food packaging revolution! Together, we can make a difference, one smart pack at a time.
                 </p>
 

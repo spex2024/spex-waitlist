@@ -4,6 +4,7 @@ import About from "../components/About.jsx";
 import Approach from "../components/Approach.jsx";
 import Cta from "../components/CTA.jsx";
 import Footer from "../components/Footer.jsx";
+import Partner from "../components/Partner.jsx";
 
 
 function HomePublic(props) {
@@ -13,6 +14,7 @@ function HomePublic(props) {
             <About />
             <Approach />
             <Cta />
+            <Partner />
             <Footer />
         </div>
     );
