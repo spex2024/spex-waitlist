@@ -48,7 +48,7 @@ export const login = async (req , res) => {
         const token = createToken(user._id,user.username , user.name , user.role);
 
         // reponse info
-        res.cookie('token', token, { httpOnly: true,maxAge: 24 * 60 * 1000 ,secure: true, sameSite: 'none',  }, ).json({ message: 'Login successful'});
+        res.cookie('token', token, { httpOnly: true,maxAge: 24 * 60 * 1000 ,secure: true,   }, ).json({ message: 'Login successful'});
         // res.status(201).json({username, token});
 
     } catch (e) {
