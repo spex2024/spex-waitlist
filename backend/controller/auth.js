@@ -37,32 +37,31 @@ export const register = async (req , res) => {
 }
 
 
-export const login = async (req, res) => {
-    // user info from form
-    const { username, password } = req.body;
+export const login = async (req , res) => {
+    // user info from  form
+    const {username, password} = req.body;
     try {
-        // authenticating user with the login method from the user model
+        // authenticating user with the login method from the user  model
         const user = await User.login(username, password);
 
         // user token
-        const token = createToken(user._id, user.username, user.name, user.role);
+        const token = createToken(user._id,user.username , user.name , user.role);
 
-        // Determine if the environment is production
-
-
-        // response info
-        res.cookie('token', token, {
-            httpOnly: true,
-            maxAge: 24 * 60 * 60 * 1000, // 24 hours in milliseconds
-            secure: true, // Use secure cookies in production
-            sameSite: 'None' // Allow cross-site cookies
-        })
+        // reponse info
+        res.cookie('token', token, { httpOnly: true,maxAge: 24 * 60 * 1000 ,secure: true, sameSite: 'none',  }, ).json({ message: 'Login successful'});
+        // res.status(201).json({username, token});
 
     } catch (e) {
-        res.status(401).json({ error: e.message });
-    }
-};
 
+        res.status(401).json({error: e.message});
+
+
+
+    }
+
+
+
+}
 
 
 export const logout = (req, res) => {
