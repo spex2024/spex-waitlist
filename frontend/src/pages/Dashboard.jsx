@@ -10,15 +10,15 @@ import {UserContext} from "../context/userContext.jsx";
 
 function Dashboard() {
     const { content } = useContext(FeedbackContext);
-    const { profile} = Fetch()
+    // const { profile} = Fetch()
     //
     // const handleLogout =  () => {
     //     logout();
     // };
     const {userInfo} = useContext(UserContext)
-    useEffect(() => {
-        profile();
-    }, []);
+    // useEffect(() => {
+    //     profile();
+    // }, []);
 
     const {name , username ,role} = userInfo;
 
