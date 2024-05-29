@@ -5,6 +5,7 @@ import Approach from "../components/Approach.jsx";
 import Cta from "../components/CTA.jsx";
 import Footer from "../components/Footer.jsx";
 import Partner from "../components/Partner.jsx";
+import Pilot from "../components/Pilot.jsx";
 
 
 function HomePublic(props) {
@@ -14,6 +15,7 @@ function HomePublic(props) {
             <About />
             <Approach />
             <Cta />
+            <Pilot />
             <Partner />
             <Footer />
         </div>
