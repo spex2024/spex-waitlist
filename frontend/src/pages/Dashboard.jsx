@@ -45,7 +45,7 @@ function Dashboard() {
         <div className="w-full flex flex-col items-center min-h-screen bg-gray-100 pb-10">
             <header className="w-full h-[20%] flex gap-[50%] items-center justify-center py-5 bg-white">
                 <Link to='/'>
-                    <img src={SpexLogo} alt="Spex Logo" className="h-64 w-64"  />
+                    <img src={SpexLogo} alt="Spex Logo" className="h-44 w-44"  />
                 </Link>
                 <Logout username={username}  role={role} />
             </header>
