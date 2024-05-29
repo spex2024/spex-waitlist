@@ -48,13 +48,13 @@ export const login = async (req, res) => {
         const token = createToken(user._id, user.username, user.name, user.role);
 
         // Determine if the environment is production
-        const isProduction = process.env.NODE_ENV === 'production';
+
 
         // response info
         res.cookie('token', token, {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000, // 24 hours in milliseconds
-            secure: isProduction, // Use secure cookies in production
+            secure: true, // Use secure cookies in production
             sameSite: 'None' // Allow cross-site cookies
         })
 
