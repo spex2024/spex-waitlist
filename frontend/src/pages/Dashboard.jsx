@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react';
-import SpexLogo from '../assets/spex-logo.webp';
+import SpexLogo from '../assets/spex-logo.png';
 import { Link } from 'react-router-dom';
 import { AiFillFileExcel } from 'react-icons/ai';
 import Feedback from '../components/Feedback.jsx';
