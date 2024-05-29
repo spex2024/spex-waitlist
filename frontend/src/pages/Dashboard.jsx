@@ -16,8 +16,9 @@ function Dashboard() {
     //     logout();
     // };
     const {userInfo} = useContext(UserContext)
-    // useEffect(() => {
-    // }, []);
+    useEffect(() => {
+        profile();
+    }, []);
 
     const {name , username ,role} = userInfo;
 
