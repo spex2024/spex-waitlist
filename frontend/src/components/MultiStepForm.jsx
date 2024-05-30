@@ -98,11 +98,8 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
 
     const handleSubmit = async () => {
         if (validate()) {
-            // Submit the form data
-            console.log("Form submitted:", formData);
-            await createFeedback(formData);
 
-            // Reset form data
+            await createFeedback(formData);
             setFormData({
                 name: '',
                 email: '',

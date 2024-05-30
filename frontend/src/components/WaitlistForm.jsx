@@ -9,7 +9,6 @@ import {
     TEModalFooter,
 } from "tw-elements-react";
 import MultiStepForm from "./MultiStepForm.jsx";
-import {AiFillCloseCircle} from "react-icons/ai";
 import {GrClose} from "react-icons/gr";
 
 export default function WaitlistForm({color ,text}) {
