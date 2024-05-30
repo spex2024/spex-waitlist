@@ -3,7 +3,7 @@ import Problem from "./Problem.jsx";
 import Solution from "./Solution.jsx";
 import solution from "../assets/solutions.png";
 import problem from "../assets/caution.png";
-import home from '../assets/home.jpg'
+import home from '../assets/pack.jpg'
 function About(props) {
 
 

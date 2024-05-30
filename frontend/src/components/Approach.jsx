@@ -26,7 +26,7 @@ function Approach(props) {
         {
             id: 'accordion-flush-body-3',
             steps: 3,
-            title: 'Returning Packs for Recycling',
+            title: 'Returning Packs For Reuse',
             content: [
                 'Used Smart packs are picked up by partnered couriers and returned to the Spex Hygienic Center, where they are machine-washed, sterilized, and prepared for reuse by food vendors for Enterprise clients.'
             ],
