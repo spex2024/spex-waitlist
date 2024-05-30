@@ -12,7 +12,6 @@ function Cta(props) {
                  data-aos-duration="800"
                  data-aos-easing="ease-in-out"
             >
-                <h1 className="font-serif font-bold text-2xl sm:text-3xl mb-3 font-nunito">Waitlist</h1>
                 <h1 className="font-bold text-2xl sm:text-4xl md:text-6xl mb-5 font-serif text-center font-sora">Embrace Smart Pack!</h1>
                 <p className="font-bold text-2xl sm:text-4xl md:text-5xl font-sora capitalize">Join the Waitlist</p>
             </div>
