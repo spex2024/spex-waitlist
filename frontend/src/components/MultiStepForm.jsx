@@ -16,7 +16,9 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
         answer3: '',
         answer4: '',
         answer5: '',
-        answer6: ''
+        answer6: '',
+        answer7: '',
+        answer8: ''
     });
 
     const [errors, setErrors] = useState({});
@@ -32,6 +34,8 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
         "Step 8: Info",
         "Step 9: Info",
         "Step 10: Info",
+        "Step 11: Info",
+        "Step 12: Info",
     ];
 
     const validate = () => {
@@ -70,6 +74,12 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
         if (currentStep === 10 && !formData.answer6) {
             newErrors.answer6 = "This field is required";
         }
+        if (currentStep === 11 && !formData.answer7) {
+            newErrors.answer7 = "This field is required";
+        }
+        if (currentStep === 12 && !formData.answer8) {
+            newErrors.answer8 = "This field is required";
+        }
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
@@ -103,7 +113,9 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                 answer3: '',
                 answer4: '',
                 answer5: '',
-                answer6: ''
+                answer6: '',
+                answer7: '',
+                answer8: ''
             });
 
             // Reset to step 1
@@ -212,11 +224,51 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                 )}
                 {currentStep === 6 && (
                     <div>
-                        <label htmlFor="step6" className="text-sm">How often do you order lunch at work?</label>
+                        <label htmlFor="step6" className="text-sm">Which packaging materials do you prefer for your food delivery?</label>
                         <select
                             id="step6"
                             name="answer2"
                             value={formData.answer2}
+                            onChange={handleChange}
+                            className="mt-2 p-2 border-b border-black w-full focus:outline-none"
+                        >
+                            <option value="" disabled>Select packaging material</option>
+                            <option value="biodegradable">Biodegradable materials</option>
+                            <option value="plastic">Plastic containers</option>
+                            <option value="paper">Paper-based packaging</option>
+                            <option value="reusable">Reusable containers</option>
+                            <option value="foam">Foam containers</option>
+                        </select>
+                        {errors.answer2 && <p className="text-red-500 text-sm mt-3">{errors.answer2}</p>}
+                    </div>
+                )}
+                {currentStep === 7 && (
+                    <div>
+                        <label htmlFor="step7" className="text-sm">How likely are you to order from a new food delivery service if it offers environmentally friendly packaging that saves you money and waste?</label>
+                        <select
+                            id="step7"
+                            name="answer3"
+                            value={formData.answer3}
+                            onChange={handleChange}
+                            className="mt-2 p-2 border-b border-black w-full focus:outline-none"
+                        >
+                            <option value="" disabled>Select likelihood</option>
+                            <option value="very_likely">Very likely</option>
+                            <option value="likely">Likely</option>
+                            <option value="neutral">Neutral</option>
+                            <option value="unlikely">Unlikely</option>
+                            <option value="very_unlikely">Very unlikely</option>
+                        </select>
+                        {errors.answer3 && <p className="text-red-500 text-sm mt-3">{errors.answer3}</p>}
+                    </div>
+                )}
+                {currentStep === 8 && (
+                    <div>
+                        <label htmlFor="step8" className="text-sm">How often do you order lunch at work?</label>
+                        <select
+                            id="step8"
+                            name="answer4"
+                            value={formData.answer4}
                             onChange={handleChange}
                             className="mt-2 p-2 border-b border-black w-full focus:outline-none"
                         >
@@ -227,16 +279,16 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                             <option value="occasionally">Occasionally</option>
                             <option value="never">Never</option>
                         </select>
-                        {errors.answer2 && <p className="text-red-500 text-sm mt-3">{errors.answer2}</p>}
+                        {errors.answer4 && <p className="text-red-500 text-sm mt-3">{errors.answer4}</p>}
                     </div>
                 )}
-                {currentStep === 7 && (
+                {currentStep === 9 && (
                     <div>
-                        <label htmlFor="step7" className="text-sm">How important is it for you to have the option to customize your meal?</label>
+                        <label htmlFor="step9" className="text-sm">How important is it for you to have the option to customize your meal?</label>
                         <select
-                            id="step7"
-                            name="answer3"
-                            value={formData.answer3}
+                            id="step9"
+                            name="answer5"
+                            value={formData.answer5}
                             onChange={handleChange}
                             className="mt-2 p-2 border-b border-black w-full focus:outline-none"
                         >
@@ -247,16 +299,16 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                             <option value="not_important">Not important</option>
                             <option value="not_important_at_all">Not important at all</option>
                         </select>
-                        {errors.answer3 && <p className="text-red-500 text-sm mt-3">{errors.answer3}</p>}
+                        {errors.answer5 && <p className="text-red-500 text-sm mt-3">{errors.answer5}</p>}
                     </div>
                 )}
-                {currentStep === 8 && (
+                {currentStep === 10 && (
                     <div>
-                        <label htmlFor="step8" className="text-sm">Would you prefer a lunch paid for by your company, yourself, or Hybrid?</label>
+                        <label htmlFor="step10" className="text-sm">Would you prefer a lunch paid for by your company, yourself, or Hybrid?</label>
                         <select
-                            id="step8"
-                            name="answer4"
-                            value={formData.answer4}
+                            id="step10"
+                            name="answer6"
+                            value={formData.answer6}
                             onChange={handleChange}
                             className="mt-2 p-2 border-b border-black w-full focus:outline-none"
                         >
@@ -265,17 +317,16 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                             <option value="self">Paid by yourself</option>
                             <option value="hybrid">Hybrid</option>
                         </select>
-                        {errors.answer4 && <p className="text-red-500 text-sm mt-3">{errors.answer4}</p>}
+                        {errors.answer6 && <p className="text-red-500 text-sm mt-3">{errors.answer6}</p>}
                     </div>
                 )}
-
-                {currentStep === 9 && (
+                {currentStep === 11 && (
                     <div>
-                        <label htmlFor="step9" className="text-sm">How long will it take for you to return a used lunch pack to a designated place in your office after eating?</label>
+                        <label htmlFor="step11" className="text-sm">How long will it take for you to return a used lunch pack to a designated place in your office after eating?</label>
                         <select
-                            id="step9"
-                            name="answer5"
-                            value={formData.answer5}
+                            id="step11"
+                            name="answer7"
+                            value={formData.answer7}
                             onChange={handleChange}
                             className="mt-2 p-2 border-b border-black w-full focus:outline-none"
                         >
@@ -283,27 +334,26 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                             <option value="15_minutes">15 minutes</option>
                             <option value="30_minutes">30 minutes</option>
                             <option value="1_hour">1 hour</option>
-                            <option value="2_hours">2 hours</option>
+                            <option value="2_hours">2 hours</                            option>
                             <option value="12_hours">12 hours</option>
                         </select>
-                        {errors.answer5 && <p className="text-red-500 text-sm mt-3">{errors.answer5}</p>}
+                        {errors.answer7 && <p className="text-red-500 text-sm mt-3">{errors.answer7}</p>}
                     </div>
                 )}
-                {currentStep === 10 && (
+                {currentStep === 12 && (
                     <div>
-                        <label htmlFor="step10" className="text-sm">How much on average would you budget for a lunch meal on a working day?</label>
+                        <label htmlFor="step12" className="text-sm">How much on average would you budget for a lunch meal on a working day?</label>
                         <input
                             type="text"
-                            id="step10"
-                            name="answer6"
-                            value={formData.answer6}
+                            id="step12"
+                            name="answer8"
+                            value={formData.answer8}
                             onChange={handleChange}
                             className="mt-2 p-2 border-b border-black w-full focus:outline-none"
                         />
-                        {errors.answer6 && <p className="text-red-500 text-sm mt-3">{errors.answer6}</p>}
+                        {errors.answer8 && <p className="text-red-500 text-sm mt-3">{errors.answer8}</p>}
                     </div>
                 )}
-
             </div>
             <div className="flex justify-between mt-20">
                 <button

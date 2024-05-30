@@ -8,7 +8,7 @@ export const createFeedback = async (req, res) => {
 
     try {
         // Extract data from the request body
-        const { name, email, phone, company, answer1, answer2, answer3 ,answer4, answer5, answer6 } = req.body;
+        const { name, email, phone, company, answer1, answer2, answer3 ,answer4, answer5, answer6,answer7,answer8 } = req.body;
 
         // Create a new feedback instance
         const newFeedback = new Feedback({
@@ -22,6 +22,8 @@ export const createFeedback = async (req, res) => {
             answer4,
             answer5,
             answer6,
+            answer7,
+            answer8
         });
 
         // Save the feedback to the database
