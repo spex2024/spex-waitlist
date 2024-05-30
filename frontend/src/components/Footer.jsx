@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 import bgImage from "../assets/spex-logo.png";
 
 
-// import spex from '../assets/spex-logo.webp'
 function Footer(props) {
     const currentYear = new Date().getFullYear();
     const social = [

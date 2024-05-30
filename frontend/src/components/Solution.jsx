@@ -1,5 +1,4 @@
 import React from 'react';
-import spex from "../assets/spex.jpg";
 
 function Solution(props) {
 
