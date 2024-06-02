@@ -50,9 +50,10 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
         }
         if (currentStep === 3 && !formData.phone) {
             newErrors.phone = "Phone number is required";
-        } else if (currentStep === 3 && !/^\d{10}$/.test(formData.phone)) {
+        } else if (currentStep === 3 && !/^\+?\d{1,4}?[-.\s]?\(?\d{1,4}?\)?[-.\s]?\d{1,9}([-.\s]?\d{1,9})?$/.test(formData.phone)) {
             newErrors.phone = "Phone number is invalid";
         }
+
         if (currentStep === 4 && !formData.company) {
             newErrors.company = "Company is required";
         }
