@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FeedbackContext } from "../context/FeedbackContext.jsx";
 import Fetch from "../hooks/Fetch.jsx";
-import { FaEye } from 'react-icons/fa';
 
 const Feedback = () => {
     const { content } = useContext(FeedbackContext);
@@ -45,12 +44,12 @@ const Feedback = () => {
         { question: "How long will it take for you to return a used lunch pack to a designated place in your office after eating?", answer: selectedItem.answer5 }
     ] : [];
 
-
     return (
         <div className="w-[90%] relative overflow-x-auto shadow-sm sm:rounded-lg mt-16 mx-auto">
             <table className="w-full text-sm text-left rtl:text-right text-white">
                 <thead className="text-xs text-white uppercase bg-green-700">
                 <tr>
+                    <th scope="col" className="px-6 py-3 th-green">No</th>
                     <th scope="col" className="px-6 py-3 th-green">Name</th>
                     <th scope="col" className="px-6 py-3 th-green">Email</th>
                     <th scope="col" className="px-6 py-3 th-green">Phone</th>
@@ -62,16 +61,19 @@ const Feedback = () => {
                 {content.map((item, index) => (
                     <tr key={index} className="odd:bg-white even:bg-gray-50 even:border-b dark:border-gray-700 relative group">
                         <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap uppercase">
-                            {item.name}
+                            {index + 1}
                         </th>
+                        <td className="px-6 py-4">{item.name}</td>
                         <td className="px-6 py-4">{item.email}</td>
                         <td className="px-6 py-4">{item.phone}</td>
                         <td className="px-6 py-4">{item.company}</td>
                         <td className="px-6 py-4">
-                            <FaEye
+                            <span
                                 className="text-gray-700 hover:text-gray-900 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                                 onClick={() => handleViewClick(item)}
-                            />
+                            >
+                                View
+                            </span>
                         </td>
                     </tr>
                 ))}
@@ -80,7 +82,7 @@ const Feedback = () => {
 
             {selectedItem && (
                 <div className="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 cursor-pointer px-10">
-                    <div className="flex flex-col items-start justify-center gap-5 bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-[60vw] lg:h-[90vh] py-10 overflow-y-auto">
+                    <div className="flex flex-col items-start justify-center gap-5 bg-white rounded-lg shadow-lg p-6 w-11/12  lg:w-[60vw] lg:h-[95vh] py-20 overflow-y-auto">
                         <h2 className="text-2xl font-bold mb-4">Feedback Details</h2>
                         {modalDetails.map((detail, index) => (
                             <div key={index} className={` w-full  items-center justify-start flex flex-col gap-5`}>
