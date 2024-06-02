@@ -51,3 +51,12 @@ export const getFeedback = async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 };
+export const healthCheck = async (req, res) => {
+    try{
+        const status= "200 OK server running "
+        res.json(status);
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
