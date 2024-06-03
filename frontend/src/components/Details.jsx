@@ -3,7 +3,6 @@
 import React from 'react';
 
 const Details = ({ selectedItem }) => {
-
     const modalDetails = selectedItem ? [
         { question: "What is your name?", answer: selectedItem.name },
         { question: "What is your email?", answer: selectedItem.email },
