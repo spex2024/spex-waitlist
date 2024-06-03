@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { FaEye, FaTrashAlt } from 'react-icons/fa'; // Assuming you're using FontAwesome
 import { FeedbackContext } from "../context/FeedbackContext.jsx";
 import Fetch from "../hooks/Fetch.jsx";
 
 const Feedback = () => {
     const { content } = useContext(FeedbackContext);
-    const { getFeedback } = Fetch();
+    const { getFeedback, deleteFeedback } = Fetch();
     const [selectedItem, setSelectedItem] = useState(null);
 
     useEffect(() => {
@@ -25,6 +26,14 @@ const Feedback = () => {
 
     const handleViewClick = (item) => {
         setSelectedItem(item);
+    };
+
+    const handleDeleteClick = async (id) => {
+        try {
+            await deleteFeedback(id);
+        } catch (error) {
+            console.error("Error deleting feedback:", error);
+        }
     };
 
     const closeModal = () => {
@@ -68,12 +77,18 @@ const Feedback = () => {
                         <td className="px-6 py-4">{item.phone}</td>
                         <td className="px-6 py-4">{item.company}</td>
                         <td className="px-6 py-4">
+                                <span
+                                    className="text-gray-700 hover:text-gray-900 cursor-pointer mr-2"
+                                    onClick={() => handleViewClick(item)}
+                                >
+                                    <FaEye />
+                                </span>
                             <span
                                 className="text-gray-700 hover:text-gray-900 cursor-pointer"
-                                onClick={() => handleViewClick(item)}
+                                onClick={() => handleDeleteClick(item._id)}
                             >
-                                View
-                            </span>
+                                    <FaTrashAlt />
+                                </span>
                         </td>
                     </tr>
                 ))}

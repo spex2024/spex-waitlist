@@ -152,8 +152,31 @@ export const Fetch = () => {
         }
     };
 
+    const deleteFeedback = async (id) => {
+        try {
+            const response = await fetch(`https://api.spexafrica.app/api/feedback/${id}`, {
+                method: 'DELETE',
+            });
 
-    return { register, login, profile , logout ,createFeedback ,getFeedback,error };
+            if (response.ok) {
+                const data = await response.json();
+                console.log(data);
+                // Update your state or UI to reflect the deletion
+                // For example, you might want to call getFeedback to refresh the feedback list
+                getFeedback();
+            } else {
+                console.error("Feedback deletion failed:", response.statusText);
+                // Handle non-ok responses, e.g., show an error message to the user
+            }
+        } catch (error) {
+            console.error("Error deleting feedback:", error);
+            // Handle network errors or other exceptions
+        }
+    };
+
+
+
+    return { register, login, profile , logout ,createFeedback ,getFeedback,error , deleteFeedback };
 };
 
 export default Fetch;
