@@ -102,11 +102,11 @@ const Feedback = () => {
                         {modalDetails.map((detail, index) => (
                             <div key={index} className="w-full justify-start flex flex-col gap-5">
                                 <h4 className="flex items-center  gap-2 font-semibold font-nunito text-sm">
-                                    <span>Question: </span>
+                                    <span className={`font-sora font-semibold`}>Question: </span>
                                     {detail.question}
                                 </h4>
                                 <p className="flex items-center  gap-2 font-light font-nunito text-sm">
-                                    <span>Answer: </span>
+                                    <span className={`font-sora font-semibold`}>Answer: </span>
                                     {detail.answer}
                                 </p>
                             </div>
