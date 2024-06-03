@@ -55,7 +55,6 @@ export const Fetch = () => {
             setError(null); // Reset error state
             setUserInfo(data)
             navigate('/dashboard')
-              console.log(data)
             await profile()
         } else {
             setError(data.errors[0].msg);
@@ -160,9 +159,6 @@ export const Fetch = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                console.log(data);
-                // Update your state or UI to reflect the deletion
-                // For example, you might want to call getFeedback to refresh the feedback list
                 getFeedback();
             } else {
                 console.error("Feedback deletion failed:", response.statusText);

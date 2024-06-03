@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Fetch from "../hooks/Fetch.jsx";
 import {Link} from "react-router-dom";
+import {toast} from "react-toastify";
 
 function LoginForm() {
     // State variables to store form input values
@@ -14,13 +15,18 @@ function LoginForm() {
         // Do something with the form data, such as sending it to a server
         console.log('Submitted data:', { username, password });
           const formData = {username,password}
-        await login(formData);
-
-
+        const success = await login(formData);
 
         // Reset form fields after submission (if needed)
         setUsername('');
         setPassword('');
+
+        // Show toast notification on successful login
+        if (success) {
+            toast.success('Login successful');
+        } else {
+            toast.success('Invalid Credentials');
+        }
     };
 
     return (
