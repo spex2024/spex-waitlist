@@ -97,10 +97,10 @@ const Feedback = () => {
 
             {selectedItem && (
                 <div className="fixed w-full  inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 cursor-pointer px-10">
-                    <div className="flex flex-col items-start justify-center gap-5 bg-white rounded-lg shadow-lg py-20 px-5 lg:w-[80vw] lg:h-[90vh] lg:py-24 overflow-y-auto">
+                    <div className="flex flex-col items-start  gap-5 bg-white rounded-lg shadow-lg py-20 px-5 lg:w-[80vw] lg:min-h-[95vh]  overflow-y-auto">
                         <h2 className="text-2xl font-bold mb-4">Feedback Details</h2>
                         {modalDetails.map((detail, index) => (
-                            <div key={index} className={`w-full items-center justify-start flex flex-col gap-5`}>
+                            <div key={index} className={`w-full  justify-start flex flex-col gap-5`}>
                                 <h4 className={`flex items-center justify-center gap-2 font-semibold font-nunito text-sm`}> <span>Question: </span>  {detail.question}</h4>
                                 <p className={`flex items-center justify-center gap-2 font-light font-nunito text-sm`}> <span>Answer: </span>{detail.answer}</p>
                             </div>
