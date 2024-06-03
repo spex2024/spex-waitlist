@@ -66,13 +66,13 @@ export const healthCheck = async (req, res) => {
 
 export const deleteFeedback = async (req, res) => {
     try {
-        const { id } = req.params;
+        const { _id } = req.params;
 
-        if (!id) {
+        if (!_id) {
             return res.status(400).json({ error: 'Feedback ID is required' });
         }
 
-        const deletedFeedback = await Feedback.findByIdAndDelete(id);
+        const deletedFeedback = await Feedback.findByIdAndDelete(_id);
 
         if (!deletedFeedback) {
             return res.status(404).json({ error: 'Feedback not found' });

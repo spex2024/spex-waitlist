@@ -76,7 +76,7 @@ const Feedback = () => {
                         <td className="px-6 py-4">{item.email}</td>
                         <td className="px-6 py-4">{item.phone}</td>
                         <td className="px-6 py-4">{item.company}</td>
-                        <td className="px-6 py-4">
+                        <td className="px-6 py-4 flex  items-center justify-center">
                                 <span
                                     className="text-gray-700 hover:text-gray-900 cursor-pointer mr-2"
                                     onClick={() => handleViewClick(item)}
