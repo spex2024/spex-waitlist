@@ -68,7 +68,7 @@ const Feedback = () => {
                 </thead>
                 <tbody className="bg-gray-400 text-black">
                 {content.map((item, index) => (
-                    <tr key={index} className="odd:bg-white even:bg-gray-50 even:border-b dark:border-gray-700 relative group">
+                    <tr key={item._id} className="odd:bg-white even:bg-gray-50 even:border-b dark:border-gray-700 relative group">
                         <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap uppercase">
                             {index + 1}
                         </th>
