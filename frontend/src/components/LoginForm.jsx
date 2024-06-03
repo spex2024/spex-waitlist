@@ -8,12 +8,9 @@ function LoginForm() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const {login ,error} = Fetch()
-    // Function to handle form submission
     const handleSubmit = async (event) => {
         event.preventDefault(); // Prevent default form submission behavior
 
-        // Do something with the form data, such as sending it to a server
-        console.log('Submitted data:', { username, password });
           const formData = {username,password}
         const success = await login(formData);
 

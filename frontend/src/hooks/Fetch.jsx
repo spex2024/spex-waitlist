@@ -137,7 +137,7 @@ export const Fetch = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                console.log(data)
+
                 setContent(data)
                 // Log or handle the profile data as needed
             } else {
