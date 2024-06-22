@@ -78,7 +78,7 @@ const ApproachSection = () => {
                     <div>
                         {/* Heading */}
                         <div className="mb-4">
-                            <h3 className="text-xs font-medium uppercase text-[#000]">Steps</h3>
+                            <h3 className="text-xs font-bold font-sora uppercase text-[#000]">Steps</h3>
                         </div>
                         {/* End Heading */}
 
