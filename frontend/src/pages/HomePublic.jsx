@@ -6,6 +6,7 @@ import Cta from "../components/CTA.jsx";
 import Footer from "../components/Footer.jsx";
 import Partner from "../components/Partner.jsx";
 import Pilot from "../components/Pilot.jsx";
+import ApproachSection from "../components/OurApproach.jsx";
 
 
 function HomePublic(props) {
@@ -13,7 +14,7 @@ function HomePublic(props) {
         <div className={'min-h-screen max-w-full bg-center bg-cover ' }   >
           <Hero/>
             <About />
-            <Approach />
+            <ApproachSection />
             <Cta />
             <Pilot />
             <Partner />

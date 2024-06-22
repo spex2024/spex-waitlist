@@ -6,7 +6,7 @@ const accordionData = [
     {
         id: 'accordion-flush-body-1',
         step: 1,
-        title: 'Placing Orders in Smart Packs',
+        title: 'Placing Orders on Spex Platform',
         content: [
             'Enterprise clients and their users place take-out food orders from their preferred food vendors/restaurants on the SPEX platform, selecting the option for delivery in durable, reusable Smart packs.'
         ],
@@ -34,7 +34,7 @@ const accordionData = [
 
 const ApproachSection = () => {
     return (
-        <div className="bg-white text-black">
+        <div className="bg-white text-black lg:h-[120vh] lg:py-5">
             <div className="w-full flex flex-col items-center px-4 xl:px-24 py-10 lg:pt-20">
                 {/* Title */}
                 <header
@@ -87,7 +87,7 @@ const ApproachSection = () => {
                                 {/* Icon */}
                                 <div className="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800">
                                     <div className="relative z-10 size-8 flex justify-center items-center">
-                                        <span className="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 text-[#ff0] font-semibold text-xs uppercase rounded-full">
+                                        <span className="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 text-black font-semibold text-xs uppercase rounded-full">
                                             {item.step}
                                         </span>
                                     </div>
@@ -96,8 +96,8 @@ const ApproachSection = () => {
 
                                 {/* Right Content */}
                                 <div className="grow pt-0.5 pb-8 sm:pb-12">
-                                    <p className="text-sm lg:text-base text-neutral-400">
-                                        <span className="text-black font-semibold">{item.title}:</span> {item.content}
+                                    <p className="text-sm lg:text-base text-black font-nunito">
+                                        <span className="text-black font-sora font-bold">{item.title}:</span> {item.content}
                                     </p>
                                 </div>
                                 {/* End Right Content */}
