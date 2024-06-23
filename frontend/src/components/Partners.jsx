@@ -15,6 +15,7 @@ function Partners() {
         "Picture12.jpg",
         "Picture11.png",
         "Picture8.png",
+        "nexmatics.png",
     ];
 
     return (
