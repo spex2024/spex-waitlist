@@ -7,13 +7,14 @@ function Partners() {
         "Picture3.png",
         "Picture4.png",
         "Picture5.jpg",
+        "logo.webp",
 
     ];
 
     const row2 = [
-        "Picture6.png",
+        "Picture.jpg",
         "Picture12.jpg",
-        "Picture11.png",
+        "caupain.png",
         "Picture8.png",
         "nexmatics.png",
     ];
