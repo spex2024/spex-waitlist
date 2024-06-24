@@ -1,5 +1,6 @@
 import React from 'react';
 import web from '../assets/spex-web.webp';
+import home from "../assets/rider.jpg";
 
 // Accordion data array
 const accordionData = [
@@ -34,11 +35,15 @@ const accordionData = [
 
 const ApproachSection = () => {
     return (
-        <div className="bg-white text-black lg:h-[120vh] lg:py-5">
-            <div className="w-full flex flex-col items-center px-4 xl:px-24 py-10 lg:pt-20">
+        <div className="bg-white text-black lg:h-[120vh] lg:py-5 lg:mt-10 bg-center bg-cover" style={{
+            backgroundColor: 'rgba(0, 0, 0, 0.9)',
+            backgroundImage: `url(${home})`,
+            backgroundBlendMode: 'multiply'
+        }} >
+            <div className="w-full flex flex-col items-center px-4 xl:px-24 py-10 lg:pt-20 " >
                 {/* Title */}
                 <header
-                    className="w-[90%] lg:w-[60%] h-auto py-5 mb-10 text-black flex flex-col items-center justify-center">
+                    className="w-[90%] lg:w-[60%] h-auto py-5 mb-10 text-white flex flex-col items-center justify-center">
                     <p className="font-nunito font-bold text-lg mb-3"
                        data-aos="fade-in"
                        data-aos-offset="200"
@@ -78,7 +83,7 @@ const ApproachSection = () => {
                     <div>
                         {/* Heading */}
                         <div className="mb-4">
-                            <h3 className="text-xs font-bold font-sora uppercase text-[#000]">Steps</h3>
+                            <h3 className="text-xs font-bold font-sora uppercase text-[#fff]">Steps</h3>
                         </div>
                         {/* End Heading */}
 
@@ -87,7 +92,7 @@ const ApproachSection = () => {
                                 {/* Icon */}
                                 <div className="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800">
                                     <div className="relative z-10 size-8 flex justify-center items-center">
-                                        <span className="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 text-black font-semibold text-xs uppercase rounded-full">
+                                        <span className="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 text-white font-semibold text-xs uppercase rounded-full">
                                             {item.step}
                                         </span>
                                     </div>
@@ -96,8 +101,8 @@ const ApproachSection = () => {
 
                                 {/* Right Content */}
                                 <div className="grow pt-0.5 pb-8 sm:pb-12">
-                                    <p className="text-sm lg:text-base text-black font-nunito">
-                                        <span className="text-black font-sora font-bold">{item.title}:</span> {item.content}
+                                    <p className="text-sm lg:text-base text-white font-nunito">
+                                        <span className="text-white font-sora font-bold">{item.title}:</span> {item.content}
                                     </p>
                                 </div>
                                 {/* End Right Content */}
