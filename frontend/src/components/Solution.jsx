@@ -8,34 +8,35 @@ function Solution(props) {
             id: 'accordion-flush-body-4',
             title: ' Food Ordering Made Easy',
             content: [
-                'Simplify meal planning for your team. With Spex, you can conveniently order food for your organization and have it delivered in our smart, reusable packs, ensuring both convenience and sustainability.'
+                'Simplify meal planning for your team,  Save \n' +
+                'Time and have it delivered in Reusable packs\n'
             ],
-            image: 'delivery.png'
+            image: 'order.png'
         },
 
         {
             id: 'accordion-flush-body-1',
-            title: ' Smart Pack Exchange',
+            title: ' Zero Waste with SPEX',
             content: [
-                'Say goodbye to single-use plastic containers. With Spex, your staff can easily return used packs and receive points in return, encouraging a culture of reusability and sustainability.'
+                'Say goodbye to single-use plastic containers at your Office '
             ],
-            image: 'food.png'
+            image: 'zwaste.png'
         },
         {
             id: 'accordion-flush-body-2',
-            title: ' Carbon Points',
+            title: ' Save Money on Bulk Orders',
             content: [
-                'Reduce your carbon footprint with every pack exchange. Spex rewards your organization for environmentally-friendly practices, helping you contribute to a healthier planet.'
+                'Cut down on Cost associated with Individual orders and the Single-Use plastic packaging it comes with.'
             ],
-            image: 'carbon.png'
+            image: 'money.png'
         },
         {
             id: 'accordion-flush-body-3',
-            title: ' Cost Savings',
+            title: ' Earn with Your Carbon Points',
             content: [
-                'Cut down on expenses associated with disposable packaging. Spex helps you save costs in the long run by promoting the use of reusable smart packs.'
+                'Reduce your carbon footprint with every pack exchange and Earn good money.'
             ],
-            image: 'cedis.png'
+            image: 'co2.png'
         },
 
     ];
@@ -51,7 +52,8 @@ function Solution(props) {
                          data-aos-duration="700"
                          data-aos-easing="ease-in-out"
                     >
-                        <div className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] rounded-lg bg-cover bg-center" style={{backgroundImage: `url(${data.image})`}}>
+                        <div className="w-[60px] h-[60px] md:w-[60px] md:h-[60px]  bg-cover bg-center bg-white flex justify-center items-center rounded-full border-2 shadow-md " >
+                            <img src={data.image} width={30} height={30}/>
                         </div>
                         <div className="flex flex-col justify-center gap-3 px-5 text-white rounded-lg h-auto w-full md:w-[450px]">
                             <h2 className="font-bold text-md md:text-lg font-sora">{data.title}</h2>

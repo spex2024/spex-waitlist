@@ -36,7 +36,7 @@ const accordionData = [
 const ApproachSection = () => {
     return (
         <div className="bg-white text-black lg:h-[120vh] lg:py-5 lg:mt-10 bg-center bg-cover" style={{
-            backgroundColor: 'rgba(0, 0, 0, 0.9)',
+            backgroundColor: 'rgba(0, 0, 0, 0.8)',
             backgroundImage: `url(${home})`,
             backgroundBlendMode: 'multiply'
         }} >
