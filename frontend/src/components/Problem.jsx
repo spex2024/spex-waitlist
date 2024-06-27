@@ -21,7 +21,7 @@ function Problem(props) {
         },
         {
             id: 'accordion-flush-body-3',
-            title: ' Under 5% of Single-Use Plastic Waste is Recycled',
+            title: ' Under 10% of Single-Use Plastic Waste is Recycled',
             content: [
                 'These waste are predominately from Single-Use plastic packages with less than 5% recycled.'
             ],
