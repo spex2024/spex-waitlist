@@ -52,10 +52,10 @@ function Solution(props) {
                          data-aos-duration="700"
                          data-aos-easing="ease-in-out"
                     >
-                        <div className="w-[60px] h-[60px] md:w-[60px] md:h-[60px]  bg-cover bg-center bg-white flex justify-center items-center rounded-full border-2 shadow-md " >
+                        <div className="w-[60px] h-[60px] md:w-[60px] md:h-[60px]  bg-cover bg-center bg-white flex justify-center items-center rounded-full border-2 shadow-md gap-16" >
                             <img src={data.image} width={30} height={30}/>
                         </div>
-                        <div className="flex flex-col justify-center gap-3 px-5 text-white rounded-lg h-auto w-full md:w-[450px]">
+                        <div className="flex flex-col justify-center  px-5 text-white rounded-lg h-auto w-full md:w-[450px]">
                             <h2 className="font-bold text-md md:text-lg font-sora">{data.title}</h2>
                             <span className="text-sm md:text-base font-nunito">{data.content}</span>
                         </div>

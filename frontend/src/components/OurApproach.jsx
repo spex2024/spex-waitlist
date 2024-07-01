@@ -1,5 +1,5 @@
 import React from 'react';
-import web from '../assets/spex-web.webp';
+import web from '../assets/spex-ui.png';
 import home from "../assets/rider.jpg";
 
 // Accordion data array
@@ -74,7 +74,8 @@ const ApproachSection = () => {
                             className="w-full object-cover rounded-xl"
                             src={web}
                             alt="Image Description"
-                            width={200}
+                            width={100}
+                            height={100}
                         />
                     </div>
                     {/* End Col */}
