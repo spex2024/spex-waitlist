@@ -7,60 +7,67 @@ import spexbg from "../assets/office-1.jpg";
 import { RiScrollToBottomLine } from "react-icons/ri";
 
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
+import 'aos/dist/aos.css';
+import Video from "./Video.jsx";
+import HoverCard from "./HoverCard.jsx";
+
 
 AOS.init();
 
 function Hero(props) {
     return (
-        <div className="w-full flex flex-col lg:justify-between justify-around lg:text-start min-h-screen px-4 lg:px-5  py-5 overflow-hidden bg-cover bg-center  font-nunito" style={{
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            backgroundImage: `url(${spexbg})`,
-            backgroundBlendMode: 'multiply'
-        }}
-             data-aos="fade-zoom-in"
-             data-aos-offset="200"
-             data-aos-delay="50"
-             data-aos-duration="1000"
-             data-aos-easing="ease-in-out"
-             data-aos-mirror="true"
-             data-aos-once="false"
-             data-aos-anchor-placement="top-center"
+        <div
+            className="w-full  lg:gap-3 flex flex-col lg:justify-center justify-around lg:text-start min-h-screen   py-10 lg:py-10 overflow-hidden bg-cover bg-center  font-myriad"
+
+            data-aos="fade-zoom-in"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"
         >
-            <header className="w-full flex items-center lg:justify-between justify-center h-[80px] px-10 ">
-                <div className={` h-80 w-80  lg:h-44 lg:w-44`}>
-                    <img src={spex} />
+
+            <section className="w-full flex flex-col  h-[70vh]  items-center justify-center lg:px-10 gap-5 lg:mt-10   ">
+
+
+                <img src={spex} width={300} className={`lg:hidden`}/>
+                <div
+                    className={`w-full text-black flex flex-col justify-center items-center space-y-5 mb-5 font-semi-bold lg:px-20 `}>
+
+                    <h1 className={`font-black  text-4xl lg:text-8xl md:8xl capitalize font-myriad text-center `}>Corporate
+                        lunch in <br/> Reusable Packs
+                    </h1>
+                    <p className={`text:xl lg:text-2xl font-semibold text-center `}>SPEX simplifies meal planning for your <span className={`font-black lg:text-3xl text-2xl uppercase`}>team</span> . <br/>Saves you time, cost and plastic waste.</p>
                 </div>
-                <ul className="lg:flex text-md hidden items-center justify-center gap-4 lg:gap-10 text-white lowercase  ">
-                    <li><a href="#about">About Spex</a></li>
-                    <li><a href="#cta">Get in Touch</a></li>
-                    <Link to={'/login'}><li className={`flex gap-2 py-2 px-5 border items-center justify-center text-white`}>login <AiOutlineLogin /></li></Link>
-                </ul>
-            </header>
-            <section className="w-full flex flex-col lg:flex-row justify-between h-[400px] lg:h-[300px] rounded-2xl bg-cover lg:px-20 gap-3 lg:mb-20 " >
+                <div className={`flex flex-col lg:flex-row gap-5 justify-center items-center`}>
 
-                <div className={`lg:w-[80%]`}>
+                    <WaitlistForm color={`outline-white`} text={`text-white`} style={{width: "100%"}}/>
 
-                    <div
-                        className="w-[150px] h-[30px] flex lowercase font-semi-bold items-center lg:items-center justify-center text-white  bg-[#71bc44] rounded-full gap-3 text-blacke text-md font-nunito font-md mb-3">
-                        <span>Eat</span>
-                        <span>Swap</span>
-                        <span>Reuse</span>
-                    </div>
-                    <div className={`w-full lg:w-[60%] text-white lg:pe-10 space-y-4 mb-5 font-semi-bold`}>
-
-                        <h1 className={`font-extra-bold  text-2xl lg:text-7xl md:5xl capitalize font-sora`}>smart pack exchange</h1>
-                        <p className={`text-lg font-nunito font-thin pe-10 `}>SPEX is a meal marketplace that leverages a web platform/app to connect food vendors with enterprises and users seeking sustainable food packaging.</p>
-                    </div>
-                    <WaitlistForm color={`outline-white`} text={`text-white`} style={{ width: "100%" }} />
-
-                </div>
-                <div className={`lg:w-[20%] flex flex-col items-center justify-end`}>
-                    <p className={`text-white text-lg font-thin font-nunito`}>scroll down</p>
-                    <RiScrollToBottomLine size={30} className={`text-white animate-pulse mt-5`} />
                 </div>
 
             </section>
+            {/*<div className={` w-full h-[60vh] lg:h-[90vh] lg:w-[80vw] bg-black mx-auto rounded-3xl flex flex-col justify-center items-center bg-cover bg-center`} >style={{*/}
+            {/*    backgroundColor: 'rgba(0, 0, 0, 0.7)',*/}
+            {/*    backgroundImage: `url(${spexbg})`,*/}
+            {/*    backgroundBlendMode: 'multiply'*/}
+            {/*}}*/}
+
+
+            {/*</div>*/}
+
+            <HoverCard/>
+
+            <div className={`lg:w-full flex flex-col items-center justify-center`}>
+                <p className={`text-white text-lg font-thin font-nunito`}>scroll down</p>
+
+                    <a href="#about">
+
+                    <RiScrollToBottomLine size={30} className={`text-black animate-pulse mt-5`}/>
+                    </a>
+            </div>
+
         </div>
     );
 }

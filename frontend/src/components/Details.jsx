@@ -22,8 +22,8 @@ const Details = ({ selectedItem }) => {
                 <h2 className="text-2xl font-bold mb-4">Feedback Details</h2>
                 {modalDetails.map((detail, index) => (
                     <div key={index} className={`w-full  justify-start flex flex-col gap-5`}>
-                        <h4 className={`flex items-center justify-center gap-2 font-semibold font-nunito text-sm`}> <span>Question: </span>  {detail.question}</h4>
-                        <p className={`flex items-center justify-center gap-2 font-light font-nunito text-sm`}> <span>Answer: </span>{detail.answer}</p>
+                        <h4 className={`flex items-center justify-center gap-2 font-semibold font-myriad text-sm`}> <span>Question: </span>  {detail.question}</h4>
+                        <p className={`flex items-center justify-center gap-2 font-light font-myriad text-sm`}> <span>Answer: </span>{detail.answer}</p>
                     </div>
                 ))}
             </div>

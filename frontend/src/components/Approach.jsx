@@ -39,31 +39,19 @@ const ApproachSection = () => {
                 {/* Title */}
                 <header
                     className="w-[90%] lg:w-[60%] h-auto py-5 mb-10 text-black flex flex-col items-center justify-center">
-                    <p className="font-nunito font-bold text-lg mb-3"
-                       data-aos="fade-in"
-                       data-aos-offset="200"
-                       data-aos-delay="50"
-                       data-aos-duration="1000"
-                       data-aos-easing="ease-in-out"
-                       data-aos-mirror="true"
-                       data-aos-once="true">
+                    <p className="font-myriad font-light text-lg mb-3"
+                      >
                         - How It Works -
                     </p>
-                    <h1 className="font-bold font-sora text-2xl lg:text-5xl mb-5 text-center"
-                        data-aos="fade-up"
-                        data-aos-offset="200"
-                        data-aos-delay="50"
-                        data-aos-duration="1000"
-                        data-aos-easing="ease-in-out"
-                        data-aos-mirror="true"
-                        data-aos-once="true">
+                    <h1 className="font-black font-myriad text-2xl lg:text-5xl mb-5 text-center"
+                       >
                         Our step-by-step approach
                     </h1>
                 </header>
                 {/* End Title */}
 
                 {/* Grid */}
-                <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 lg:items-center">
+                <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 lg:items-center font-myriad">
                     <div className="aspect-w-16 aspect-h-9 lg:w-[100%]">
                         <img
                             className="w-full object-cover rounded-xl"
@@ -85,13 +73,11 @@ const ApproachSection = () => {
                         {accordionData.map((item, index) => (
                             <div className="flex gap-x-5 ms-1" key={item.id}>
                                 {/* Icon */}
-                                <div className="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800">
-                                    <div className="relative z-10 size-8 flex justify-center items-center">
-                                        <span className="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 text-[#ff0] font-semibold text-xs uppercase rounded-full">
+
+
                                             {item.step}
-                                        </span>
-                                    </div>
-                                </div>
+
+
                                 {/* End Icon */}
 
                                 {/* Right Content */}

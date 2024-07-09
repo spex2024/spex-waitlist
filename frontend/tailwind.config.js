@@ -1,18 +1,19 @@
 /** @type {import('tailwindcss').Config} */
+const { nextui } = require("@nextui-org/react");
 module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/tw-elements-react/dist/js/**/*.js"
+    "./node_modules/tw-elements-react/dist/js/**/*.js",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {},
     fontFamily: {
-      nunito: ["Nunito Sans", "sans-serif"],
-      cormorant: ["Cormorant", "serif"],
-      sora: ["Sora", "serif"],
-      hanmlet: ["Hahmlet", "serif"],
-    },
+      myriad: ['Myriad Pro', 'sans-serif']
+
+
+},
     fontWeight: {
       'extra-light': 200,
       light: 300,
@@ -25,5 +26,5 @@ module.exports = {
 },
 },
 darkMode: "class",
-    plugins: [require("tw-elements-react/dist/plugin.cjs")]
+    plugins: [require("tw-elements-react/dist/plugin.cjs"),  nextui()]
 }

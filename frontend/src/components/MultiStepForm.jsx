@@ -136,10 +136,10 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
     };
 
     return (
-        <div className="w-full max-w-lg mx-auto mt-5">
+        <div className="w-full max-w-lg mx-auto mt-5 font-myriad">
             <div className="flex justify-start items-center">
                 <div className="text-center p-2">
-                    <div className="flex items-center text-gray-500 text-sm font-thin italic mb-2">
+                    <div className="flex items-center text-gray-500 text-sm font-light italic mb-2">
                         {currentStep} <MdOutlineHorizontalRule /> {steps.length}
                     </div>
                 </div>
@@ -147,7 +147,7 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
             <div className="mt-10">
                 {currentStep === 1 && (
                     <div>
-                        <label htmlFor="step1" className="text-sm">What is your name?</label>
+                        <label htmlFor="step1" className="text-sm font-light">What is your name?</label>
                         <input
                             type="text"
                             id="step1"
@@ -161,7 +161,7 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                 )}
                 {currentStep === 2 && (
                     <div>
-                        <label htmlFor="step2" className="text-sm">What is your email?</label>
+                        <label htmlFor="step2" className="text-sm font-light">What is your email?</label>
                         <input
                             type="email"
                             id="step2"
@@ -175,41 +175,41 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                 )}
                 {currentStep === 3 && (
                     <div>
-                        <label htmlFor="step3" className="text-sm">What is your phone number?</label>
+                        <label htmlFor="step3" className="text-sm font-light">What is your phone number?</label>
                         <input
                             type="tel"
                             id="step3"
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            className="mt-2 p-2 border-b border-black w-full focus:outline-none"
+                            className="mt-2 p-2 border-b border-black w-full focus:outline-none font-light"
                         />
                         {errors.phone && <p className="text-red-500 text-sm mt-3">{errors.phone}</p>}
                     </div>
                 )}
                 {currentStep === 4 && (
                     <div>
-                        <label htmlFor="step4" className="text-sm">Where do you work?</label>
+                        <label htmlFor="step4" className="text-sm font-light">Where do you work?</label>
                         <input
                             type="text"
                             id="step4"
                             name="company"
                             value={formData.company}
                             onChange={handleChange}
-                            className="mt-2 p-2 border-b border-black w-full focus:outline-none"
+                            className="mt-2 p-2 border-b border-black w-full focus:outline-none font-light"
                         />
                         {errors.company && <p className="text-red-500 text-sm mt-3">{errors.company}</p>}
                     </div>
                 )}
                 {currentStep === 5 && (
                     <div>
-                        <label htmlFor="step5" className="text-sm">What is the most important factor for you when it comes to food packaging?</label>
+                        <label htmlFor="step5" className="text-sm font-light">What is the most important factor for you when it comes to food packaging?</label>
                         <select
                             id="step5"
                             name="answer1"
                             value={formData.answer1}
                             onChange={handleChange}
-                            className="mt-2 p-2 border-b border-black w-full focus:outline-none"
+                            className="mt-2 p-2 border-b border-black w-full focus:outline-none font-light"
                         >
                             <option value="" disabled>Select the most important factor</option>
                             <option value="sustainability">Sustainability</option>
@@ -223,13 +223,13 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                 )}
                 {currentStep === 6 && (
                     <div>
-                        <label htmlFor="step6" className="text-sm">Which packaging materials do you prefer for your food delivery?</label>
+                        <label htmlFor="step6" className="text-sm font-light">Which packaging materials do you prefer for your food delivery?</label>
                         <select
                             id="step6"
                             name="answer2"
                             value={formData.answer2}
                             onChange={handleChange}
-                            className="mt-2 p-2 border-b border-black w-full focus:outline-none"
+                            className="mt-2 p-2 border-b border-black w-full focus:outline-none font-light"
                         >
                             <option value="" disabled>Select packaging material</option>
                             <option value="biodegradable">Biodegradable materials</option>
@@ -243,13 +243,13 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                 )}
                 {currentStep === 7 && (
                     <div>
-                        <label htmlFor="step7" className="text-sm">How likely are you to order from a new food delivery service if it offers environmentally friendly packaging that saves you money and waste?</label>
+                        <label htmlFor="step7" className="text-sm font-light">How likely are you to order from a new food delivery service if it offers environmentally friendly packaging that saves you money and waste?</label>
                         <select
                             id="step7"
                             name="answer3"
                             value={formData.answer3}
                             onChange={handleChange}
-                            className="mt-2 p-2 border-b border-black w-full focus:outline-none"
+                            className="mt-2 p-2 border-b border-black w-full focus:outline-none font-light"
                         >
                             <option value="" disabled>Select likelihood</option>
                             <option value="very_likely">Very likely</option>
@@ -263,13 +263,13 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                 )}
                 {currentStep === 8 && (
                     <div>
-                        <label htmlFor="step8" className="text-sm">How often do you order lunch at work?</label>
+                        <label htmlFor="step8" className="text-sm font-light">How often do you order lunch at work?</label>
                         <select
                             id="step8"
                             name="answer4"
                             value={formData.answer4}
                             onChange={handleChange}
-                            className="mt-2 p-2 border-b border-black w-full focus:outline-none"
+                            className="mt-2 p-2 border-b border-black w-full focus:outline-none font-light"
                         >
                             <option value="" disabled>Select frequency</option>
                             <option value="daily">Daily</option>
@@ -283,13 +283,13 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                 )}
                 {currentStep === 9 && (
                     <div>
-                        <label htmlFor="step9" className="text-sm">How important is it for you to have the option to customize your meal?</label>
+                        <label htmlFor="step9" className="text-sm font-light">How important is it for you to have the option to customize your meal?</label>
                         <select
                             id="step9"
                             name="answer5"
                             value={formData.answer5}
                             onChange={handleChange}
-                            className="mt-2 p-2 border-b border-black w-full focus:outline-none"
+                            className="mt-2 p-2 border-b border-black w-full focus:outline-none font-light"
                         >
                             <option value="" disabled>Select importance</option>
                             <option value="very_important">Very important</option>
@@ -303,13 +303,13 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                 )}
                 {currentStep === 10 && (
                     <div>
-                        <label htmlFor="step10" className="text-sm">Would you prefer a lunch paid for by your company, yourself, or Hybrid?</label>
+                        <label htmlFor="step10" className="text-sm font-light">Would you prefer a lunch paid for by your company, yourself, or Hybrid?</label>
                         <select
                             id="step10"
                             name="answer6"
                             value={formData.answer6}
                             onChange={handleChange}
-                            className="mt-2 p-2 border-b border-black w-full focus:outline-none"
+                            className="mt-2 p-2 border-b border-black w-full focus:outline-none font-light"
                         >
                             <option value="" disabled>Select an option</option>
                             <option value="company">Paid by company</option>
@@ -321,13 +321,13 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                 )}
                 {currentStep === 11 && (
                     <div>
-                        <label htmlFor="step11" className="text-sm">How long will it take for you to return a used lunch pack to a designated place in your office after eating?</label>
+                        <label htmlFor="step11" className="text-sm font-light">How long will it take for you to return a used lunch pack to a designated place in your office after eating?</label>
                         <select
                             id="step11"
                             name="answer7"
                             value={formData.answer7}
                             onChange={handleChange}
-                            className="mt-2 p-2 border-b border-black w-full focus:outline-none"
+                            className="mt-2 p-2 border-b border-black w-full focus:outline-none font-light"
                         >
                             <option value="" disabled>Select time</option>
                             <option value="15_minutes">15 minutes</option>
@@ -341,14 +341,14 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                 )}
                 {currentStep === 12 && (
                     <div>
-                        <label htmlFor="step12" className="text-sm">How much on average would you budget for a lunch meal on a working day?</label>
+                        <label htmlFor="step12" className="text-sm font-light">How much on average would you budget for a lunch meal on a working day?</label>
                         <input
                             type="text"
                             id="step12"
                             name="answer8"
                             value={formData.answer8}
                             onChange={handleChange}
-                            className="mt-2 p-2 border-b border-black w-full focus:outline-none"
+                            className="mt-2 p-2 border-b border-black w-full focus:outline-none font-light"
                         />
                         {errors.answer8 && <p className="text-red-500 text-sm mt-3">{errors.answer8}</p>}
                     </div>
@@ -358,21 +358,21 @@ const MultiStepForm = ({ setShowModal, setShowSuccessMessage }) => {
                 <button
                     onClick={handlePrev}
                     disabled={currentStep === 1}
-                    className="text-sm px-4 py-2 outline outline-1 outline-slate-400 text-black disabled:opacity-50"
+                    className="text-sm px-4 py-2 outline outline-1 outline-slate-400 text-black disabled:opacity-50 font-light"
                 >
                     Previous Question
                 </button>
                 {currentStep === steps.length ? (
                     <button
                         onClick={handleSubmit}
-                        className="px-4 py-2 outline outline-1 outline-green-700 text-black"
+                        className="px-4 py-2 outline outline-1 outline-green-700 text-black font-light"
                     >
                         Submit
                     </button>
                 ) : (
                     <button
                         onClick={handleNext}
-                        className="text-sm px-4 py-2 outline outline-1 outline-slate-400 text-black"
+                        className="text-sm px-4 py-2 outline outline-1 outline-slate-400 text-black font-light"
                     >
                         Next Question
                     </button>

@@ -4,9 +4,7 @@ import {
     TEModal,
     TEModalDialog,
     TEModalContent,
-    TEModalHeader,
     TEModalBody,
-    TEModalFooter,
 } from "tw-elements-react";
 import MultiStepForm from "./MultiStepForm.jsx";
 import {GrClose} from "react-icons/gr";
@@ -22,7 +20,8 @@ export default function WaitlistForm({color ,text}) {
                 <TERipple rippleColor="white">
                     <button
                         type="button"
-                        className={`inline-block px-5 py-2 outline outline-1 ${color} ${text} mt-5 font-nunito `}
+                        className={`inline-block px-5 py-2 rounded-full bg-[#71bc44] text-white
+                         font-light font-myriad text-xl `}
                         onClick={() => setShowModalTopRight(true)}
                     >
                         Join the waitlist
@@ -57,8 +56,8 @@ export default function WaitlistForm({color ,text}) {
                             </button>
                         </div>
 
-                        <div className={`mt- flex flex-col items-start justify-start h-[50px]  px-5 font-sora `}>
-                            <h5 className="text-lg  xl:text-md leading-normal font-light text-center">
+                        <div className={`mt- flex flex-col items-start justify-start h-[50px]  px-5 font-myriad `}>
+                            <h5 className="text-lg  xl:text-md leading-normal font-black text-center">
                                 Embrace Smart Pack!
                             </h5>
                             <h5 className="text-4xl xl:text-2xl leading-normal font-light text-center">

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {FaXTwitter, FaInstagram, FaFacebookF, FaTiktok, FaLinkedin} from "react-icons/fa6";
 import {Link} from "react-router-dom";
 import bgImage from "../assets/spex-logo.png";
@@ -40,15 +39,9 @@ function Footer(props) {
 
     ];
     return (
-        <div id={"footer"} className="w-full h-auto flex flex-col items-center justify-center py-10  text-black font-nunito bg-cover bg-center"
+        <div id={"footer"} className="w-full h-auto flex flex-col items-center justify-center py-10  text-black font-myriad bg-cover bg-center"
 
-             data-aos="fade-zoom-in"
-             data-aos-offset="200"
-             data-aos-delay="50"
-             data-aos-duration="1000"
-             data-aos-easing="ease-in-out"
-             data-aos-mirror="true"
-             data-aos-once="false"
+
 
         >
             <div className="w-full max-w-xl h-auto flex flex-col justify-center items-center   py-5">
@@ -62,12 +55,12 @@ function Footer(props) {
                 </ul>
             </div>
             <div
-                className="w-full max-w-6xl flex flex-col items-center sm:flex-row justify-between  mt-10 sm:mt-36 border-t border-t-gray-300  px-2">
-                <div className="flex items-center font-semibold text-sm sm:text-lg font-serif mt-5">
+                className="w-full  flex flex-col items-center sm:flex-row justify-between  mt-10 sm:mt-36 border-t border-t-gray-300 px-20  lg:px-36">
+                <div className="flex items-center font-light text-sm sm:text-lg font-serif mt-5">
                     <p>Spex &copy; {currentYear}, All Rights Reserved.</p>
                 </div>
                 <div className="flex items-center ">
-                    <ul className="flex items-center text-sm mt-5  gap-5 text-[#252526] font-semibold ">
+                    <ul className="flex items-center text-sm mt-5  gap-5 text-[#252526] font-light ">
                         <Link to={'/login'}>
                             <li className="list-none">Dashboard</li>
                         </Link>

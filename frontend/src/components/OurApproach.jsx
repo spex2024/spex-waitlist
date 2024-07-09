@@ -1,6 +1,5 @@
 import React from 'react';
-import web from '../assets/spex-ui.png';
-import home from "../assets/rider.jpg";
+
 
 // Accordion data array
 const accordionData = [
@@ -37,31 +36,20 @@ const ApproachSection = () => {
     return (
         <div className="bg-white text-black lg:h-[120vh] lg:py-5 lg:mt-10 bg-center bg-cover" style={{
             backgroundColor: 'rgba(0, 0, 0, 0.8)',
-            backgroundImage: `url(${home})`,
+            backgroundImage: `url(https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541344/rider_di6odp.jpg)`,
             backgroundBlendMode: 'multiply'
         }} >
             <div className="w-full flex flex-col items-center px-4 xl:px-24 py-10 lg:pt-20 " >
                 {/* Title */}
                 <header
                     className="w-[90%] lg:w-[60%] h-auto py-5 mb-10 text-white flex flex-col items-center justify-center">
-                    <p className="font-nunito font-bold text-lg mb-3"
-                       data-aos="fade-in"
-                       data-aos-offset="200"
-                       data-aos-delay="50"
-                       data-aos-duration="1000"
-                       data-aos-easing="ease-in-out"
-                       data-aos-mirror="true"
-                       data-aos-once="true">
+                    <p className="font-myriad font-bold text-lg mb-3"
+
+                      >
                         - How It Works -
                     </p>
-                    <h1 className="font-bold font-sora text-2xl lg:text-5xl mb-5 text-center"
-                        data-aos="fade-up"
-                        data-aos-offset="200"
-                        data-aos-delay="50"
-                        data-aos-duration="1000"
-                        data-aos-easing="ease-in-out"
-                        data-aos-mirror="true"
-                        data-aos-once="true">
+                    <h1 className="font-bold font-myriad text-2xl lg:text-5xl mb-5 text-center"
+                       >
                         Our step-by-step approach
                     </h1>
                 </header>
@@ -72,7 +60,7 @@ const ApproachSection = () => {
                     <div className="aspect-w-16 aspect-h-9 lg:w-[100%]">
                         <img
                             className="w-full object-cover rounded-xl"
-                            src={web}
+                            src={'https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541343/spex-ui_gkeate.png'}
                             alt="Image Description"
                             width={100}
                             height={100}
@@ -92,7 +80,7 @@ const ApproachSection = () => {
                             <div className="flex gap-x-5 ms-1" key={item.id}>
                                 {/* Icon */}
                                 <div className="relative last:after:hidden after:absolute after:top-8 after:bottom-0 after:start-4 after:w-px after:-translate-x-[0.5px] after:bg-neutral-800">
-                                    <div className="relative z-10 size-8 flex justify-center items-center">
+                                    <div className="relative  size-8 flex justify-center items-center">
                                         <span className="flex flex-shrink-0 justify-center items-center size-8 border border-neutral-800 text-white font-semibold text-xs uppercase rounded-full">
                                             {item.step}
                                         </span>

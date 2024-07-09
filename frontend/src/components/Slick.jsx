@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Card from "./Card.jsx";
 
 
-const Problem = () => {
+const Slick = () => {
     const accordionData = [
         {
             id: 'accordion-flush-body-1',
@@ -13,7 +13,7 @@ const Problem = () => {
             content: [
                 'An Estimated 17 million MT of Mismanaged plastic waste found in oceans and off the coast of Africa annually. (Statista, 2022).',
             ],
-            image: 'https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541790/sup_pceezp.jpg',
+            image: 'sup.jpg',
         },
         {
             id: 'accordion-flush-body-2',
@@ -21,7 +21,7 @@ const Problem = () => {
             content: [
                 'Single-use plastic packaging costs food businesses up to 10% of revenue or $0.20-$0.30 per meal, while managing plastic waste in Africa costs $5 billion annually.',
             ],
-            image: 'https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541790/spu_rxfz15.jpg',
+            image: 'spu.jpeg',
         },
         {
             id: 'accordion-flush-body-3',
@@ -29,7 +29,7 @@ const Problem = () => {
             content: [
                 'These waste are predominately from Single-Use plastic packages with less than 5% recycled.',
             ],
-            image: 'https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541789/resup_rzdrur.jpg',
+            image: 'resup.jpg',
         },
         {
             id: 'accordion-flush-body-4',
@@ -37,11 +37,12 @@ const Problem = () => {
             content: [
                 'These Waste pollutes Marine lives, affect the Climate and livelihoods, especially families living around coastal Areas.',
             ],
-            image: 'https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541790/fish-plastic2_gagfxk.jpg',
+            image: 'fish-plastic2.jpg',
         },
     ];
 
     const settings = {
+        dots: true,
         infinite: false,
         speed: 500,
         slidesToShow: 4,
@@ -54,7 +55,11 @@ const Problem = () => {
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-                    dots: true
+                    dots: true,
+                    fade: true,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    cssEase: "linear"
                 }
             },
             {
@@ -63,7 +68,6 @@ const Problem = () => {
                     slidesToShow: 2,
                     slidesToScroll: 2,
                     initialSlide: 2,
-                    infinite: true,
                     fade: true,
                     autoplay: true,
                     autoplaySpeed: 2000,
@@ -75,7 +79,6 @@ const Problem = () => {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    infinite: true,
                     fade: true,
                     autoplay: true,
                     autoplaySpeed: 2000,
@@ -98,4 +101,4 @@ const Problem = () => {
     );
 };
 
-export default Problem;
+export default Slick;
