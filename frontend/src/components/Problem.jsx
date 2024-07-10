@@ -17,7 +17,7 @@ const Problem = () => {
         },
         {
             id: 'accordion-flush-body-2',
-            title: 'Single-Use Plastic Costs African Food Industry 10%',
+            title: 'African Governments spend $5 Billion Managing plastic waste annually',
             content: [
                 'Single-use plastic packaging costs food businesses up to 10% of revenue or $0.20-$0.30 per meal, while managing plastic waste in Africa costs $5 billion annually.',
             ],
@@ -27,7 +27,7 @@ const Problem = () => {
             id: 'accordion-flush-body-3',
             title: 'Under 10% of Single-Use Plastic Waste is Recycled',
             content: [
-                'These waste are predominately from Single-Use plastic packages with less than 5% recycled.',
+                'These waste are predominately from Single-Use plastic packages with less than 10% recycled.',
             ],
             image: 'https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541789/resup_rzdrur.jpg',
         },

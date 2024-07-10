@@ -28,7 +28,7 @@ const Solution = () => {
         },
         {
             id: 'accordion-flush-body-3',
-            title: 'Earn with Your Carbon Print',
+            title: 'Earn with Your Carbon Point',
             content: [
                 'Reduce your carbon footprint with every pack exchange and Earn good money.',
             ],
