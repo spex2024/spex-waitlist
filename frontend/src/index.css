@@ -16,4 +16,8 @@
         @apply bg-neutral-800;
     }
 }
+/* Example of changing placeholder color */
+input::placeholder {
+    color: #343A40; /* Adjust the color value as needed */
+}
 

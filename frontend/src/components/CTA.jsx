@@ -1,5 +1,6 @@
 import React from 'react';
-import WaitlistForm from "./WaitlistForm.jsx";
+import Drawer from "./Drawer.jsx";
+
 
 
 function Cta(props) {
@@ -19,7 +20,7 @@ function Cta(props) {
                     Be part of the sustainable food packaging revolution! Together, we can make a difference, one smart pack at a time.
                 </p>
 
-                <WaitlistForm color={`outline-white`} text={`text-white`}/>
+              <Drawer/>
             </div>
         </div>
     );

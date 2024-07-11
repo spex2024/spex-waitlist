@@ -2,7 +2,8 @@ import React, {useContext} from 'react';
 import {UserContext} from "../context/userContext.jsx";
 import {Link} from "react-router-dom";
 import spex from "../assets/spex-logo.png";
-import WaitlistForm from "./WaitlistForm.jsx";
+import Drawer from "./Drawer.jsx";
+
 
 function Navbar(props) {
 
@@ -13,7 +14,7 @@ function Navbar(props) {
 
 
             <header
-                className="fixed w-full lg:flex items-center lg:justify-between justify-center h-[80px] py-5 px-16  border-b shadow-sm bg-white z-10 hidden  ">
+                className=" font-myriad fixed w-full lg:flex items-center lg:justify-between justify-center h-[80px] py-5 px-16  border-b shadow-sm bg-white z-10 hidden font-light ">
 
                 <img src={spex} className={`lg:h-32 lg:w-32`}/>
 
@@ -25,7 +26,7 @@ function Navbar(props) {
                     {/*    </li>*/}
                     {/*</Link>*/}
                 </ul>
-                <WaitlistForm/>
+                <Drawer/>
             </header>
 
 

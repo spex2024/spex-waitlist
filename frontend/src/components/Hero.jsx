@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import spex from "../assets/spex-logo.png";
-import WaitlistForm from "./WaitlistForm.jsx";
+
 import { AiOutlineLogin } from "react-icons/ai";
 import spexbg from "../assets/office-1.jpg";
 import { RiScrollToBottomLine } from "react-icons/ri";
@@ -10,6 +10,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Video from "./Video.jsx";
 import HoverCard from "./HoverCard.jsx";
+import Drawer from "./Drawer.jsx";
 
 
 AOS.init();
@@ -41,13 +42,9 @@ function Hero(props) {
                     </h1>
                     <p className={`text:xl lg:text-2xl font-semibold text-center `}>SPEX simplifies meal planning for your <span className={`font-black lg:text-3xl text-2xl uppercase`}>team</span> . <br/>Saves you time, cost and plastic waste.</p>
                 </div>
-                <div className={`flex flex-col lg:flex-row gap-5 justify-center items-center`}>
-
-                    <WaitlistForm color={`outline-white`} text={`text-white`} style={{width: "100%"}}/>
-
-                </div>
 
             </section>
+                   <Drawer/>
             {/*<div className={` w-full h-[60vh] lg:h-[90vh] lg:w-[80vw] bg-black mx-auto rounded-3xl flex flex-col justify-center items-center bg-cover bg-center`} >style={{*/}
             {/*    backgroundColor: 'rgba(0, 0, 0, 0.7)',*/}
             {/*    backgroundImage: `url(${spexbg})`,*/}

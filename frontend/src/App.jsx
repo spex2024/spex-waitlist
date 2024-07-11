@@ -8,6 +8,7 @@ import { UserContext } from "./context/userContext.jsx";
 import Register from "./pages/Register.jsx";
 import {ClimbingBoxLoader, ClipLoader, GridLoader} from "react-spinners";
 import spexbg from "./assets/spex-logo.png";
+import MultiForm from "./components/MultiForm.jsx";
 
 function App() {
     const { userInfo } = useContext(UserContext);
@@ -49,6 +50,7 @@ function App() {
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/public" element={<HomePublic />} />
                     <Route path="/spex" element={<Register />} />
+                    <Route path="/form" element={<MultiForm/>} />
                 </Routes>
             )}
         </Router>
