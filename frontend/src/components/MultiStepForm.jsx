@@ -104,18 +104,17 @@ const MultiStepForm = () => {
 
     const onSubmitStep2 = async (data) => {
         try {
-            // Combine step 1 data with step 2 data
+            console.log('Submitting feedback data:', data); // Add this line to log data
+            await axios.post('https://spex-backend.vercel.app/api/update', data);
 
-             await axios.post('https://spex-backend.vercel.app/api/update', data);
-
-                toast.success('Feedback successfully submitted!')
-                reset();
-
-
+            toast.success('Feedback successfully submitted!');
+            reset();
         } catch (error) {
-            toast.error('Feedback submission failed!')
+            console.error('Feedback submission error:', error); // Add this line to log error
+            toast.error('Feedback submission failed!');
         }
     };
+
 
     const handlePrevious = () => {
         setStep(step - 1);
