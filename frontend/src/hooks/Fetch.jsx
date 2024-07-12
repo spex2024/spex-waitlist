@@ -126,6 +126,27 @@ export const Fetch = () => {
             // Handle any network errors or exceptions
         }
     }
+ const updateFeedback = async ( formData) =>{
+        try {
+            const response = await fetch(`https://spex-backend.vercel.app/api/update`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body:JSON.stringify(formData)
+            });
+
+            console.log(formData)
+            if (response.ok) {
+                const feedback = await response.json();
+                navigate('/');
+
+            }
+        } catch (error) {
+            console.error( error.message);
+            // Handle any network errors or exceptions
+        }
+    }
 
 
 
@@ -172,7 +193,7 @@ export const Fetch = () => {
 
 
 
-    return { register, login, profile , logout ,createFeedback ,getFeedback,error , deleteFeedback };
+    return { register, login, profile , logout ,createFeedback ,getFeedback,error , deleteFeedback , updateFeedback};
 };
 
 export default Fetch;

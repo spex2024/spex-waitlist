@@ -83,7 +83,7 @@ const MultiStepForm = () => {
     const onSubmitStep1 = async (data) => {
         try {
             console.log('Submitting step 1 data:', data);
-            const response = await axios.post('https://spex-backend.vercel.app/api/create', data);
+             await axios.post('https://spex-backend.vercel.app/api/create', data);
 
             toast.success('Form successfully submitted!');
             setFormData(data);
@@ -108,23 +108,25 @@ const MultiStepForm = () => {
     };
 
     const onSubmitStep2 = async (data) => {
-        try {
-            console.log('Submitting feedback data:', data);
-            const response = await axios.post('https://spex-backend.vercel.app/api/update', data);
 
-            toast.success('Feedback successfully submitted!');
-            reset();
-        } catch (error) {
-            if (error.response) {
-                console.error('Server response error:', error.response.data);
-                toast.error(`Feedback submission failed: ${error.response.data.message}`);
-            } else if (error.request) {
-                console.error('No response from server:', error.request);
-                toast.error('Feedback submission failed: No response from server.');
-            } else {
-                console.error('Error in request setup:', error.message);
-                toast.error(`Feedback submission failed: ${error.message}`);
+        try {
+            const response = await fetch(`https://spex-backend.vercel.app/api/update`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body:JSON.stringify(data)
+            });
+
+            console.log(data)
+            if (response.ok) {
+                toast.success('Thanks for the feedback!');
+                reset();
+
             }
+        } catch (error) {
+            toast.error(`Feedback submission failed`);
+            // Handle any network errors or exceptions
         }
     };
 
