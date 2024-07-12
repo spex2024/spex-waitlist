@@ -178,7 +178,7 @@ const MultiStepForm = () => {
                     <div className={formGroupClass}>
                         <label htmlFor="email2" className={labelClass}>Email</label>
                         <input id="email2" type="email" {...register('email', { required: 'Email is required' })} defaultValue={formData.email} className={inputClass} />
-                        {errors.email && <p>{errors.email.message}</p>}
+                        {errors.email &&   <p className={` text-red-600`} >{errors.email.message}</p>}
                     </div>
                     {questions.map((question, index) => (
                         <div key={index} className={formGroupClass}>
@@ -189,14 +189,14 @@ const MultiStepForm = () => {
                                     <option key={idx} value={option}>{option}</option>
                                 ))}
                             </select>
-                            {errors[`answer${index + 1}`] && <p className={`text-xs text-red-600`}>Field is required</p>}
+                            {errors[`answer${index + 1}`] && <p className={` text-red-600`}>Field is required</p>}
                         </div>
                     ))}
 
                     <div className={formGroupClass}>
                         <label htmlFor="question8" className={labelClass}>How much on average would you budget for a lunch meal on a working day?</label>
                         <input id="question8" {...register('answer8', { required: 'field is required' })} className={inputClass} />
-                        {errors.answer8 && <p>{errors.answer8.message}</p>}
+                        {errors.answer8 && <p className={` text-red-600`}>{errors.answer8.message}</p>}
                     </div>
                     <div className="flex gap-4">
                         <button type="button" onClick={handlePrevious} className={btnClass}>Previous</button>
