@@ -132,7 +132,7 @@ const MultiStepForm = () => {
     const btnClass = "h-10 w-32 border border-black hover:bg-black hover:text-white font-light";
 
     return (
-        <div className={`lg:mt-10 mt-10`}>
+        <div className={`lg:mt-10 mt-10 font-light text-md`}>
             {step === 1 && (
                 <form onSubmit={handleSubmit(onSubmitStep1)} className="flex flex-col lg:gap-5 gap-2 justify-center items-start px-10">
                     <div className={formGroupClass}>
