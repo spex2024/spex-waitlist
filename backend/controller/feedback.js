@@ -14,16 +14,14 @@ export const createFeedback = async (req, res) => {
     try {
         const { name, email, phone, company } = req.body;
 
-        const newFeedback = new Feedback({
+        const newFeedback = await Feedback.create({
             name,
             email,
             phone,
             company
         });
 
-        const savedFeedback = await newFeedback.save();
 
-        res.status(201).json(savedFeedback);
 
         const mailOptions = {
             from: 'Spex Africa <no-reply@spexafrica.com>',
@@ -57,11 +55,6 @@ export const createFeedback = async (req, res) => {
         console.error("Error creating feedback:", error);
         res.status(500).json({ error: "Internal Server Error" });
     }
-
-
-
-
-
 };
 
 export const updateFeedback = async (req, res) => {
@@ -82,14 +75,15 @@ export const updateFeedback = async (req, res) => {
             text: `
         Hi ${profile.name},
 
-        Thank you for your feedback. We are excited to have you on board and will keep you updated on our progress.
-
+     Thank you for your valuable feedback. We are thrilled to have you on board and look forward to keeping you updated on our progress.
         Best regards,
         The Spex Africa Team
     `,
             html: `
         <p>Hi ${profile.name},</p>
-        <p>Thank you for joining our waitlist. We are excited to have you on board and will keep you updated on our progress.</p>
+        <p>
+     Thank you for your valuable feedback. We are thrilled to have you on board and look forward to keeping you updated on our progress.
+        Best regards</p>
         <p>Best regards,<br>The Spex Africa Team</p>
     `
         };

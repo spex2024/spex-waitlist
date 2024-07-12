@@ -85,25 +85,21 @@ const MultiStepForm = () => {
             console.log('Submitting step 1 data:', data);
              await axios.post('https://spex-backend.vercel.app/api/create', data);
 
-            toast.success('Thanks for joining the waitlist');
+            toast('Thanks for joining the waitlist', {
+                icon: '👏',
+                style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                },
+            });
             setFormData(data);
             setStep(2);
             reset();
         } catch (error) {
-            if (error.response) {
-                // The request was made and the server responded with a status code
-                // that falls out of the range of 2xx
-                console.error('Server response error:', error.response.data);
+
                 toast.error(`Form submission failed: ${error.response.data.message}`);
-            } else if (error.request) {
-                // The request was made but no response was received
-                console.error('No response from server:', error.request);
-                toast.error('Form submission failed: No response from server.');
-            } else {
-                // Something happened in setting up the request that triggered an Error
-                console.error('Error in request setup:', error.message);
-                toast.error(`Form submission failed: ${error.message}`);
-            }
+
         }
     };
 
@@ -118,7 +114,6 @@ const MultiStepForm = () => {
                 body:JSON.stringify(data)
             });
 
-            console.log(data)
             if (response.ok) {
                 toast.success('Thanks for the feedback!');
                 reset();
