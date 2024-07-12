@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import {Toaster} from "react-hot-toast";
-import {toast} from "react-toastify";
+import toast, {Toaster} from "react-hot-toast";
+
 
 const MultiStepForm = () => {
     const [step, setStep] = useState(1);
@@ -88,10 +88,10 @@ const MultiStepForm = () => {
             // Store form data and move to the next step
 
 
-
+            toast.success('Form successfully submitted!')
             setFormData(data);
             setStep(2);
-            toast.success('Form successfully submitted!')
+
             reset();
 
 
@@ -106,7 +106,6 @@ const MultiStepForm = () => {
             // Combine step 1 data with step 2 data
 
              await axios.post('https://spex-backend.vercel.app/api/update', data);
-
                 toast.success('Feedback successfully submitted!')
                 reset();
 
