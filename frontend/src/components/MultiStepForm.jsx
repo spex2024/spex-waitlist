@@ -82,38 +82,52 @@ const MultiStepForm = () => {
 
     const onSubmitStep1 = async (data) => {
         try {
-            //
-            const response =await axios.post('https://spex-backend.vercel.app/api/create', data);
+            console.log('Submitting step 1 data:', data);
+            const response = await axios.post('https://spex-backend.vercel.app/api/create', data);
 
-            // Store form data and move to the next step
-
-
-            toast.success('Form successfully submitted!')
-
+            toast.success('Form successfully submitted!');
             setFormData(data);
             setStep(2);
-
             reset();
-
-
-            // Reset the form for step 2
         } catch (error) {
-            toast.error('Form successfully failed!')
+            if (error.response) {
+                // The request was made and the server responded with a status code
+                // that falls out of the range of 2xx
+                console.error('Server response error:', error.response.data);
+                toast.error(`Form submission failed: ${error.response.data.message}`);
+            } else if (error.request) {
+                // The request was made but no response was received
+                console.error('No response from server:', error.request);
+                toast.error('Form submission failed: No response from server.');
+            } else {
+                // Something happened in setting up the request that triggered an Error
+                console.error('Error in request setup:', error.message);
+                toast.error(`Form submission failed: ${error.message}`);
+            }
         }
     };
 
     const onSubmitStep2 = async (data) => {
         try {
-            console.log('Submitting feedback data:', data); // Add this line to log data
-            await axios.post('https://spex-backend.vercel.app/api/update', data);
+            console.log('Submitting feedback data:', data);
+            const response = await axios.post('https://spex-backend.vercel.app/api/update', data);
 
             toast.success('Feedback successfully submitted!');
             reset();
         } catch (error) {
-            console.error('Feedback submission error:', error); // Add this line to log error
-            toast.error('Feedback submission failed!');
+            if (error.response) {
+                console.error('Server response error:', error.response.data);
+                toast.error(`Feedback submission failed: ${error.response.data.message}`);
+            } else if (error.request) {
+                console.error('No response from server:', error.request);
+                toast.error('Feedback submission failed: No response from server.');
+            } else {
+                console.error('Error in request setup:', error.message);
+                toast.error(`Feedback submission failed: ${error.message}`);
+            }
         }
     };
+
 
 
     const handlePrevious = () => {
