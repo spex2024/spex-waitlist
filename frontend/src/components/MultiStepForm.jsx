@@ -83,15 +83,18 @@ const MultiStepForm = () => {
     const onSubmitStep1 = async (data) => {
         try {
             //
-            await axios.post('https://api.spexafrica.app/api/create', data);
+            const response =await axios.post('https://spex-api.onrender.com/api/create', data);
 
             // Store form data and move to the next step
+            if(response.ok){
+
             setFormData(data);
             setStep(2);
             toast.success('Form successfully submitted!')
+            reset();
+            }
 
             // Reset the form for step 2
-            reset();
         } catch (error) {
             toast.success('Form successfully failed!')
         }
@@ -101,8 +104,7 @@ const MultiStepForm = () => {
         try {
             // Combine step 1 data with step 2 data
 
-            const response = await axios.post('https://api.spexafrica.app/api/update', data);
-            console.log(response)
+            const response = await axios.post('https://spex-api.onrender.com/api/update', data);
             if(response.ok){
                 toast.success('Feedback successfully submitted!')
                 reset();

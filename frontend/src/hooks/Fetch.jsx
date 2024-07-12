@@ -15,7 +15,7 @@ export const Fetch = () => {
     const {setContent} = useContext(FeedbackContext)
 
     const register = async (formdata) => {
-        const response = await fetch(`https://api.spexafrica.app/api/register`, {
+        const response = await fetch(`https://spex-api.onrender.com/api/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ export const Fetch = () => {
     };
 
     const login = async (formdata) => {
-        const response = await fetch(`https://api.spexafrica.app/api/login`, {
+        const response = await fetch(`https://spex-api.onrender.com/api/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ export const Fetch = () => {
 
     const profile = async () => {
         try {
-            const response = await fetch(`https://api.spexafrica.app/api/profile`, {
+            const response = await fetch(`https://spex-api.onrender.com/api/profile`, {
                 credentials: "include",
             });
 
@@ -88,7 +88,7 @@ export const Fetch = () => {
     const logout = async (e) =>{
         e.preventDefault();
         try {
-            const response = await fetch(`https://api.spexafrica.app/api/logout`, {
+            const response = await fetch(`https://spex-api.onrender.com/api/logout`, {
                 method: 'POST',
                 credentials: "include",
             });
@@ -107,7 +107,7 @@ export const Fetch = () => {
 
     const createFeedback = async ( formData) =>{
         try {
-            const response = await fetch(`https://api.spexafrica.app/api/create`, {
+            const response = await fetch(`https://spex-api.onrender.com/api/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -131,7 +131,7 @@ export const Fetch = () => {
 
     const getFeedback =  async () => {
         try {
-            const response = await fetch(`https://api.spexafrica.app/api/feedback`, {
+            const response = await fetch(`https://spex-api.onrender.com/api/feedback`, {
 
             });
 
@@ -153,7 +153,7 @@ export const Fetch = () => {
 
     const deleteFeedback = async (id) => {
         try {
-            const response = await fetch(`https://api.spexafrica.app/api/feedback/${id}`, {
+            const response = await fetch(`https://spex-api.onrender.com/api/feedback/${id}`, {
                 method: 'DELETE',
             });
 
