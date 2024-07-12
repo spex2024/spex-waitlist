@@ -86,7 +86,8 @@ const MultiStepForm = () => {
             const response =await axios.post('https://spex-backend.vercel.app/api/create', data);
 
             // Store form data and move to the next step
-            if(response.ok){
+
+            if(response.status === 200){
 
             setFormData(data);
             setStep(2);
@@ -105,7 +106,7 @@ const MultiStepForm = () => {
             // Combine step 1 data with step 2 data
 
             const response = await axios.post('https://spex-backend.vercel.app/api/update', data);
-            if(response.ok){
+            if(response.status=== 2000){
                 toast.success('Feedback successfully submitted!')
                 reset();
             }
