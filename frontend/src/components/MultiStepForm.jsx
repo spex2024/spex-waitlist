@@ -189,7 +189,7 @@ const MultiStepForm = () => {
                                     <option key={idx} value={option}>{option}</option>
                                 ))}
                             </select>
-                            {errors[`answer${index + 1}`] && <p>{errors[`answer${index + 1}`].message}</p>}
+                            {errors[`answer${index + 1}`] && <p className={`text-xs text-red line-clamp-1`}>{errors[`answer${index + 1}`].message}</p>}
                         </div>
                     ))}
                     <div className={formGroupClass}>
