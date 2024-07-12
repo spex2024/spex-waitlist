@@ -87,13 +87,13 @@ const MultiStepForm = () => {
 
             // Store form data and move to the next step
 
-            if(response.status === 200){
+
 
             setFormData(data);
             setStep(2);
             toast.success('Form successfully submitted!')
             reset();
-            }
+
 
             // Reset the form for step 2
         } catch (error) {
@@ -105,11 +105,11 @@ const MultiStepForm = () => {
         try {
             // Combine step 1 data with step 2 data
 
-            const response = await axios.post('https://spex-backend.vercel.app/api/update', data);
-            if(response.status=== 2000){
+             await axios.post('https://spex-backend.vercel.app/api/update', data);
+
                 toast.success('Feedback successfully submitted!')
                 reset();
-            }
+
             // Send the combined data to the backend
             // await axios.post('/api/feedback', combinedData);
 
