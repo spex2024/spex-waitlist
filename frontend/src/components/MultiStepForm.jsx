@@ -189,12 +189,12 @@ const MultiStepForm = () => {
                                     <option key={idx} value={option}>{option}</option>
                                 ))}
                             </select>
-                            {errors[`answer${index + 1}`] && <p className={`text-xs text-red line-clamp-1`}>{errors[`answer${index + 1}`].message}</p>}
+                            {errors[`answer${index + 1}`] && <p className={`text-xs text-red line-clamp-1`}>{errors[`field${index + 1}`].message}</p>}
                         </div>
                     ))}
                     <div className={formGroupClass}>
                         <label htmlFor="question8" className={labelClass}>How much on average would you budget for a lunch meal on a working day?</label>
-                        <input id="question8" {...register('answer8', { required: 'Question 8 is required' })} className={inputClass} />
+                        <input id="question8" {...register('answer8', { required: 'field is required' })} className={inputClass} />
                         {errors.answer8 && <p>{errors.answer8.message}</p>}
                     </div>
                     <div className="flex gap-4">
