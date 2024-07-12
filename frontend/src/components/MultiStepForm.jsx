@@ -88,7 +88,15 @@ const MultiStepForm = () => {
             // Store form data and move to the next step
 
 
-            toast.success('Form successfully submitted!')
+            // toast.success('Form successfully submitted!')
+            toast.promise(
+                saveSettings(settings),
+                {
+                    loading: 'Saving...',
+                    success: <b>Settings saved!</b>,
+                    error: <b>Could not save.</b>,
+                }
+            );
             setFormData(data);
             setStep(2);
 
