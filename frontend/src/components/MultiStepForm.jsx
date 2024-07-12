@@ -85,7 +85,7 @@ const MultiStepForm = () => {
             console.log('Submitting step 1 data:', data);
              await axios.post('https://spex-backend.vercel.app/api/create', data);
 
-            toast.success('Form successfully submitted!');
+            toast.success('Thanks for joining the waitlist');
             setFormData(data);
             setStep(2);
             reset();
