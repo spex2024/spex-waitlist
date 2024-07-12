@@ -7,6 +7,7 @@ import Footer from "../components/Footer.jsx";
 import Partner from "../components/Partner.jsx";
 import Pilot from "../components/Pilot.jsx";
 import ApproachSection from "../components/OurApproach.jsx";
+import {Toaster} from "react-hot-toast";
 
 
 function HomePublic(props) {
@@ -19,6 +20,10 @@ function HomePublic(props) {
             <Pilot />
             <Partner />
             <Footer />
+            <Toaster
+                position="bottom-center"
+                reverseOrder={false}
+            />
         </div>
     );
 }

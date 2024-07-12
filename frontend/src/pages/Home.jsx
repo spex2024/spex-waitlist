@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar.jsx";
 function Home(props) {
     return (
         <div>
-            <Navbar/>
+               <Navbar/>
              <HomePublic />
 
         </div>

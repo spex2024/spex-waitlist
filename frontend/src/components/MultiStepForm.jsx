@@ -202,10 +202,7 @@ const MultiStepForm = () => {
                 </form>
             )}
 
-            <Toaster
-                position="bottom-center"
-                reverseOrder={false}
-            />
+
         </div>
     );
 };
