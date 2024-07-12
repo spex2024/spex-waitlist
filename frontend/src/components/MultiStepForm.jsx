@@ -183,15 +183,16 @@ const MultiStepForm = () => {
                     {questions.map((question, index) => (
                         <div key={index} className={formGroupClass}>
                             <label htmlFor={`question${index + 1}`} className={labelClass}>{question.question}</label>
-                            <select id={`question${index + 1}`} {...register(`answer${index + 1}`, { required: `${question.question} is required` })} className={inputClass}>
+                            <select id={`question${index + 1}`} {...register(`answer${index + 1}`, { required: 'Field is required' })} className={inputClass}>
                                 <option value="">Select an option</option>
                                 {question.options.map((option, idx) => (
                                     <option key={idx} value={option}>{option}</option>
                                 ))}
                             </select>
-                            {errors[`answer${index + 1}`] && <p className={`text-xs text-red line-clamp-1`}>{errors[`field${index + 1}`].message}</p>}
+                            {errors[`answer${index + 1}`] && <p className={`text-xs text-red-600`}>Field is required</p>}
                         </div>
                     ))}
+
                     <div className={formGroupClass}>
                         <label htmlFor="question8" className={labelClass}>How much on average would you budget for a lunch meal on a working day?</label>
                         <input id="question8" {...register('answer8', { required: 'field is required' })} className={inputClass} />
