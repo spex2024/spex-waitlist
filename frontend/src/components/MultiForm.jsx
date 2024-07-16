@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
-const MultiForm = () => {
+const MultiForm = ({toggleDrawer}) => {
     const [step, setStep] = useState(1);
     const [formData, setFormData] = useState({});
     const [error , setError] = useState("")
@@ -93,6 +93,7 @@ const MultiForm = () => {
             setFormData(data);
             setStep(2);
             reset();
+            toggleDrawer()
 
             // Store form data and move to the next step
 

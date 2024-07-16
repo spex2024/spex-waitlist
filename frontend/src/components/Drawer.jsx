@@ -64,7 +64,7 @@ const Drawer = () => {
                     <span className="sr-only">Close menu</span>
                 </button>
 
-               <MultiStepForm/>
+               <MultiStepForm toggleDrawer={toggleDrawer}/>
 
             </div>
         </div>
