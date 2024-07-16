@@ -93,7 +93,7 @@ const MultiForm = ({toggleDrawer}) => {
             setFormData(data);
             setStep(2);
             reset();
-            toggleDrawer()
+
 
             // Store form data and move to the next step
 

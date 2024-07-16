@@ -4,7 +4,7 @@ import axios from 'axios';
 import toast, {Toaster} from "react-hot-toast";
 
 
-const MultiStepForm = () => {
+const MultiStepForm = ({toggleDrawer}) => {
     const [step, setStep] = useState(1);
     const [formData, setFormData] = useState({});
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -117,6 +117,7 @@ const MultiStepForm = () => {
             if (response.ok) {
                 toast.success('Thanks for the feedback!');
                 reset();
+                toggleDrawer()
 
             }
         } catch (error) {
