@@ -27,14 +27,16 @@ function Dashboard() {
     // }, []);
     const {name , username ,role} = userInfo;
 
+    console.log(userInfo)
+
     const downloadCSV = () => {
         if (!content || content.length === 0) {
             alert('No data available to download');
             return;
-        }if (!vendor || vendor.length === 0) {
-            alert('No data available to download');
-            return;
         }
+
+
+
 
         const headers = Object.keys(content[0]).join(',');
         const rows = content.map(row => Object.values(row).join(',')).join('\n');
@@ -50,10 +52,10 @@ function Dashboard() {
     };
 
     const downloadVendorCSV = () => {
-        if (!content || content.length === 0) {
-            alert('No data available to download');
-            return;
-        }
+        if (!vendor || vendor.length === 0) {
+        alert('No data available to download');
+        return;
+    }
 
         const headers = Object.keys(vendor[0]).join(',');
         const rows = vendor.map(row => Object.values(row).join(',')).join('\n');
