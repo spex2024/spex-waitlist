@@ -33,7 +33,7 @@ function Hero(props) {
             <section className="w-full flex flex-col  h-[70vh]  items-center justify-center lg:px-10 gap-5 lg:mt-10   ">
 
 
-                <img src={spex} width={100} className={`lg:hidden`}/>
+                <img src={spex} width={250} className={`lg:hidden`}/>
                 <div
                     className={`w-full text-black flex flex-col justify-center items-center space-y-5 mb-5 font-semi-bold lg:px-20 `}>
 
