@@ -100,7 +100,7 @@ function Dashboard() {
                     <Tab key="user" title="User Feedback">
                         <button
                             onClick={downloadCSV}
-                            className=" bg-green-700 h-[45px] text-white font-bold py-2 px-2  mt-4 ml-4 flex items-center gap-3"
+                            className=" bg-green-700 h-[45px] text-white font-bold py-2 px-2  my-4 ml-4 flex items-center gap-3"
                         >
                           <AiOutlineCloudDownload/> User Data <AiFillFileExcel size={20}/>
                         </button>
@@ -111,7 +111,7 @@ function Dashboard() {
                     <Tab key="vendor" title="Vendor Feedback">
                         <button
                             onClick={downloadVendorCSV}
-                            className="bg-green-700 h-[45px] text-white font-bold py-2 px-2 rounded mt-4 ml-4 flex items-center gap-3"
+                            className="bg-green-700 h-[45px] text-white font-bold py-2 px-2 rounded my-4 ml-4 flex items-center gap-3"
                         >
                             <AiOutlineCloudDownload/> User Data <AiFillFileExcel size={20}/>
                         </button>
