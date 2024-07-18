@@ -17,8 +17,8 @@ const Feedback = () => {
             }
         };
 
-        const intervalId = setInterval(() => {
-            fetchPostData();
+        const intervalId = setInterval(async () => {
+            await fetchPostData();
         }, 1000);
 
         return () => clearInterval(intervalId);
