@@ -8,6 +8,7 @@ import { FeedbackContext } from '../context/FeedbackContext.jsx';
 import Fetch from "../hooks/Fetch.jsx";
 import {UserContext} from "../context/userContext.jsx";
 import {Tab, Tabs} from "@nextui-org/react";
+import VendorFeedback from "../components/VendorFeedback.jsx";
 
 function Dashboard() {
     const { content } = useContext(FeedbackContext);
@@ -70,7 +71,7 @@ function Dashboard() {
                 <Feedback />
                     </Tab>  <Tab key="vendor" title="Vendor Feedback">
 
-                <Feedback />
+                <VendorFeedback/>
                     </Tab>
 
                 </Tabs>
