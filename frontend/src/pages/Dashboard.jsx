@@ -64,7 +64,7 @@ function Dashboard() {
         const encodedUri = encodeURI(csvVendor);
         const link = document.createElement('a');
         link.setAttribute('href', encodedUri);
-        link.setAttribute('download', 'feedback_data.csv');
+        link.setAttribute('download', 'vendor.csv');
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
