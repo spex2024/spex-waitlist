@@ -11,26 +11,8 @@ const ActionForm = () => {
     const { createFeedback } = Fetch();
 
     const onSubmit =  async  data => {
-      const response = await createFeedback(data)
-        if (response.status === 200) {
-        toast.success('Thank you for joining the waitlist! 🎉 Check your email for further updates if provided.', {
-            icon: '👏',
-            iconSize: '3rem',
-            duration: 3000,
-            style: {
-                border: '2px solid #4caf50',
-                padding: '16px',
-                color: '#4caf50',
-                fontWeight: 'light',
-                fontSize: '15px',
-                background: '#fff',
-                width: '900px',
-                borderRadius: '8px',
-                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
-            },
-        });
-          reset()
-        }
+      await createFeedback(data , reset)
+
 
 
 

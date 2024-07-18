@@ -105,7 +105,7 @@ export const Fetch = () => {
     }
 
 
-    const createFeedback = async ( formData) =>{
+    const createFeedback = async ( formData ,reset) =>{
         try {
             const response = await fetch(`https://spex-backend.vercel.app/api/add-vendor`, {
                 method: 'POST',
@@ -118,7 +118,23 @@ export const Fetch = () => {
             console.log(formData)
             if (response.ok) {
                 const feedback = await response.json();
-
+                toast.success('Thank you for joining the waitlist! 🎉 Check your email for further updates if provided.', {
+                    icon: '👏',
+                    iconSize: '3rem',
+                    duration: 3000,
+                    style: {
+                        border: '2px solid #4caf50',
+                        padding: '16px',
+                        color: '#4caf50',
+                        fontWeight: 'light',
+                        fontSize: '15px',
+                        background: '#fff',
+                        width: '900px',
+                        borderRadius: '8px',
+                        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+                    },
+                });
+                 reset()
                 navigate('/');
 
             }
