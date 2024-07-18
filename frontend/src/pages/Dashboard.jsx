@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 import SpexLogo from '../assets/spex-logo.png';
 import { Link } from 'react-router-dom';
-import { AiFillFileExcel } from 'react-icons/ai';
+import {AiFillFileExcel, AiOutlineCloudDownload} from 'react-icons/ai';
 import Feedback from '../components/Feedback.jsx';
 import Logout from '../components/Logout.jsx';
 import { FeedbackContext } from '../context/FeedbackContext.jsx';
@@ -87,15 +87,10 @@ function Dashboard() {
                 <div className={`flex gap-5`}>
 
                 <button
-                    onClick={downloadCSV}
-                    className="bg-green-700 h-[45px] text-white font-bold py-2 px-2 rounded mt-4 ml-4 flex items-center gap-3"
-                >
-                    User Data <AiFillFileExcel size={20} />
-                </button>  <button
                     onClick={downloadVendorCSV}
                     className="bg-green-700 h-[45px] text-white font-bold py-2 px-2 rounded mt-4 ml-4 flex items-center gap-3"
                 >
-                    Vendor Data <AiFillFileExcel size={20} />
+                    <AiOutlineCloudDownload/> User Data <AiFillFileExcel size={20}/>
                 </button>
                 </div>
             </div>
@@ -103,11 +98,24 @@ function Dashboard() {
 
                 <Tabs aria-label="Options">
                     <Tab key="user" title="User Feedback">
+                        <button
+                            onClick={downloadCSV}
+                            className=" bg-green-700 h-[45px] text-white font-bold py-2 px-2  mt-4 ml-4 flex items-center gap-3"
+                        >
+                          <AiOutlineCloudDownload/> User Data <AiFillFileExcel size={20}/>
+                        </button>
 
-                <Feedback />
-                    </Tab>  <Tab key="vendor" title="Vendor Feedback">
+                        <Feedback/>
+                    </Tab>
 
-                <VendorFeedback/>
+                    <Tab key="vendor" title="Vendor Feedback">
+                        <button
+                            onClick={downloadVendorCSV}
+                            className="bg-green-700 h-[45px] text-white font-bold py-2 px-2 rounded mt-4 ml-4 flex items-center gap-3"
+                        >
+                            <AiOutlineCloudDownload/> User Data <AiFillFileExcel size={20}/>
+                        </button>
+                        <VendorFeedback/>
                     </Tab>
 
                 </Tabs>
