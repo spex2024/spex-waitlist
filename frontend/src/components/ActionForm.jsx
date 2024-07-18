@@ -14,8 +14,6 @@ const ActionForm = () => {
       await createFeedback(data , reset)
 
 
-
-
     }
 
         const input =" w-full text-sm px-4 py-3 outline-double outline-1  outline-[#333] placeholder-gray-500   focus:outline-green-600  focus:outline-2";
