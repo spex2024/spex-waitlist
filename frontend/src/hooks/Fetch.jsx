@@ -123,7 +123,7 @@ export const Fetch = () => {
                 toast.success('Thank you for joining the waitlist! 🎉 Check your email for further updates if provided.', {
                     icon: '👏',
                     iconSize: '3rem',
-                    duration: 3000,
+                    duration: 6000,
                     style: {
                         border: '2px solid #4caf50',
                         padding: '16px',
