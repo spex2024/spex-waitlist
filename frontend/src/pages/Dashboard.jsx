@@ -9,9 +9,11 @@ import Fetch from "../hooks/Fetch.jsx";
 import {UserContext} from "../context/userContext.jsx";
 import {Tab, Tabs} from "@nextui-org/react";
 import VendorFeedback from "../components/VendorFeedback.jsx";
+import {VendorContext} from "../context/VendorContext.jsx";
 
 function Dashboard() {
     const { content } = useContext(FeedbackContext);
+    const {vendor} = useContext(VendorContext)
     // const { profile} = Fetch()
     //
     // const handleLogout =  () => {
@@ -28,6 +30,9 @@ function Dashboard() {
         if (!content || content.length === 0) {
             alert('No data available to download');
             return;
+        }if (!vendor || vendor.length === 0) {
+            alert('No data available to download');
+            return;
         }
 
         const headers = Object.keys(content[0]).join(',');
@@ -35,6 +40,25 @@ function Dashboard() {
         const csvContent = `data:text/csv;charset=utf-8,${headers}\n${rows}`;
 
         const encodedUri = encodeURI(csvContent);
+        const link = document.createElement('a');
+        link.setAttribute('href', encodedUri);
+        link.setAttribute('download', 'feedback_data.csv');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    const downloadVendorCSV = () => {
+        if (!content || content.length === 0) {
+            alert('No data available to download');
+            return;
+        }
+
+        const headers = Object.keys(vendor[0]).join(',');
+        const rows = vendor.map(row => Object.values(row).join(',')).join('\n');
+        const csvVendor = `data:text/csv;charset=utf-8,${headers}\n${rows}`;
+
+        const encodedUri = encodeURI(csvVendor);
         const link = document.createElement('a');
         link.setAttribute('href', encodedUri);
         link.setAttribute('download', 'feedback_data.csv');
@@ -60,7 +84,12 @@ function Dashboard() {
                     onClick={downloadCSV}
                     className="bg-green-700 h-[45px] text-white font-bold py-2 px-2 rounded mt-4 ml-4 flex items-center gap-3"
                 >
-                    Download CSV <AiFillFileExcel size={20} />
+                    User Data <AiFillFileExcel size={20} />
+                </button>  <button
+                    onClick={downloadVendorCSV}
+                    className="bg-green-700 h-[45px] text-white font-bold py-2 px-2 rounded mt-4 ml-4 flex items-center gap-3"
+                >
+                    Vendor Data <AiFillFileExcel size={20} />
                 </button>
             </div>
             <div className="w-[90%] min-h-screen py-5 ">
