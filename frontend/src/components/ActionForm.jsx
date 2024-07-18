@@ -14,9 +14,10 @@ const ActionForm = () => {
       await createFeedback(data , reset)
 
 
+
     }
 
-        const input =" w-full text-sm px-4 py-3 outline-double outline-1  outline-[#333] placeholder-gray-500   focus:outline-green-600  focus:outline-2";
+        const input =" w-full font-myriad font-light text-sm px-4 py-3 outline-double outline-1  outline-[#333] placeholder-gray-500   focus:outline-green-600  focus:outline-2";
        const error = "text-red-500 text-sm font-light font-myriad";
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6">
@@ -72,9 +73,9 @@ const ActionForm = () => {
 
             <button
                 type="submit"
-                className="w-full px-4 py-2 text-base tracking-wider font-semibold outline-none border border-[#333] bg-[#222] text-white hover:bg-transparent hover:text-[#333] transition-all duration-300"
+                className="w-full px-4 py-2 text-xl tracking-wider font-light outline-none border border-[#333] bg-[#222] text-white hover:bg-transparent hover:text-[#333] transition-all duration-300"
             >
-                Join the waitlist
+                submit
             </button>
         </form>
     );

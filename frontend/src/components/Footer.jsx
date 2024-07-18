@@ -11,27 +11,31 @@ function Footer(props) {
             id: 'IG',
             name:"instagram",
             steps: <FaInstagram />,
-            link:'https://www.instagram.com/spex_africa?igsh=MWE4bDkzaXQzZ2w2cA'
+            link:'https://www.instagram.com/spex_africa?igsh=MWE4bDkzaXQzZ2w2cA',
+            target:'_blank'
 
         },
         {
             id: 'FB',
             name:"facebook",
             steps: <FaFacebookF/>,
-            link:'https://www.facebook.com/share/rwdLMHF8Hr14Bq4p/?mibextid=qi2Omg'
+            link:'https://www.facebook.com/share/rwdLMHF8Hr14Bq4p/?mibextid=qi2Omg',
+            target:'_blank'
 
         },
         {
             id: 'X',
             name:"X",
             steps: <FaXTwitter  />,
-            link:'https://x.com/Spex_Africa?t=b3TmU_Xdfnt8WFdV8yWBdQ&s=09'
+            link:'https://x.com/Spex_Africa?t=b3TmU_Xdfnt8WFdV8yWBdQ&s=09',
+            target:'_blank'
 
         },  {
             id: 'X',
             name:"linkedin",
             steps: <FaLinkedin />,
-            link:'https://www.linkedin.com/company/spex-africa'
+            link:'https://www.linkedin.com/company/spexafricapp/',
+            target:'_blank'
 
         },
 
@@ -48,29 +52,35 @@ function Footer(props) {
                <img src={bgImage} className={`lg:h-64 lg:w-64`}/>
                 <ul className="flex gap-5  flex-wrap justify-center">
                     {social.map((social) => (
-                        <Link key={social.link} to={social.link}>
+                        <Link key={social.link} to={social.link} target={social.target}>
                             <li className="text-md text-white bg-[#252526] p-2 rounded-full hover:bg-[#71bc44] hover:text-black  hover: transition-colors 3s">{social.steps}</li>
                         </Link>
                     ))}
                 </ul>
             </div>
             <div
-                className="w-full  flex flex-col items-center sm:flex-row justify-between  mt-10 sm:mt-36 border-t border-t-gray-300 px-20  lg:px-36">
-                <div className="flex items-center font-light text-sm sm:text-lg font-serif mt-5">
+                className="w-full  font-myriad flex flex-col items-center sm:flex-row justify-between  mt-10 sm:mt-36 border-t border-t-gray-300 px-20  lg:px-20">
+                <div className="flex items-center font-light text-md font-serif mt-5 gap-4">
                     <p>Spex &copy; {currentYear}, All Rights Reserved.</p>
+
+                        <p>Implemented by  <Link to={'https://dercolbags.com'} className={`font-bold `} target={'_blank'}>
+                            Dercolbags
+                        </Link></p>
+
+
                 </div>
                 <div className="flex items-center ">
                     <ul className="flex items-center text-sm mt-5  gap-5 text-[#252526] font-light ">
-                        <Link to={'/login'}>
+                        <Link to={'/login'} target={'_blank'}>
                             <li className="list-none">Dashboard</li>
                         </Link>
-                        <Link to={'/'}>
+                        <Link to={'/'} target={'_blank'}>
                             <li className="list-none">Terms</li>
                         </Link>
-                        <Link to={'/'}>
+                        <Link to={'/'}  target={'_blank'}>
                             <li className="list-none">Policy</li>
                         </Link>
-                        <Link to={'/'}>
+                        <Link to={'/'} target={'_blank'}>
                             <li className="list-none">Contact</li>
                         </Link>
                     </ul>
