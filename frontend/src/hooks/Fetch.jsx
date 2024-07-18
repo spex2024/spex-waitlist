@@ -107,7 +107,7 @@ export const Fetch = () => {
 
     const createFeedback = async ( formData) =>{
         try {
-            const response = await fetch(`https://spex-backend.vercel.app/api/create`, {
+            const response = await fetch(`https://spex-backend.vercel.app/api/add-vendor`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

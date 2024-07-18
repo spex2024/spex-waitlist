@@ -8,6 +8,7 @@ import Partner from "../components/Partner.jsx";
 import Pilot from "../components/Pilot.jsx";
 import ApproachSection from "../components/OurApproach.jsx";
 import {Toaster} from "react-hot-toast";
+import Action from "../components/Action.jsx";
 
 
 function HomePublic(props) {
@@ -19,6 +20,7 @@ function HomePublic(props) {
             <Cta />
             <Pilot />
             <Partner />
+            <Action />
             <Footer />
             <Toaster
                 position="bottom-center"
