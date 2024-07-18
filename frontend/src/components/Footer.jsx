@@ -43,13 +43,13 @@ function Footer(props) {
 
     ];
     return (
-        <div id={"footer"} className="w-full h-auto flex flex-col items-center justify-center py-10  text-black font-myriad bg-cover bg-center"
+        <div id={"footer"} className="w-full h-full flex flex-col items-center justify-center py-10  text-black font-myriad bg-cover bg-center"
 
 
 
         >
-            <div className="w-full max-w-xl h-auto flex flex-col justify-center items-center   py-5">
-               <img src={bgImage} className={`lg:h-64 lg:w-64`}/>
+            <div className="w-full h-auto flex flex-col justify-center items-center   py-5">
+               <img src={bgImage} className={`lg:h-52 lg:w-52`}/>
                 <ul className="flex gap-5  flex-wrap justify-center">
                     {social.map((social) => (
                         <Link key={social.link} to={social.link} target={social.target}>
@@ -59,8 +59,8 @@ function Footer(props) {
                 </ul>
             </div>
             <div
-                className="w-full  font-myriad flex flex-col items-center sm:flex-row justify-between  mt-10 sm:mt-36 border-t border-t-gray-300 px-20  lg:px-20">
-                <div className="flex items-center font-light text-md font-serif mt-5 gap-4">
+                className="w-full text-sm font-myriad flex flex-col items-center justify-center  mt-10 sm:mt-36 border-t border-t-gray-300 px-5  lg:px-20  h-52 lg:h-auto">
+                <div className="flex lg:flex-row flex-col items-center font-light lg:text-md font-serif mt-5 gap-4">
                     <p>Spex &copy; {currentYear}, All Rights Reserved.</p>
 
                         <p>Implemented by  <Link to={'https://dercolbags.com'} className={`font-bold `} target={'_blank'}>
