@@ -66,7 +66,7 @@ const Problem = () => {
                     infinite: true,
                     fade: true,
                     autoplay: true,
-                    autoplaySpeed: 2000,
+                    autoplaySpeed: 6000,
                     cssEase: "linear"
                 }
             },
@@ -78,7 +78,7 @@ const Problem = () => {
                     infinite: true,
                     fade: true,
                     autoplay: true,
-                    autoplaySpeed: 2000,
+                    autoplaySpeed: 6000,
                     cssEase: "linear"
                 }
             }
