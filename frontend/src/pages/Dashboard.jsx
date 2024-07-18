@@ -80,6 +80,9 @@ function Dashboard() {
                     <h1 className="text-5xl font-bold capitalize mb-2">Welcome, {name} 👋</h1>
                     <p className="text-xl">Good to see you boss</p>
                 </div>
+
+                <div className={`flex gap-5`}>
+
                 <button
                     onClick={downloadCSV}
                     className="bg-green-700 h-[45px] text-white font-bold py-2 px-2 rounded mt-4 ml-4 flex items-center gap-3"
@@ -91,6 +94,7 @@ function Dashboard() {
                 >
                     Vendor Data <AiFillFileExcel size={20} />
                 </button>
+                </div>
             </div>
             <div className="w-[90%] min-h-screen py-5 ">
 
