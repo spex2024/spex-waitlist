@@ -10,20 +10,21 @@ import {UserContext} from "../context/userContext.jsx";
 import {Tab, Tabs} from "@nextui-org/react";
 import VendorFeedback from "../components/VendorFeedback.jsx";
 import {VendorContext} from "../context/VendorContext.jsx";
+import logout from "../components/Logout.jsx";
 
 function Dashboard() {
     const { content } = useContext(FeedbackContext);
     const {vendor} = useContext(VendorContext)
-    // const { profile} = Fetch()
-    //
+    const { profile} = Fetch()
+
     // const handleLogout =  () => {
     //     logout();
     // };
+    //
     const {userInfo} = useContext(UserContext)
-    // useEffect(() => {
-    //     profile();
+    // useEffect(async () => {
+    //     await profile();
     // }, []);
-
     const {name , username ,role} = userInfo;
 
     const downloadCSV = () => {
