@@ -7,6 +7,7 @@ import Logout from '../components/Logout.jsx';
 import { FeedbackContext } from '../context/FeedbackContext.jsx';
 import Fetch from "../hooks/Fetch.jsx";
 import {UserContext} from "../context/userContext.jsx";
+import {Tab, Tabs} from "@nextui-org/react";
 
 function Dashboard() {
     const { content } = useContext(FeedbackContext);
@@ -61,8 +62,18 @@ function Dashboard() {
                     Download CSV <AiFillFileExcel size={20} />
                 </button>
             </div>
-            <div className="w-[90%] min-h-screen py-5">
+            <div className="w-[90%] min-h-screen py-5 ">
+
+                <Tabs aria-label="Options">
+                    <Tab key="user" title="User Feedback">
+
                 <Feedback />
+                    </Tab>  <Tab key="vendor" title="Vendor Feedback">
+
+                <Feedback />
+                    </Tab>
+
+                </Tabs>
             </div>
         </div>
     );

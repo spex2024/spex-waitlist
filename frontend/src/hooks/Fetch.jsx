@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
 import {UserContext} from "../context/userContext.jsx";
 import {FeedbackContext} from "../context/FeedbackContext.jsx";
+import {VendorContext} from "../context/VendorContext.jsx";
 // import {UserContext} from "../context/userContext.jsx";
 // import {PostContext} from "../context/post.jsx";
 
@@ -13,6 +14,7 @@ export const Fetch = () => {
 
     const {setUserInfo} = useContext(UserContext)
     const {setContent} = useContext(FeedbackContext)
+    const {setVendor} = useContext(VendorContext)
 
     const register = async (formdata) => {
         const response = await fetch(`https://spex-backend.vercel.app/api/register`, {
@@ -189,6 +191,27 @@ export const Fetch = () => {
         }
     };
 
+
+    const getVendor =  async () => {
+        try {
+            const response = await fetch(`https://spex-backend.vercel.app/api/vendor`, {
+
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+
+                setVendor(data)
+                // Log or handle the profile data as needed
+            } else {
+
+            }
+        } catch (error) {
+            console.error("Error fetching vendor:", error);
+            // Handle any network errors or exceptions
+        }
+    };
+
     const deleteFeedback = async (id) => {
         try {
             const response = await fetch(`https://spex-backend.vercel.app/api/feedback/${id}`, {
@@ -197,7 +220,24 @@ export const Fetch = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                getFeedback();
+                await getFeedback();
+            } else {
+                console.error("Feedback deletion failed:", response.statusText);
+                // Handle non-ok responses, e.g., show an error message to the user
+            }
+        } catch (error) {
+            console.error("Error deleting feedback:", error);
+            // Handle network errors or other exceptions
+        }
+    }; const deleteVendor= async (id) => {
+        try {
+            const response = await fetch(`https://spex-backend.vercel.app/api/vendor/${id}`, {
+                method: 'DELETE',
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                await getVendor();
             } else {
                 console.error("Feedback deletion failed:", response.statusText);
                 // Handle non-ok responses, e.g., show an error message to the user
@@ -210,7 +250,7 @@ export const Fetch = () => {
 
 
 
-    return { register, login, profile , logout ,createFeedback ,getFeedback,error , deleteFeedback , updateFeedback};
+    return { register, login, profile , logout ,createFeedback ,getFeedback,error , deleteFeedback , updateFeedback,getVendor ,deleteVendor};
 };
 
 export default Fetch;

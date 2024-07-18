@@ -5,6 +5,7 @@ import './index.css'
 import { UserContextProvider} from "./context/userContext.jsx";
 import {FeedbackContextProvider} from "./context/FeedbackContext.jsx";
 import {NextUIProvider} from "@nextui-org/react";
+import { VendorContextProvider} from "./context/VendorContext.jsx";
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -12,7 +13,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <NextUIProvider>
       <UserContextProvider>
           <FeedbackContextProvider>
-          <App />
+              <VendorContextProvider>
+
+                <App />
+              </VendorContextProvider>
           </FeedbackContextProvider>
       </UserContextProvider>
       </NextUIProvider>

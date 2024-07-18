@@ -46,7 +46,8 @@ function App() {
             ) : (
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/dashboard" element={<ProtectedRoute element={Dashboard} />} />
+                    {/*<Route path="/dashboard" element={<ProtectedRoute element={Dashboard} />} />*/}
+                    <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/public" element={<HomePublic />} />
                     <Route path="/spex" element={<Register />} />
