@@ -118,6 +118,7 @@ export const Fetch = () => {
             console.log(formData)
             if (response.ok) {
                 const feedback = await response.json();
+
                 navigate('/');
 
             }

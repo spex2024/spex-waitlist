@@ -1,6 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Fetch from "../hooks/Fetch.jsx";
+import toast from "react-hot-toast";
+
 
 
 const ActionForm = () => {
@@ -10,9 +12,31 @@ const ActionForm = () => {
 
     const onSubmit =  async  data => {
       const response = await createFeedback(data)
-        console.log(response.data);
-    };
-       const input =" w-full text-sm px-4 py-3 outline-double outline-1  outline-[#333] placeholder-gray-500   focus:outline-green-600  focus:outline-2";
+        if (response.status === 200) {
+        toast.success('Thank you for joining the waitlist! 🎉 Check your email for further updates if provided.', {
+            icon: '👏',
+            iconSize: '3rem',
+            duration: 3000,
+            style: {
+                border: '2px solid #4caf50',
+                padding: '16px',
+                color: '#4caf50',
+                fontWeight: 'light',
+                fontSize: '15px',
+                background: '#fff',
+                width: '900px',
+                borderRadius: '8px',
+                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+            },
+        });
+          reset()
+        }
+
+
+
+    }
+
+        const input =" w-full text-sm px-4 py-3 outline-double outline-1  outline-[#333] placeholder-gray-500   focus:outline-green-600  focus:outline-2";
        const error = "text-red-500 text-sm font-light font-myriad";
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6">

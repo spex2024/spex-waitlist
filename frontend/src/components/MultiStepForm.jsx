@@ -85,12 +85,20 @@ const MultiStepForm = ({toggleDrawer}) => {
             console.log('Submitting step 1 data:', data);
              await axios.post('https://spex-backend.vercel.app/api/create', data);
 
-            toast('Thanks for joining the waitlist', {
+            toast.success('Thank you for joining the waitlist! 🎉 Check your email for further updates .', {
                 icon: '👏',
+                iconSize: '3rem',
+                duration: 3000,
                 style: {
-                    borderRadius: '10px',
-                    background: '#333',
-                    color: '#fff',
+                    border: '2px solid #4caf50',
+                    padding: '16px',
+                    color: '#4caf50',
+                    fontWeight: 'light',
+                    fontSize: '15px',
+                    background: '#fff',
+                    width: '900px',
+                    borderRadius: '8px',
+                    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
                 },
             });
             setFormData(data);
@@ -115,7 +123,22 @@ const MultiStepForm = ({toggleDrawer}) => {
             });
 
             if (response.ok) {
-                toast.success('Thanks for the feedback!');
+                toast.success('Thank you for feedback! 🎉 Check your email for further updates .', {
+                    icon: '👏',
+                    iconSize: '3rem',
+                    duration: 3000,
+                    style: {
+                        border: '2px solid #4caf50',
+                        padding: '16px',
+                        color: '#4caf50',
+                        fontWeight: 'light',
+                        fontSize: '15px',
+                        background: '#fff',
+                        width: '900px',
+                        borderRadius: '8px',
+                        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+                    },
+                });
                 reset();
                 toggleDrawer()
 
