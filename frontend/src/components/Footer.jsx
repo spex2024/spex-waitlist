@@ -49,7 +49,7 @@ function Footer(props) {
 
         >
             <div className="w-full h-auto flex flex-col justify-center items-center   py-5">
-               <img src={bgImage} width={200}/>
+               <img src={bgImage} className={`lg:h-40 lg:w-40 w-40 h-40`}/>
                 <ul className="flex gap-5  flex-wrap justify-center">
                     {social.map((social) => (
                         <Link key={social.link} to={social.link} target={social.target}>
