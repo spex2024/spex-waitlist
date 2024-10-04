@@ -11,11 +11,11 @@ const Drawer = () => {
     return (
         <div className="text-center">
             <button
-                className="text-white bg-[#71bc44] rounded-full font-light  text-md px-5 py-2.5 mb-2 "
+                className="text-white bg-[#71bc44] rounded-full font-light  text-md px-5 py-2.5 mb-2 font-bold "
                 type="button"
                 onClick={toggleDrawer}
             >
-                Join the waitlist
+                Sign Up
             </button>
 
             <div
