@@ -37,7 +37,7 @@ const Drawer = () => {
                     </h1>
                     <p className={`font-light`}>
 
-                    Join the waitlist
+                    Sign Up
                     </p>
                 </h5>
                 <button

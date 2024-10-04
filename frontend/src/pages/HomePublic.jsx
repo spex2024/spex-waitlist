@@ -9,6 +9,7 @@ import Pilot from "../components/Pilot.jsx";
 import ApproachSection from "../components/OurApproach.jsx";
 import {Toaster} from "react-hot-toast";
 import Action from "../components/Action.jsx";
+import Plans from "@/components/Plans.jsx";
 
 
 function HomePublic(props) {
@@ -17,6 +18,7 @@ function HomePublic(props) {
           <Hero/>
             <About />
             <ApproachSection />
+            <Plans/>
             <Cta />
             <Pilot />
             <Partner />
