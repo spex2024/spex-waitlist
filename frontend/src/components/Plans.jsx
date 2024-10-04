@@ -23,7 +23,7 @@ export default function Component() {
             packs: 20,
             pricePerPack: 400,
             totalPrice: 4000,
-            features: ["10 staff members", "20 smart packs", "2 smart packs per staff", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
+            features: ["10 staff members", "20 smart packs", "2 smart packs per staff", "Access to SPEX platform", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
         },
         {
             name: "Silver",
@@ -31,7 +31,7 @@ export default function Component() {
             packs: 50,
             pricePerPack: 375,
             totalPrice: 9375,
-            features: ["25 staff members", "50 smart packs", "2 smart packs per staff", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
+            features: ["25 staff members", "50 smart packs", "2 smart packs per staff", "Access to SPEX platform","Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
         },
         {
             name: "Gold",
@@ -39,7 +39,7 @@ export default function Component() {
             packs: 100,
             pricePerPack: 350,
             totalPrice: 17500,
-            features: ["50 staff members", "100 smart packs", "2 smart packs per staff", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
+            features: ["50 staff members", "100 smart packs", "2 smart packs per staff", "Access to SPEX platform", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
         },
         {
             name: "Custom Solutions",
@@ -47,7 +47,7 @@ export default function Component() {
             packs: null,
             pricePerPack: null,
             totalPrice: null,
-            features: ["Flexible staff numbers", "Customized pack quantities", "Flexible payment plan", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
+            features: ["Flexible staff numbers", "Customized pack quantities", "Flexible payment plan","Access to SPEX platform","Pack customization", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
         },
     ]
 
