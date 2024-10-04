@@ -23,7 +23,7 @@ export default function Component() {
             packs: 20,
             pricePerPack: 400,
             totalPrice: 4000,
-            features: ["10 staff members", "20 meal packs", "2 packs per staff", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
+            features: ["10 staff members", "20 smart packs", "2 smart packs per staff", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
         },
         {
             name: "Silver",
@@ -31,7 +31,7 @@ export default function Component() {
             packs: 50,
             pricePerPack: 375,
             totalPrice: 9375,
-            features: ["25 staff members", "50 meal packs", "2 packs per staff", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
+            features: ["25 staff members", "50 smart packs", "2 smart packs per staff", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
         },
         {
             name: "Gold",
@@ -39,7 +39,7 @@ export default function Component() {
             packs: 100,
             pricePerPack: 350,
             totalPrice: 17500,
-            features: ["50 staff members", "100 meal packs", "2 packs per staff", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
+            features: ["50 staff members", "100 smart packs", "2 smart packs per staff", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
         },
         {
             name: "Custom Solutions",
@@ -56,7 +56,7 @@ export default function Component() {
             <Card className="w-full max-w-7xl bg-white shadow-2xl rounded-lg overflow-hidden">
                 <CardHeader className="p-6 bg-[#71bc44] text-white">
                     <CardTitle className="text-3xl font-bold flex items-center justify-between">
-                        <span>Spex Corporate Meal Pricing Plans</span>
+                        <span>Spex Enterprise Pricing Plans</span>
                     </CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
