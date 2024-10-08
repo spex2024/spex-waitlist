@@ -6,27 +6,35 @@ const accordionData = [
     {
         id: 'accordion-flush-body-1',
         step: 1,
-        title: 'Placing Orders on Spex Platform',
+        title: 'Smart Pack Delivery',
         content: [
-            'Enterprise clients and their users place take-out food orders from their preferred food vendors/restaurants on the SPEX platform, selecting the option for delivery in durable, reusable Smart packs.'
+            'At Spex, we deliver reusable food containers (Smartpacks) to restaurants / food Vendors on behalf of Enterprises.'
         ],
         image: 'reusable.png'
     },
     {
         id: 'accordion-flush-body-2',
         step: 2,
-        title: 'Smart Pack Delivery',
+        title: 'Placing Orders on Spex Platform',
         content: [
-            'Partnered couriers deliver the take-out meals in Smart packs to Enterprise users, ensuring a streamlined and eco-friendly delivery process.'
+            'Enterprises / Users access take-out meals on the Spex Platform from their preferred food vendors/restaurants.'
         ],
         image: 'restaurant.png'
     },
     {
         id: 'accordion-flush-body-3',
         step: 3,
+        title: 'Take-Out Orders by Vendors in Smartpacks',
+        content: [
+            'Restaurants/food Vendors prepare Take-out orders for Enterprises / Users in our Smartpacks'
+        ],
+        image: 'recycle.png'
+    }, {
+        id: 'accordion-flush-body-4',
+        step: 4,
         title: 'Returning Packs For Reuse',
         content: [
-            'Used Smart packs are picked up by partnered couriers and returned to the Spex Hygienic Center, where they are machine-washed, sterilized, and prepared for reuse by food vendors for Enterprise clients.'
+            'Food vendors deliver new take-out meals in exchange for used and cleaned Smartpacks from Users for Redistribution and Reuse..'
         ],
         image: 'recycle.png'
     }
