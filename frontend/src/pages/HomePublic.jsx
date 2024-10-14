@@ -10,6 +10,7 @@ import ApproachSection from "../components/OurApproach.jsx";
 import {Toaster} from "react-hot-toast";
 import Action from "../components/Action.jsx";
 import Plans from "@/components/Plans.jsx";
+import Feature from "@/components/Feature.jsx";
 
 
 function HomePublic(props) {
