@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import MultiStepForm from "./MultiStepForm.jsx";
+import {Link} from "react-router-dom";
 
 const Drawer = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -10,13 +11,16 @@ const Drawer = () => {
 
     return (
         <div className="text-center">
-            <button
-                className="text-white bg-[#71bc44] rounded-full  text-md px-10 py-2.5 mb-2 font-bold "
-                type="button"
-                onClick={toggleDrawer}
-            >
-                Sign Up
-            </button>
+            <Link to={'https://main.spexafrica.app'}>
+                <button
+                    className="text-white bg-[#71bc44] rounded-full  text-md px-10 py-2.5 mb-2 font-bold "
+                    type="button"
+                    // onClick={toggleDrawer}
+                >
+                    Sign Up
+                </button>
+            </Link>
+
 
             <div
                 id="drawer-right-example"
