@@ -75,7 +75,7 @@ export default function Component() {
             <Card className="w-full max-w-7xl bg-white shadow-2xl rounded-lg overflow-hidden">
                 <CardHeader className="p-6 bg-[#71bc44] text-white">
                     <CardTitle className="text-3xl font-bold flex items-center justify-between">
-                        <span>Spex Corporate Meal Pricing Plans</span>
+                        <span>SPEX Enterprise Model Pricing Plans</span>
                     </CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
