@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin, ExternalLink } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
 
 const social = [
@@ -43,11 +43,16 @@ export default function Footer() {
     return (
         <footer className="bg-white text-gray-600">
             <div className="container mx-auto px-4 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div className="space-y-6">
-                        <img src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1722177650/spex_logo-03_png_dui5ur.png" alt="Spex Logo" className="h-24 w-auto" />
+                        <Image
+                            src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1722177650/spex_logo-03_png_dui5ur.png"
+                            alt="Spex Logo"
+                            width={150}
+                            height={96}
+                            className="w-auto h-24"
+                        />
                         <p className="text-sm max-w-md">
-
                             SPEX is a meal marketplace that leverages a web platform/app to connect food vendors with enterprises and users seeking sustainable food packaging.
                         </p>
                         <div className="flex space-x-4">
@@ -92,17 +97,21 @@ export default function Footer() {
                         <h3 className="text-lg font-semibold mb-6 text-[#71bc44]">Contact Us</h3>
                         <ul className="space-y-4">
                             <li className="flex items-center">
-                                <Mail className="h-5 w-5 mr-3 text-[#71bc44]" />
-                                <a href="mailto:hello@spexafrica.app" className="hover:text-[#71bc44] transition-colors duration-300">hello@spexafrica.app</a>
-                                <a href="mailto:sales@spexafrica.app" className="hover:text-[#71bc44] transition-colors duration-300">sales@spexafrica.app</a>
+                                <Mail className="h-5 w-5 mr-3 text-[#71bc44] flex-shrink-0" />
+                                <div className="flex flex-col">
+                                    <a href="mailto:hello@spexafrica.app" className="hover:text-[#71bc44] transition-colors duration-300">hello@spexafrica.app</a>
+                                    <a href="mailto:sales@spexafrica.app" className="hover:text-[#71bc44] transition-colors duration-300">sales@spexafrica.app</a>
+                                </div>
                             </li>
                             <li className="flex items-center">
-                                <Phone className="h-5 w-5 mr-3 text-[#71bc44]" />
-                                <a href="tel:+233302515422" className="hover:text-[#71bc44] transition-colors duration-300"> +233 302 515 422 </a> |
-                                <a href="tel:+233530091529" className="hover:text-[#71bc44] transition-colors duration-300"> +233 530 091 529 </a>
+                                <Phone className="h-5 w-5 mr-3 text-[#71bc44] flex-shrink-0" />
+                                <div className="flex flex-col">
+                                    <a href="tel:+233302515422" className="hover:text-[#71bc44] transition-colors duration-300">+233 302 515 422</a>
+                                    <a href="tel:+233530091529" className="hover:text-[#71bc44] transition-colors duration-300">+233 530 091 529</a>
+                                </div>
                             </li>
                             <li className="flex items-start">
-                                <MapPin className="h-5 w-5 mr-3 mt-1 text-[#71bc44]" />
+                                <MapPin className="h-5 w-5 mr-3 mt-1 text-[#71bc44] flex-shrink-0" />
                                 <address className="not-italic">
                                     5 Paterson Ave. Adenta Ritz,<br />
                                     Accra, Ghana
