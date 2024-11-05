@@ -235,12 +235,6 @@ export default function Plans() {
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <Button
-                                                                        className="mt-6 w-full bg-[#71bc44] hover:bg-[#5a9636] text-white px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300"
-                                                                        onClick={toggleModal}
-                                                                    >
-                                                                        Close
-                                                                    </Button>
                                                                 </div>
                                                             </DialogContent>
                                                         </Dialog>
