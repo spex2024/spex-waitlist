@@ -3,10 +3,10 @@
 import { useState, useRef } from 'react'
 import Image from "next/image"
 import Link from "next/link"
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
-import { Play, Pause, X, ArrowRight, Menu, ChevronDown, Leaf, DollarSign, Clock, Users } from "lucide-react"
+import { Play, Pause, X, ArrowRight, CheckCircle, Menu, ChevronDown } from "lucide-react"
 import { useInView } from 'react-intersection-observer'
 
 export default function Hero() {
@@ -17,10 +17,6 @@ export default function Hero() {
         triggerOnce: true,
         threshold: 0.1,
     })
-
-    const { scrollY } = useScroll()
-    const y2 = useTransform(scrollY, [0, 300], [0, -50])
-    const opacity = useTransform(scrollY, [0, 300], [1, 0])
 
     const toggleVideo = () => {
         setIsVideoOpen(!isVideoOpen)
@@ -40,218 +36,204 @@ export default function Hero() {
     }
 
     const features = [
-        {
-            icon: <Leaf className="w-6 h-6" />,
-            title: "Eco-friendly",
-            description: "Sustainable packaging"
-        },
-        {
-            icon: <Clock className="w-6 h-6" />,
-            title: "Time-saving",
-            description: "Efficient meal planning"
-        },
-        {
-            icon: <DollarSign className="w-6 h-6" />,
-            title: "Cost-effective",
-            description: "Budget-friendly solutions"
-        },
-        {
-            icon: <Users className="w-6 h-6" />,
-            title: "Team-oriented",
-            description: "Perfect for groups"
-        }
+        "Eco-friendly packaging",
+        "Simplified meal planning",
+        "Cost-effective solutions",
+        "Convenient for teams"
     ]
 
-    const navLinks = ["Home", "About", "Problem", "Solution", "Pilots", "Approach", "Plans"]
+    const floatingTags = [
+        { text: "Eco-friendly", x: -35, y: -40, color: "#71bc44" },
+        { text: "Reusable", x: 35, y: -30, color: "#c7b730" },
+        { text: "Time-saving", x: -30, y: 35, color: "#ff6b6b" },
+        { text: "Cost-effective", x: 20, y: 40, color: "#4ecdc4" },
+    ]
 
     return (
-        <div className="relative w-full min-h-screen overflow-hidden bg-gradient-to-br from-[#e8f5e9] to-white">
-            {/* Animated background */}
-            <div className="absolute inset-0 overflow-hidden">
-                <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#71bc4410" fillOpacity="1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                        <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
-                        M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,128C672,128,768,160,864,165.3C960,171,1056,149,1152,149.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
-                        M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
-                    </path>
-                </svg>
-            </div>
-
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0iI2ZmZmZmZjEwIj48L3JlY3Q+CjxwYXRoIGQ9Ik0zNi4zNCAxMy4yNWwtOC4wOSA4LjA5TDIwLjE2IDEzLjI1IDEzLjI1IDIwLjE2bDguMDkgOC4wOS04LjA5IDguMDkgNi45MSA2LjkxIDguMDktOC4wOSA4LjA5IDguMDkgNi45MS02LjkxLTguMDktOC4wOSA4LjA5LTguMDl6IiBmaWxsPSIjNzFiYzQ0MTAiPjwvcGF0aD4KPC9zdmc+')] bg-repeat" />
-
-            {/* Floating elements */}
-            <motion.div
-                className="absolute top-20 left-10 w-20 h-20 rounded-full bg-[#71bc44]/10"
-                animate={{ y: [0, 20, 0] }}
-                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-            />
-            <motion.div
-                className="absolute bottom-40 right-20 w-16 h-16 rounded-full bg-[#c7b730]/10"
-                animate={{ y: [0, -15, 0] }}
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
-            />
-
-            {/* Leaf decorations */}
-            <motion.div
-                className="absolute top-10 right-10 text-[#71bc44]/20"
-                animate={{ rotate: [0, 10, 0] }}
-                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-            >
-                <Leaf size={60} />
-            </motion.div>
-            <motion.div
-                className="absolute bottom-10 left-10 text-[#c7b730]/20"
-                animate={{ rotate: [0, -10, 0] }}
-                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }}
-            >
-                <Leaf size={40} />
-            </motion.div>
-
-            <div className="relative z-10 container mx-auto px-4 py-8">
-                <header className="flex justify-between items-center mb-8 bg-white/80 backdrop-blur-sm rounded-full py-2 px-4 shadow-lg W-[60%]">
-                    <motion.div
-                        initial={{scale: 0.8, opacity: 0}}
-                        animate={{scale: 1, opacity: 1}}
-                        transition={{duration: 0.5}}
-                    >
-                        <Image
-                            src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1722177650/spex_logo-03_png_dui5ur.png"
-                            alt="SPEX Logo"
-                            width={50}
-                            height={40}
-                        />
-                    </motion.div>
-                    <Button variant="ghost" size="icon" className="lg:hidden">
-                        <Menu className="h-6 w-6"/>
-                    </Button>
-                    <nav className="hidden lg:flex space-x-1">
-                        {navLinks.map((item) => (
-                            <Link key={item} href="#" className="text-[#71bc44] hover:text-white hover:bg-[#71bc44] transition-colors text-sm font-medium px-3 py-1 rounded-full">
-                                {item}
-                            </Link>
-                        ))}
-                    </nav>
-                </header>
-
-                <div className="flex flex-col lg:flex-row items-center gap-12 mt-12">
-                    <motion.div
-                        initial={{opacity: 0, x: -50}}
-                        animate={{opacity: 1, x: 0}}
-                        transition={{duration: 0.8}}
-                        className="lg:w-1/2 space-y-8"
-                    >
-                        <h1 className="text-5xl font-black tracking-tight sm:text-6xl lg:text-7xl">
-                            <span className="bg-gradient-to-r from-[#71bc44] to-[#c7b730] text-transparent bg-clip-text">
-                                Corporate lunch in
-                                <br />
-                                Reusable Packs
-                            </span>
-                        </h1>
-                        <p className="text-xl text-gray-600 sm:text-2xl leading-relaxed">
-                            SPEX simplifies meal planning for your{" "}
-                            <span className="font-bold text-2xl uppercase sm:text-3xl text-[#71bc44]">team</span>.
-                            <br />
-                            Saves you time, cost and plastic waste.
-                        </p>
-                        <div className="flex flex-wrap gap-4">
-                            <Button asChild size="lg" className="bg-[#71bc44] hover:bg-[#71bc44]/90 text-white text-lg px-6 py-3 rounded-full">
-                                <Link href="https://spexafrica.app" className="flex items-center">
-                                    Get Started <ArrowRight className="ml-2 h-5 w-5"/>
-                                </Link>
-                            </Button>
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                className="border-[#71bc44] text-[#71bc44] hover:bg-[#71bc44]/10 text-lg px-6 py-3 rounded-full"
+        <div className="relative w-full min-h-screen overflow-hidden bg-white pb-10">
+            <div className="absolute inset-0 bg-grid-[#71bc44]/[0.02] bg-[size:50px_50px]" />
+            <div className="relative z-10 flex flex-col lg:flex-row min-h-screen">
+                <div className="w-full lg:w-1/2 lg:px-20 px-2 py-8 lg:py-12 flex flex-col">
+                    <header className="w-full mb-8">
+                        <div className="flex justify-between items-center">
+                            <motion.div
+                                initial={{scale: 0.8, opacity: 0}}
+                                animate={{scale: 1, opacity: 1}}
+                                transition={{duration: 0.5}}
                             >
-                                <Link href="https://spexafrica.site" className="flex items-center">
-                                    Explore Demo <ArrowRight className="ml-2 h-5 w-5"/>
-                                </Link>
+                                <Image
+                                    src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1722177650/spex_logo-03_png_dui5ur.png"
+                                    alt="SPEX Logo"
+                                    width={90}
+                                    height={60}
+                                />
+                            </motion.div>
+                            <Button variant="ghost" size="icon" className="lg:hidden">
+                                <Menu className="h-6 w-6"/>
                             </Button>
+                            <nav className="hidden lg:flex space-x-4">
+                                <Link href="#"
+                                      className="text-[#71bc44] hover:text-[#c7b730] transition-colors">Home</Link>
+                                <Link href="#"
+                                      className="text-[#71bc44] hover:text-[#c7b730] transition-colors">About</Link>
+                                <Link href="#"
+                                      className="text-[#71bc44] hover:text-[#c7b730] transition-colors">Services</Link>
+                                <Link href="#"
+                                      className="text-[#71bc44] hover:text-[#c7b730] transition-colors">Contact</Link>
+                            </nav>
                         </div>
-                    </motion.div>
+                    </header>
 
+                    <main className="flex-grow flex flex-col justify-center px-16 ">
+                        <motion.div
+                            initial={{opacity: 0, y: 20}}
+                            animate={{opacity: 1, y: 0}}
+                            transition={{duration: 0.8}}
+                            className="space-y-8"
+                        >
+                            <motion.h1
+                                initial={{opacity: 0, y: 20}}
+                                animate={{opacity: 1, y: 0}}
+                                transition={{duration: 0.8, delay: 0.3}}
+                                className="text-5xl font-black tracking-tight sm:text-6xl lg:text-7xl"
+                            >
+                                <span
+                                    className="bg-gradient-to-r from-[#71bc44] to-[#c7b730] text-transparent bg-clip-text">
+                                    Corporate lunch in
+                                    <br/>
+                                    Reusable Pack
+                                </span>
+                            </motion.h1>
+                            <motion.p
+                                initial={{opacity: 0, y: 20}}
+                                animate={{opacity: 1, y: 0}}
+                                transition={{duration: 0.8, delay: 0.4}}
+                                className="text-xl text-gray-600 sm:text-2xl leading-relaxed"
+                            >
+                                SPEX simplifies meal planning for your{" "}
+                                <span className="font-bold text-2xl uppercase sm:text-3xl text-[#71bc44]">team</span>.
+                                Save time, reduce costs, and eliminate plastic waste.
+                            </motion.p>
+                            <motion.div
+                                initial={{opacity: 0, y: 20}}
+                                animate={{opacity: 1, y: 0}}
+                                transition={{duration: 0.8, delay: 0.5}}
+                                className="flex flex-col sm:flex-row gap-4"
+                            >
+                                <Button asChild size="lg" className="bg-[#71bc44] hover:bg-[#71bc44]/90 text-white">
+                                    <Link href="https://main.spexafrica.app" className="flex items-center">
+                                        Get Started <ArrowRight className="ml-2 h-4 w-4"/>
+                                    </Link>
+                                </Button>
+                                <Button asChild variant="outline" size="lg"
+                                        className="border-[#71bc44] text-[#71bc44] hover:bg-[#71bc44]/10">
+                                    <Link href="https://spexafrica.site">
+                                        Explore Demos
+                                    </Link>
+                                </Button>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{opacity: 0, y: 20}}
+                                animate={{opacity: 1, y: 0}}
+                                transition={{duration: 0.8, delay: 0.6}}
+                                className="mt-12"
+                            >
+                                <h2 className="text-2xl font-bold mb-6 text-[#c7b730]">Why Choose SPEX?</h2>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    {features.map((feature, index) => (
+                                        <motion.div
+                                            key={index}
+                                            initial={{opacity: 0, y: 10}}
+                                            animate={{opacity: 1, y: 0}}
+                                            transition={{duration: 0.5, delay: 0.1 * index}}
+                                            className="flex items-center space-x-3 bg-[#71bc44]/5 rounded-lg p-3 shadow-sm"
+                                        >
+                                            <CheckCircle className="text-[#71bc44] h-5 w-5 flex-shrink-0"/>
+                                            <span className="text-sm font-medium text-gray-700">{feature}</span>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        </motion.div>
+
+                    </main>
                     <motion.div
-                        ref={ref}
-                        initial={{opacity: 0, scale: 0.9}}
-                        animate={inView ? {opacity: 1, scale: 1} : {}}
-                        transition={{duration: 0.8, delay: 0.2}}
-                        className="lg:w-1/2 relative aspect-square rounded-full overflow-hidden shadow-2xl border-8 border-[#e8f5e9]"
+                        initial={{opacity: 0, y: 20}}
+                        animate={{opacity: 1, y: 0}}
+                        transition={{duration: 0.8, delay: 0.6}}
+                        className=""
                     >
+                        <Link
+                            href="#about"
+                            className="flex flex-col items-center text-black hover:text-[#c7b730] transition-colors"
+                            aria-label="Scroll to About section"
+                        >
+                            <span className="mb-2 text-sm font-medium">Explore More</span>
+                            <ChevronDown className="animate-bounce"/>
+                        </Link>
+                    </motion.div>
+                </div>
+
+                <motion.div
+                    ref={ref}
+                    initial={{opacity: 0, scale: 0.9}}
+                    animate={inView ? {opacity: 1, scale: 1} : {}}
+                    transition={{duration: 0.8, delay: 0.2}}
+                    className="w-full lg:w-1/2 h-[50vh] lg:h-screen relative group"
+                >
+                    <div className="absolute inset-0">
                         <Image
                             src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541343/hero-1_raxkds.jpg"
-                            alt="SPEX reusable lunch packs"
+                            alt="Video thumbnail"
                             layout="fill"
                             objectFit="cover"
                             className="w-full h-full"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                        <Button
-                            variant="ghost"
-                            size="icon"
-                            className="absolute inset-0 m-auto w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all duration-300"
-                            onClick={toggleVideo}
-                            aria-label="Play demo video"
-                        >
-                            <motion.div
-                                animate={{
-                                    scale: [1, 1.2, 1],
-                                    opacity: [1, 0.8, 1],
-                                }}
-                                transition={{
-                                    duration: 2,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                }}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:scale-110 transition-all duration-300"
+                                onClick={toggleVideo}
+                                aria-label="Play video"
                             >
                                 <Play className="w-10 h-10" />
-                            </motion.div>
-                        </Button>
+                            </Button>
+                        </div>
                         <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
                             <p className="text-white text-lg font-semibold">Discover SPEX</p>
                             <p className="text-white/80 text-sm">02:15</p>
                         </div>
-                    </motion.div>
-                </div>
 
-                <motion.div
-                    initial={{opacity: 0, y: 50}}
-                    animate={{opacity: 1, y: 0}}
-                    transition={{duration: 0.8, delay: 0.4}}
-                    className="mt-24"
-                >
-                    <h2 className="text-4xl font-bold mb-12 text-center text-[#71bc44]">Why Choose <span className="text-[#c7b730]">SPEX</span>?</h2>
-                    <div className="flex flex-wrap justify-center gap-6">
-                        {features.map((feature, index) => (
+                        {/* Floating tags */}
+                        {floatingTags.map((tag, index) => (
                             <motion.div
                                 key={index}
-                                initial={{opacity: 0, y: 20}}
-                                animate={{opacity: 1, y: 0}}
-
-                                transition={{duration: 0.5, delay: 0.1 * index}}
-                                className="flex items-center bg-white/80 backdrop-blur-sm rounded-full py-2 px-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-[#71bc44]/20 group"
+                                className="absolute text-white font-bold text-xs sm:text-sm md:text-base px-2 py-1 rounded-full shadow-lg"
+                                initial={{ opacity: 0, x: tag.x, y: tag.y }}
+                                animate={{
+                                    opacity: 1,
+                                    x: [tag.x - 5, tag.x + 5, tag.x - 5],
+                                    y: [tag.y - 5, tag.y + 5, tag.y - 5],
+                                }}
+                                transition={{
+                                    delay: index * 0.2,
+                                    duration: 4,
+                                    repeat: Infinity,
+                                    repeatType: "reverse"
+                                }}
+                                style={{
+                                    left: `${50 + tag.x}%`,
+                                    top: `${50 + tag.y}%`,
+                                    backgroundColor: tag.color,
+                                }}
                             >
-                                <div className="w-10 h-10 rounded-full bg-[#71bc44]/10 flex items-center justify-center text-[#71bc44] group-hover:bg-[#71bc44] group-hover:text-white transition-colors duration-300 mr-3">
-                                    {feature.icon}
-                                </div>
-                                <div>
-                                    <h3 className="text-sm font-semibold text-[#71bc44] group-hover:text-[#c7b730] transition-colors duration-300">{feature.title}</h3>
-                                    <p className="text-xs text-gray-600 group-hover:text-gray-800 transition-colors duration-300">{feature.description}</p>
-                                </div>
+                                {tag.text}
                             </motion.div>
                         ))}
                     </div>
-                </motion.div>
-
-                <motion.div style={{ y: y2, opacity }} className="mt-24 text-center">
-                    <Link
-                        href="#about"
-                        className="inline-flex flex-col items-center text-[#71bc44] hover:text-[#c7b730] transition-colors"
-                        aria-label="Scroll to About section"
-                    >
-                        <span className="mb-2 text-lg font-medium">Explore More</span>
-                        <ChevronDown className="animate-bounce w-8 h-8" />
-                    </Link>
                 </motion.div>
             </div>
 
