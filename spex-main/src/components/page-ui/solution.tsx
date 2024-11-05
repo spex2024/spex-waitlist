@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react"
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import {useEffect} from "react";
+import {useCallback, useEffect} from "react";
 
 type CardData = {
     id: string
@@ -58,19 +58,22 @@ export default function Solution() {
     const scrollPrev = React.useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])
     const scrollNext = React.useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
 
-    const onSelect = React.useCallback(() => {
-        if (!emblaApi) return
-        setCurrentIndex(emblaApi.selectedScrollSnap())
-    }, [emblaApi, setCurrentIndex])
+    const onSelect = useCallback((): void => { // Explicitly define the return type as void
+        if (!emblaApi) return;
+        setCurrentIndex(emblaApi.selectedScrollSnap());
+    }, [emblaApi]);
 
-    // @ts-ignore
     useEffect(() => {
-        if (!emblaApi) return
-        onSelect()
-        setScrollSnaps(emblaApi.scrollSnapList())
-        emblaApi.on("select", onSelect)
-        return () => emblaApi.off("select", onSelect)
-    }, [emblaApi, onSelect])
+        if (!emblaApi) return;
+
+        onSelect();
+        setScrollSnaps(emblaApi.scrollSnapList());
+
+        emblaApi.on("select", onSelect);
+        return (): void => { // Explicitly return void in cleanup
+            emblaApi.off("select", onSelect);
+        };
+    }, [emblaApi, onSelect]);
 
     useEffect(() => {
         if (!emblaApi || !isPlaying) return
