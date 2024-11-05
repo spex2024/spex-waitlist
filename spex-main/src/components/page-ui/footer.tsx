@@ -113,7 +113,7 @@ export default function Footer() {
                     <div>
                         <h3 className="text-lg font-semibold mb-6 text-[#71bc44]">Our Mission</h3>
                         <p className="text-sm">
-                            At Spex, we're committed to transforming the local food industry through innovative technology and sustainable practices. Our goal is to empower vendors, satisfy customers, and contribute to a thriving food ecosystem across Africa.
+                            At Spex, we are committed to transforming the local food industry through innovative technology and sustainable practices. Our goal is to empower vendors, satisfy customers, and contribute to a thriving food ecosystem across Africa.
                         </p>
                     </div>
                 </div>

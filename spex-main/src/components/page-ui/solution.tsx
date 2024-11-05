@@ -92,7 +92,7 @@ export default function Solution() {
             </div>
             <div className="relative overflow-hidden" ref={emblaRef}>
                 <div className="flex">
-                    {accordionData.map((card, index) => (
+                    {accordionData.map((card) => (
                         <div key={card.id}
                              className="flex-[0_0_100%] min-w-0 sm:flex-[0_0_50%] md:flex-[0_0_33.33%] pl-4">
                             <Card className="h-full overflow-hidden group">

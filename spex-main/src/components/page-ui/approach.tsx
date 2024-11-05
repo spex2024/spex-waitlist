@@ -83,7 +83,7 @@ export default function ApproachSection() {
                         <Card className="bg-white/5 backdrop-blur-sm border-none shadow-xl">
                             <CardContent className="p-6">
                                 <Accordion type="single" collapsible className="w-full">
-                                    {accordionData.map((item, index) => (
+                                    {accordionData.map((item) => (
                                         <AccordionItem value={item.id} key={item.id} className="border-b border-white/10">
                                             <AccordionTrigger className="text-left hover:no-underline">
                                                 <div className="flex items-center">
