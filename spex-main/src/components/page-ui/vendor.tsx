@@ -5,11 +5,11 @@ import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
+import {Input} from "@/components/ui/input";
 
 const formSchema = z.object({
     name: z.string().min(1, { message: "Full name is required" }),
