@@ -40,7 +40,7 @@ export default function Vendor() {
                         Ready to Grow Your Food Business with SPEX?
                     </h2>
                     <p className="text-xl text-gray-100 max-w-2xl">
-                        Join our exclusive network and connect with enterprises seeking sustainable meal packaging solutions. It's time to expand your reach and boost your sales!
+                        Join our exclusive network and connect with enterprises seeking sustainable meal packaging solutions. It is time to expand your reach and boost your sales!
                     </p>
                     <motion.button
                         whileHover={{ scale: 1.05 }}
