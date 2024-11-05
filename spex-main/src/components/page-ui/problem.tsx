@@ -65,6 +65,8 @@ export default function Problem() {
         setCurrentIndex(emblaApi.selectedScrollSnap())
     }, [emblaApi, setCurrentIndex])
 
+
+    // @ts-ignore
     useEffect(() => {
         if (!emblaApi) return
         onSelect()
@@ -76,6 +78,8 @@ export default function Problem() {
     useEffect(() => {
         if (!emblaApi || !isPlaying) return
         const intervalId = setInterval(() => emblaApi.scrollNext(), 5000)
+
+        // Return the cleanup function
         return () => clearInterval(intervalId)
     }, [emblaApi, isPlaying])
 

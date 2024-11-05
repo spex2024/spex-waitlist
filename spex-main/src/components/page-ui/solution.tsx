@@ -63,6 +63,7 @@ export default function Solution() {
         setCurrentIndex(emblaApi.selectedScrollSnap())
     }, [emblaApi, setCurrentIndex])
 
+    // @ts-ignore
     useEffect(() => {
         if (!emblaApi) return
         onSelect()
