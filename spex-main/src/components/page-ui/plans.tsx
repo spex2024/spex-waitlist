@@ -153,9 +153,22 @@ export default function Plans() {
                                                                 <DialogHeader>
                                                                     <DialogTitle>Contact Sales</DialogTitle>
                                                                 </DialogHeader>
-                                                                <div className="py-4">
-                                                                    <p className="flex items-center mb-2"><Phone className="mr-2" /> Phone: +233 302 515 422</p>
-                                                                    <p className="flex items-center"><Mail className="mr-2" /> Email: hello@spexafrica.app</p>
+                                                                <div
+                                                                    className="bg-white rounded-lg p-8 max-w-md w-full">
+                                                                    <div className="space-y-4">
+                                                                        <div className="flex items-center space-x-2">
+                                                                            <Phone className="text-[#71bc44]"/>
+                                                                            <p className="text-[#5a6c7d]">(233) 302 515
+                                                                                422 | 530 091 529</p>
+                                                                        </div>
+                                                                        <div className="flex items-center space-x-2">
+                                                                            <Mail className="text-[#71bc44]"/>
+                                                                            <div>
+                                                                                <p className="text-[#5a6c7d]">hello@spexafrica.app</p>
+                                                                                <p className="text-[#5a6c7d]">sales@spexafrica.app</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </DialogContent>
                                                         </Dialog>
@@ -299,9 +312,22 @@ export default function Plans() {
                                                                 <DialogHeader>
                                                                     <DialogTitle>Contact Sales</DialogTitle>
                                                                 </DialogHeader>
-                                                                <div className="py-4">
-                                                                    <p className="flex items-center mb-2"><Phone className="mr-2" /> Phone: +233 302 515 422</p>
-                                                                    <p className="flex items-center"><Mail className="mr-2" /> Email: hello@spexafrica.app</p>
+                                                                <div
+                                                                    className="bg-white rounded-lg p-8 max-w-md w-full">
+                                                                    <div className="space-y-4">
+                                                                        <div className="flex items-center space-x-2">
+                                                                            <Phone className="text-[#71bc44]"/>
+                                                                            <p className="text-[#5a6c7d]">(233) 302 515
+                                                                                422 | 530 091 529</p>
+                                                                        </div>
+                                                                        <div className="flex items-center space-x-2">
+                                                                            <Mail className="text-[#71bc44]"/>
+                                                                            <div>
+                                                                                <p className="text-[#5a6c7d]">hello@spexafrica.app</p>
+                                                                                <p className="text-[#5a6c7d]">sales@spexafrica.app</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </DialogContent>
                                                         </Dialog>
