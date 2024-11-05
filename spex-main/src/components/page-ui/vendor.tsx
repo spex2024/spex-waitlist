@@ -8,18 +8,24 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as z from 'zod'
 
-type FormData = {
-    name: string
-    email: string
-    business: string
-    phone: string
-    location: string
-}
+const formSchema = z.object({
+    name: z.string().min(1, { message: "Full name is required" }),
+    email: z.string().email({ message: "Invalid email address" }),
+    business: z.string().min(1, { message: "Business name is required" }),
+    phone: z.string().min(1, { message: "Phone number is required" }),
+    location: z.string().min(1, { message: "Location is required" }),
+})
+
+type FormData = z.infer<typeof formSchema>
 
 export default function Vendor() {
     const [isDialogOpen, setIsDialogOpen] = useState(false)
-    const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
+    const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+        resolver: zodResolver(formSchema)
+    })
 
     const onSubmit = (data: FormData) => {
         console.log(data)
@@ -36,11 +42,11 @@ export default function Vendor() {
                     transition={{ duration: 0.8 }}
                     className="space-y-8 z-10"
                 >
-                    <h2 className="text-5xl md:text-6xl font-extrabold leading-tight text-white">
+                    <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-white">
                         Ready to Grow Your Food Business with SPEX?
-                    </h2>
+                    </h1>
                     <p className="text-xl text-gray-100 max-w-2xl">
-                        Join our exclusive network and connect with enterprises seeking sustainable meal packaging solutions. It is time to expand your reach and boost your sales!
+                        Join our exclusive network and connect with enterprises seeking sustainable meal packaging solutions. It's time to expand your reach and boost your sales!
                     </p>
                     <motion.button
                         whileHover={{ scale: 1.05 }}
@@ -76,9 +82,9 @@ export default function Vendor() {
                         <p className="text-white text-3xl font-bold mb-4">
                             Spex is empowering <span className="bg-white text-[#71bc44] px-2 py-1 rounded-md">10,000 local food vendors</span>
                         </p>
-                        <h3 className="text-white text-5xl font-extrabold mb-6">
+                        <h2 className="text-white text-5xl font-extrabold mb-6">
                             Be Part of the Revolution!
-                        </h3>
+                        </h2>
                     </motion.div>
                 </div>
             </div>
@@ -96,7 +102,7 @@ export default function Vendor() {
                             <Label htmlFor="name">Full Name</Label>
                             <Input
                                 id="name"
-                                {...register("name", { required: "Full name is required" })}
+                                {...register("name")}
                                 aria-invalid={errors.name ? "true" : "false"}
                             />
                             {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
@@ -106,13 +112,7 @@ export default function Vendor() {
                             <Input
                                 id="email"
                                 type="email"
-                                {...register("email", {
-                                    required: "Email is required",
-                                    pattern: {
-                                        value: /\S+@\S+\.\S+/,
-                                        message: "Invalid email address",
-                                    },
-                                })}
+                                {...register("email")}
                                 aria-invalid={errors.email ? "true" : "false"}
                             />
                             {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
@@ -121,7 +121,7 @@ export default function Vendor() {
                             <Label htmlFor="business">Business Name</Label>
                             <Input
                                 id="business"
-                                {...register("business", { required: "Business name is required" })}
+                                {...register("business")}
                                 aria-invalid={errors.business ? "true" : "false"}
                             />
                             {errors.business && <p className="text-red-500 text-sm">{errors.business.message}</p>}
@@ -131,7 +131,7 @@ export default function Vendor() {
                             <Input
                                 id="phone"
                                 type="tel"
-                                {...register("phone", { required: "Phone number is required" })}
+                                {...register("phone")}
                                 aria-invalid={errors.phone ? "true" : "false"}
                             />
                             {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
@@ -140,7 +140,7 @@ export default function Vendor() {
                             <Label htmlFor="location">Location</Label>
                             <Input
                                 id="location"
-                                {...register("location", { required: "Location is required" })}
+                                {...register("location")}
                                 aria-invalid={errors.location ? "true" : "false"}
                             />
                             {errors.location && <p className="text-red-500 text-sm">{errors.location.message}</p>}
