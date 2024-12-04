@@ -21,7 +21,7 @@ export default function Plans() {
             totalPrice: 4000,
             sixMonthStaff: 100,
             sixMonthPacks: 200,
-            features: ["20 Smartpacks", "Access to SPEX platform", "Pack customization", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
+            features: ["20 Smartpacks", "Access to SPEX platform", "Pack customization", "Choose up to 3 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
         },
         {
             name: "Silver",
@@ -31,7 +31,7 @@ export default function Plans() {
             totalPrice: 9375,
             sixMonthStaff: 150,
             sixMonthPacks: 300,
-            features: ["50 Smartpacks", "Access to SPEX platform", "Pack customization", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
+            features: ["50 Smartpacks", "Access to SPEX platform", "Pack customization", "Choose up to 3 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
         },
         {
             name: "Gold",
@@ -41,7 +41,7 @@ export default function Plans() {
             totalPrice: 17500,
             sixMonthStaff: 200,
             sixMonthPacks: 400,
-            features: ["100 Smartpacks", "Access to SPEX platform", "Pack customization", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
+            features: ["100 Smartpacks", "Access to SPEX platform", "Pack customization", "Choose up to 3 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
         },
         {
             name: "Custom Solutions",
@@ -50,7 +50,7 @@ export default function Plans() {
             pricePerPack: null,
             totalPrice: null,
             sixMonthPacks: null,
-            features: ["Customized pack quantities", "Flexible payment plan", "Access to SPEX platform", "Pack customization", "Choose up to 2 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
+            features: ["Customized pack quantities", "Flexible payment plan", "Access to SPEX platform", "Pack customization", "Choose up to 3 vendors", "Email and phone support", "Bring your own vendor or choose from our platform"]
         },
     ]
 
