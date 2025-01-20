@@ -38,7 +38,7 @@ function Hero(props) {
                     className={`w-full text-black flex flex-col justify-center items-center space-y-5 mb-5 font-semi-bold lg:px-20 `}>
 
                     <h1 className={`font-black  text-4xl lg:text-8xl md:8xl capitalize font-myriad text-center `}>Corporate
-                        lunch in <br/> Reusable Packs
+                        Meal in <br/> Reusable Packs
                     </h1>
                     <p className={`text:xl lg:text-2xl font-semibold text-center `}>SPEX simplifies meal planning for your <span className={`font-black lg:text-3xl text-2xl uppercase`}>team</span> . <br/>Saves you time, cost and plastic waste.</p>
                 </div>
