@@ -92,7 +92,7 @@ export default function Hero() {
                             >
                                 <span
                                     className="bg-gradient-to-r from-[#71bc44] to-[#c7b730] text-transparent bg-clip-text">
-                                    Corporate lunch
+                                    Corporate Meal
                                     <br/>
                                     Reimagined
                                 </span>
