@@ -13,7 +13,7 @@ import Footer from "@/components/page-ui/footer";
 
 export default function Home() {
   return (
-      <div className=" w-full grid grid-cols-1 items-center justify-items-center min-h-screen  font-[family-name:var(--font-geist-sans)] ">
+      <div className=" w-full overflow-x-hidden font-[family-name:var(--font-geist-sans)] ">
 
         <Hero/>
         <SmartPackExchangeSection/>

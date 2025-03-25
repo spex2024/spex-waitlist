@@ -4,6 +4,7 @@ import React from 'react'
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { ArrowRight, Package, Zap, TrendingUp } from "lucide-react"
+import Link from "next/link";
 
 export default function CTA() {
     return (
@@ -28,13 +29,16 @@ export default function CTA() {
                         <p className="text-xl sm:text-2xl text-gray-300 mb-8">
                             Join us in shaping the future of packaging solutions. Sign up now and be at the forefront of innovation.
                         </p>
-                        <Button
-                            size="lg"
-                            className="bg-gradient-to-r from-[#71bc44] to-[#c7b730] text-[#1C2026] hover:from-[#62ad35] hover:to-[#b8a821] text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                        >
-                            Sign Up Now
-                            <ArrowRight className="ml-2 h-5 w-5" />
-                        </Button>
+                        <Link href="https://main.spexafrica.app/" target="_blank" rel="noopener noreferrer">
+                            <Button
+                                size="lg"
+                                className="bg-gradient-to-r from-[#71bc44] to-[#c7b730] text-[#1C2026] hover:from-[#62ad35] hover:to-[#b8a821] text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                            >
+                                Sign Up Now
+                                <ArrowRight className="ml-2 h-5 w-5" />
+                            </Button>
+                        </Link>
+
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
