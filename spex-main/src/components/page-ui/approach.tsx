@@ -12,7 +12,7 @@ const spexContent = [
         title: "Enterprise & Vendor Onboarding",
         description:
             "Enterprises and their Food Vendors are onboarded onto the Spex Platform. Spex delivers reusable food containers (Smartpacks) to restaurants and food vendors on behalf of subscribed Enterprises and Users.",
-        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541341/hero_tg9gt8.jpg",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1746625087/agency/ent-1_slekkd.png",
         icon: Package,
     },
     {
@@ -21,7 +21,7 @@ const spexContent = [
         title: "Platform Access & Ordering",
         description:
             "Enterprises and Users access take-out meals on the Spex Platform from their preferred food vendors and restaurants.",
-        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541196/spex_jrkich.jpg",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1746623972/agency/Spex-Africa-Employee-Interface-plan_iipkmg.png",
         icon: ShoppingCart,
     },
     {
@@ -30,7 +30,7 @@ const spexContent = [
         title: "Order Preparation",
         description:
             "Food Vendors and Restaurants receive orders on the Spex platform and prepare take-out meals for delivery using our Smartpacks (reusable food containers).",
-        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541344/rider_di6odp.jpg",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1746624550/agency/meal-prep_lqqvyz.png",
         icon: UtensilsCrossed,
     },
     {
@@ -39,7 +39,7 @@ const spexContent = [
         title: "Delivery & Smartpack Exchange",
         description:
             "Food vendors deliver take-out meals in Smartpacks in exchange for used and cleaned Smartpacks from Users for Redistribution and Reuse.",
-        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541196/spex_jrkich.jpg",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1746624645/agency/deliver_xoc3xs.png",
         icon: Recycle,
     },
 ]
@@ -232,7 +232,7 @@ export default function Approach() {
 
                             {/* Step indicators */}
                             <div className="absolute top-4 right-4 z-20 flex space-x-2">
-                                {spexContent.map((tab, index) => (
+                                {spexContent.map((tab) => (
                                     <motion.div
                                         key={tab.id}
                                         className={`h-2 w-2 rounded-full ${activeTab === tab.id ? "bg-white" : "bg-white/40"}`}

@@ -39,7 +39,7 @@ export default function SmartPackExchangeSection() {
         offset: ["start end", "end start"],
     })
 
-    const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
+
     const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
     const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8])
 
