@@ -9,37 +9,38 @@ const spexContent = [
     {
         id: "01",
         step: 1,
-        title: "Order Your Meal",
+        title: "Enterprise & Vendor Onboarding",
         description:
-            "Users or Enterprises place take-out meal orders on the Spex platform from their preferred food vendors or restaurants.",
+            "Enterprises and their Food Vendors are onboarded onto the Spex Platform. Spex delivers reusable food containers (Smartpacks) to restaurants and food vendors on behalf of subscribed Enterprises and Users.",
         image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541341/hero_tg9gt8.jpg",
-        icon: ShoppingCart,
+        icon: Package,
     },
     {
         id: "02",
         step: 2,
-        title: "Receive Meal in a Smartpack",
-        description: "Food vendors prepare the ordered meals and deliver them in reusable Smartpacks provided by Spex.",
+        title: "Platform Access & Ordering",
+        description:
+            "Enterprises and Users access take-out meals on the Spex Platform from their preferred food vendors and restaurants.",
         image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541196/spex_jrkich.jpg",
-        icon: Package,
+        icon: ShoppingCart,
     },
     {
         id: "03",
         step: 3,
-        title: "Return Your Used Smartpack",
+        title: "Order Preparation",
         description:
-            "After enjoying the meal, users return the cleaned Smartpacks to the food vendor during the next delivery or pick-up.",
+            "Food Vendors and Restaurants receive orders on the Spex platform and prepare take-out meals for delivery using our Smartpacks (reusable food containers).",
         image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541344/rider_di6odp.jpg",
-        icon: Recycle,
+        icon: UtensilsCrossed,
     },
     {
         id: "04",
         step: 4,
-        title: "Earn Points for Reusing",
+        title: "Delivery & Smartpack Exchange",
         description:
-            "Users earn points every time they return Smartpacks, promoting sustainability and rewarding eco-friendly behavior.",
+            "Food vendors deliver take-out meals in Smartpacks in exchange for used and cleaned Smartpacks from Users for Redistribution and Reuse.",
         image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541196/spex_jrkich.jpg",
-        icon: UtensilsCrossed,
+        icon: Recycle,
     },
 ]
 
@@ -173,8 +174,9 @@ export default function Approach() {
                             transition={{ delay: 0.3 }}
                         >
                             <p className="text-gray-700 text-lg leading-relaxed">
-                                Discover the power of sustainable food delivery. Spex makes reusable food containers accessible and
-                                convenient for restaurants and enterprises.
+                                Spex connects Enterprises with Food Vendors through our sustainable food delivery platform. Our
+                                Smartpack reusable container system reduces waste while providing convenient, eco-friendly food delivery
+                                solutions.
                             </p>
                         </motion.div>
 
