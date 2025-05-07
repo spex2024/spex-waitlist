@@ -7,21 +7,35 @@ import { Check, Sparkles } from "lucide-react"
 const plans = [
     {
         name: "Bronze",
-        pricePerHead: 739.92,
-        features: ["Minimum Staff: 10", "Maximum Vendors: 2", "Budget-Friendly Vendors", "Email Support"],
+        pricePerMeal: 39.0,
+        pricePerStaff: 780,
+        features: [
+            "10 staff minimum",
+            "20 smart packs",
+            "2 smart packs per staff",
+            "Access to the SPEX platform",
+            "2 standard meal option / week",
+            "Choose up to 2 vendors",
+            "Email and phone support",
+            "Bring your own vendor or choose from our platform",
+        ],
         gradient: "from-white to-white",
         borderColor: "border-[#71bc44]/20",
         shadowColor: "shadow-[#71bc44]/10",
     },
     {
         name: "Silver",
-        pricePerHead: 1399.99,
+        pricePerMeal: 59.0,
+        pricePerStaff: 1180,
         features: [
-            "Minimum Staff: 10",
-            "Maximum Vendors: 3",
-            "Pro Vendors",
-            "Bring Your Own Vendor or Choose from Our Platform",
-            "Email and Phone Support",
+            "10 staff minimum",
+            "20 smart packs",
+            "2 smart packs per staff",
+            "Access to the SPEX platform",
+            "3 standard meal option / week",
+            "Choose up to 2 vendors",
+            "Email and phone support",
+            "Bring your own vendor or choose from our platform",
         ],
         popular: true,
         gradient: "from-[#71bc44] to-[#71bc44]",
@@ -30,13 +44,17 @@ const plans = [
     },
     {
         name: "Gold",
-        pricePerHead: 2279.99,
+        pricePerMeal: 99.0,
+        pricePerStaff: 1980,
         features: [
-            "Minimum Staff: 10",
-            "Maximum Vendors: 5",
-            "Premium Vendors",
-            "Bring Your Own Vendor or Choose from Our Platform",
-            "Email and Phone Support",
+            "10 staff minimum",
+            "20 smart packs",
+            "2 smart packs per staff",
+            "Access to the SPEX platform",
+            "5 Premium meals of choice / week",
+            "Choose up to 2 vendors",
+            "Email and phone support",
+            "Bring your own vendor or choose from our platform",
         ],
         gradient: "from-white to-white",
         borderColor: "border-[#71bc44]/20",
@@ -116,27 +134,6 @@ export default function PricingPage() {
                 >
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#71bc44] mb-6 tracking-wider relative inline-block">
                         SPEX ENTERPRISE MODEL
-                        {/*<motion.div*/}
-                        {/*    className="absolute -bottom-3 left-0 right-0 h-2 bg-[#71bc44] rounded-full"*/}
-                        {/*    initial={{ width: "0%", left: "10%" }}*/}
-                        {/*    animate={{ width: "100%", left: "0%" }}*/}
-                        {/*    transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}*/}
-                        {/*/>*/}
-                        {/*<motion.div*/}
-                        {/*    className="absolute -bottom-3 left-0 right-0 h-2 bg-white rounded-full"*/}
-                        {/*    style={{*/}
-                        {/*        background: "linear-gradient(90deg, transparent, #ffffff, transparent)",*/}
-                        {/*    }}*/}
-                        {/*    animate={{*/}
-                        {/*        x: ["0%", "100%"],*/}
-                        {/*        opacity: [0, 1, 0],*/}
-                        {/*    }}*/}
-                        {/*    transition={{*/}
-                        {/*        duration: 2,*/}
-                        {/*        repeat: Number.POSITIVE_INFINITY,*/}
-                        {/*        repeatDelay: 1,*/}
-                        {/*    }}*/}
-                        {/*/>*/}
                     </h1>
                 </motion.div>
 
@@ -147,13 +144,7 @@ export default function PricingPage() {
                     transition={{ delay: 0.3, duration: 0.6 }}
                 >
           <span className="relative inline-block">
-            Choose the perfect plan for your business needs
-            {/*<motion.span*/}
-            {/*    className="absolute bottom-0 left-0 w-full h-0.5 bg-[#71bc44]/30"*/}
-            {/*    initial={{ width: 0 }}*/}
-            {/*    animate={{ width: "100%" }}*/}
-            {/*    transition={{ delay: 0.8, duration: 0.6 }}*/}
-            {/*/>*/}
+            Enterprises / Users access take-out meals on the Spex Platform from their preferred food vendors/restaurants
           </span>
                 </motion.h2>
             </motion.div>
@@ -225,8 +216,8 @@ export default function PricingPage() {
                                 transition: { type: "spring", stiffness: 300, damping: 15 },
                             }}
                             className={`rounded-2xl bg-gradient-to-br ${plan.gradient} p-8 relative overflow-hidden
-                border-2 ${plan.borderColor} shadow-xl ${plan.shadowColor}
-                transition-all duration-300`}
+                                border-2 ${plan.borderColor} shadow-xl ${plan.shadowColor}
+                                transition-all duration-300`}
                         >
                             {plan.popular && (
                                 <motion.div
@@ -241,22 +232,34 @@ export default function PricingPage() {
                             )}
 
                             <h2 className={`text-3xl font-bold ${plan.popular ? "text-white" : "text-[#71bc44]"}`}>{plan.name}</h2>
-                            <p className={`${plan.popular ? "text-white/90" : "text-gray-500"} mb-6`}>Per staff member</p>
+                            <div className={`${plan.popular ? "text-white/90" : "text-gray-500"} mb-2`}>
+                                <p className="font-medium">10 Staff Minimum</p>
+                            </div>
+
+                            <motion.div
+                                className="mb-2"
+                                initial={{ scale: 0.9, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                transition={{ delay: 0.3 + index * 0.2, duration: 0.4 }}
+                            >
+                <span className={`text-4xl font-bold ${plan.popular ? "text-white" : "text-[#71bc44]"}`}>
+                  {formatCurrency(plan.pricePerMeal)}
+                </span>
+                                <span className={`${plan.popular ? "text-white/90" : "text-gray-600"} ml-1`}>/ meal</span>
+                            </motion.div>
 
                             <motion.div
                                 className="mb-6"
                                 initial={{ scale: 0.9, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
-                                transition={{ delay: 0.3 + index * 0.2, duration: 0.4 }}
+                                transition={{ delay: 0.4 + index * 0.2, duration: 0.4 }}
                             >
-                <span className={`text-5xl font-bold ${plan.popular ? "text-white" : "text-[#71bc44]"}`}>
-                  {formatCurrency(plan.pricePerHead)}
+                <span className={`text-2xl font-bold ${plan.popular ? "text-white/90" : "text-gray-700"}`}>
+                  {formatCurrency(plan.pricePerStaff)}
                 </span>
+                                <span className={`${plan.popular ? "text-white/80" : "text-gray-600"} ml-1`}>per staff</span>
+                                <p className={`${plan.popular ? "text-white/80" : "text-gray-600"} text-sm mt-1`}>Per Month</p>
                             </motion.div>
-
-                            <p className={`${plan.popular ? "text-white" : "text-gray-700"} uppercase text-base font-bold mb-6`}>
-                                Per head
-                            </p>
 
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
@@ -267,7 +270,7 @@ export default function PricingPage() {
                                         : "bg-[#71bc44] text-white hover:bg-[#65a93c]"
                                 } rounded-full py-3.5 px-4 font-bold mb-8 shadow-lg transition-all duration-300`}
                             >
-                                Choose a Plan
+                                Choose Plan
                             </motion.button>
 
                             <motion.div
