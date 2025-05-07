@@ -46,7 +46,7 @@ export default function Vendor() {
                         Ready to Grow Your Food Business with SPEX?
                     </h1>
                     <p className="text-xl text-gray-100 max-w-2xl">
-                        Join our exclusive network and connect with enterprises seeking sustainable meal packaging solutions. It's time to expand your reach and boost your sales!
+                        Join our exclusive network and connect with enterprises seeking sustainable meal packaging solutions. It&#39;s time to expand your reach and boost your sales!
                     </p>
                     <motion.button
                         whileHover={{ scale: 1.05 }}
@@ -57,15 +57,15 @@ export default function Vendor() {
                         <span>Join Now</span>
                         <ArrowRight className="w-6 h-6" />
                     </motion.button>
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.5 }}
-                        className="flex items-center space-x-4 text-white"
-                    >
-                        <ArrowRight className="w-6 h-6" />
-                        <span className="text-lg font-semibold">Join 10,000+ food vendors already onboard</span>
-                    </motion.div>
+                    {/*<motion.div*/}
+                    {/*    initial={{ opacity: 0, y: 20 }}*/}
+                    {/*    animate={{ opacity: 1, y: 0 }}*/}
+                    {/*    transition={{ duration: 0.5, delay: 0.5 }}*/}
+                    {/*    className="flex items-center space-x-4 text-white"*/}
+                    {/*>*/}
+                    {/*    <ArrowRight className="w-6 h-6" />*/}
+                    {/*    <span className="text-lg font-semibold">Join 10,000+ food vendors already onboard</span>*/}
+                    {/*</motion.div>*/}
                 </motion.div>
                 <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl transform -rotate-3">
                     <img

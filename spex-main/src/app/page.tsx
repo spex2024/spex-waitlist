@@ -9,18 +9,21 @@ import Pilot from "@/components/page-ui/pilot";
 import Partners from "@/components/page-ui/partners";
 import Vendor from "@/components/page-ui/vendor";
 import Footer from "@/components/page-ui/footer";
+import FAQSection from "@/components/page-ui/faq";
+import {Navbar} from "@/components/page-ui/nav";
 
 
 export default function Home() {
   return (
       <div className=" w-full overflow-x-hidden font-[family-name:var(--font-geist-sans)] ">
-
+        <Navbar />
         <Hero/>
         <SmartPackExchangeSection/>
         <Problem/>
         <Solution/>
         <ApproachSection/>
         <Plans/>
+          <FAQSection/>
         <CTA/>
         <Pilot/>
         <Partners/>
