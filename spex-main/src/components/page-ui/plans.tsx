@@ -132,8 +132,8 @@ export default function PricingPage() {
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#71bc44] mb-6 tracking-wider relative inline-block">
-                        SPEX ENTERPRISE MODEL
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#71bc44] mb-6 tracking-wider relative inline-block capitalize">
+                        Spex Enterprise Model
                     </h1>
                 </motion.div>
 

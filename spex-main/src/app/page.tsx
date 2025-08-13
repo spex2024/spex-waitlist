@@ -11,6 +11,7 @@ import Vendor from "@/components/page-ui/vendor";
 import Footer from "@/components/page-ui/footer";
 import FAQSection from "@/components/page-ui/faq";
 import {Navbar} from "@/components/page-ui/nav";
+import ProductSales from "@/components/page-ui/product-sales";
 
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <Problem/>
         <Solution/>
         <ApproachSection/>
+        <ProductSales/>
         <Plans/>
           <FAQSection/>
         <CTA/>
