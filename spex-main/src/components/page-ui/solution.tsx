@@ -1,129 +1,124 @@
 import Image from "next/image"
-import { Leaf } from "lucide-react"
 
-interface CardData {
-    id: string
-    title: string
-    content: string[]
-    image: string
-}
+const cards = [
+    {
+        title: "Effortless Corporate Meal Planning",
+        desc: "Simplify meal planning for your team, save time and have it delivered in reusable packs",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/f_auto,q_auto/v1720541341/hero_tg9gt8.jpg",
+        tag: "01",
+        big: true,
+    },
+    {
+        title: "Earn with Your Carbon Point",
+        desc: "Reduce your carbon footprint with every pack exchange and Earn good money.",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/f_auto,q_auto/v1720541340/carbon_t19akr.jpg",
+        tag: "02",
+        big: false,
+    },
+    {
+        title: "Save on Costs, Ditch Single-Use Plastics",
+        desc: "Cut down on cost associated with meal orders and the single-use plastic packaging.",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/f_auto,q_auto/v1720541344/rider_di6odp.jpg",
+        tag: "03",
+        big: false,
+    },
+    {
+        title: "Zero Waste with SPEX",
+        desc: "Say goodbye to single-use plastic containers at your office.",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/f_auto,q_auto/v1720541196/spex_jrkich.jpg",
+        tag: "04",
+        big: true,
+    },
+]
 
-export default function Home() {
-    const accordionData: CardData[] = [
-        {
-            id: "accordion-flush-body-4",
-            title: "Effortless Corporate Meal Planning",
-            content: ["Simplify meal planning for your team, save time and have it delivered in reusable packs"],
-            image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541341/hero_tg9gt8.jpg",
-        },
-        {
-            id: "accordion-flush-body-3",
-            title: "Earn with Your Carbon Point",
-            content: ["Reduce your carbon footprint with every pack exchange and Earn good money."],
-            image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541340/carbon_t19akr.jpg",
-        },
-        {
-            id: "accordion-flush-body-2",
-            title: "Save on Costs, Ditch Single-Use Plastics",
-            content: ['Cut down on Cost associated with meals orders and the "Single-Use" plastic packaging it comes with.'],
-            image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541344/rider_di6odp.jpg",
-        },
-        {
-            id: "accordion-flush-body-1",
-            title: "Zero Waste with SPEX",
-            content: ["Say goodbye to single-use plastic containers at your office"],
-            image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541196/spex_jrkich.jpg",
-        },
-    ]
-
+export default function Solution() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-[#f0f7eb] via-[#e8f5e0] to-[#f2f8ed] relative">
-            {/* Gradient overlay pattern */}
-            <div className="absolute inset-0 bg-[radial-gradient(#71bc44_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.15] pointer-events-none"></div>
+        <section id="solution" className="bg-white border-t-4 border-black font-[family-name:var(--font-geist-sans)]">
 
-
-            <div className="max-w-6xl mx-auto px-4 py-8 relative z-10">
-                {/* Header */}
-                <div className="mb-12">
-                    <p className="text-[#4a8c2a] text-sm font-medium uppercase tracking-wider">SPEX</p>
-                    <div className="relative inline-block">
-                        <h1 className="text-4xl md:text-5xl font-bold mt-2 text-[#4a8c2a] relative z-10">The Solution</h1>
-                        {/*<div className="absolute -bottom-2 left-0 w-full h-3 bg-[#71bc44]/20 rounded-full z-0 transform -rotate-1"></div>*/}
-                        {/*<svg className="absolute -bottom-1 left-0 w-full h-2 z-0" viewBox="0 0 200 10" preserveAspectRatio="none">*/}
-                        {/*    <path d="M0,0 Q50,10 100,5 T200,0" fill="none" stroke="#4a8c2a" strokeWidth="2" strokeLinecap="round" />*/}
-                        {/*</svg>*/}
+            {/* Header */}
+            <div className="border-b-4 border-black">
+                <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+                    <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#71bc44] mb-3">— SPEX</p>
+                        <h2 className="text-6xl md:text-8xl font-black text-black uppercase leading-[0.88] tracking-[-0.04em]">
+                            The Solution.
+                        </h2>
                     </div>
-                    <p className="text-[#3a6b21] mt-4 max-w-3xl text-lg md:text-xl font-medium">
+                    <p className="text-black/50 text-sm font-medium max-w-xs leading-relaxed border-l-4 border-black pl-4">
                         Innovative approaches to tackle plastic waste and promote sustainable practices.
                     </p>
                 </div>
+            </div>
 
-                {/* Bento Grid Layout */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 h-[600px]">
-                    {/* First Card */}
-                    <div className="relative overflow-hidden rounded-lg shadow-md group">
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 z-10"></div>
-                        <Image
-                            src={accordionData[0].image || "/placeholder.svg"}
-                            alt={accordionData[0].title}
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="relative z-20 flex flex-col justify-end h-full p-6 text-white">
-                            <h2 className="text-xl font-bold mb-2">{accordionData[0].title}</h2>
-                            <p className="text-sm text-white/90">{accordionData[0].content[0]}</p>
+            {/* Bento grid */}
+            <div className="max-w-7xl mx-auto px-6 md:px-10 py-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4" style={{ minHeight: "600px" }}>
+
+                    {/* Card 1 — big left */}
+                    <div className="relative overflow-hidden border-2 border-black group md:row-span-2">
+                        <div className="absolute inset-0">
+                            <Image src={cards[0].image} alt={cards[0].title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <div className="absolute inset-0 bg-black/60 group-hover:bg-black/45 transition-all" />
                         </div>
-                    </div>
-
-                    {/* Middle Column - Split into two cards */}
-                    <div className="flex flex-col gap-6 h-full">
-                        {/* Top Middle Card */}
-                        <div className="relative overflow-hidden rounded-lg shadow-md flex-1 group">
-                            <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 z-10"></div>
-                            <Image
-                                src={accordionData[1].image || "/placeholder.svg"}
-                                alt={accordionData[1].title}
-                                fill
-                                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            />
-                            <div className="relative z-20 flex flex-col justify-end h-full p-6 text-white">
-                                <h2 className="text-xl font-bold mb-2">{accordionData[1].title}</h2>
-                                <p className="text-sm text-white/90">{accordionData[1].content[0]}</p>
+                        <div className="relative z-10 h-full flex flex-col justify-between p-8" style={{ minHeight: "300px" }}>
+                            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#71bc44]">{cards[0].tag}</span>
+                            <div>
+                                <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-2">{cards[0].title}</h3>
+                                <p className="text-white/60 text-sm font-medium">{cards[0].desc}</p>
                             </div>
                         </div>
-
-                        {/* Bottom Middle Card */}
-                        <div className="relative overflow-hidden rounded-lg shadow-md flex-1 group">
-                            <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 z-10"></div>
-                            <Image
-                                src={accordionData[2].image || "/placeholder.svg"}
-                                alt={accordionData[2].title}
-                                fill
-                                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                            />
-                            <div className="relative z-20 flex flex-col justify-end h-full p-6 text-white">
-                                <h2 className="text-xl font-bold mb-2">{accordionData[2].title}</h2>
-                                <p className="text-sm text-white/90">{accordionData[2].content[0]}</p>
-                            </div>
-                        </div>
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#71bc44] scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
                     </div>
 
-                    {/* Third Card */}
-                    <div className="relative overflow-hidden rounded-lg shadow-md group">
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80 z-10"></div>
-                        <Image
-                            src={accordionData[3].image || "/placeholder.svg"}
-                            alt={accordionData[3].title}
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="relative z-20 flex flex-col justify-end h-full p-6 text-white">
-                            <h2 className="text-xl font-bold mb-2">{accordionData[3].title}</h2>
-                            <p className="text-sm text-white/90">{accordionData[3].content[0]}</p>
+                    {/* Card 2 */}
+                    <div className="relative overflow-hidden border-2 border-black group">
+                        <div className="absolute inset-0">
+                            <Image src={cards[1].image} alt={cards[1].title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <div className="absolute inset-0 bg-black/65 group-hover:bg-black/50 transition-all" />
                         </div>
+                        <div className="relative z-10 h-full flex flex-col justify-between p-8" style={{ minHeight: "280px" }}>
+                            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#71bc44]">{cards[1].tag}</span>
+                            <div>
+                                <h3 className="text-xl font-black text-white uppercase tracking-tight mb-2">{cards[1].title}</h3>
+                                <p className="text-white/60 text-sm font-medium">{cards[1].desc}</p>
+                            </div>
+                        </div>
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#71bc44] scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                    </div>
+
+                    {/* Card 3 */}
+                    <div className="relative overflow-hidden border-2 border-black group">
+                        <div className="absolute inset-0">
+                            <Image src={cards[2].image} alt={cards[2].title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <div className="absolute inset-0 bg-black/65 group-hover:bg-black/50 transition-all" />
+                        </div>
+                        <div className="relative z-10 h-full flex flex-col justify-between p-8" style={{ minHeight: "280px" }}>
+                            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#71bc44]">{cards[2].tag}</span>
+                            <div>
+                                <h3 className="text-xl font-black text-white uppercase tracking-tight mb-2">{cards[2].title}</h3>
+                                <p className="text-white/60 text-sm font-medium">{cards[2].desc}</p>
+                            </div>
+                        </div>
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#71bc44] scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                    </div>
+
+                    {/* Card 4 — spans 2 cols */}
+                    <div className="relative overflow-hidden border-2 border-black group md:col-span-2">
+                        <div className="absolute inset-0">
+                            <Image src={cards[3].image} alt={cards[3].title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <div className="absolute inset-0 bg-black/60 group-hover:bg-black/45 transition-all" />
+                        </div>
+                        <div className="relative z-10 h-full flex flex-col justify-between p-8" style={{ minHeight: "260px" }}>
+                            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#71bc44]">{cards[3].tag}</span>
+                            <div>
+                                <h3 className="text-2xl font-black text-white uppercase tracking-tight mb-2">{cards[3].title}</h3>
+                                <p className="text-white/60 text-sm font-medium">{cards[3].desc}</p>
+                            </div>
+                        </div>
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#71bc44] scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

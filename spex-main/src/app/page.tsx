@@ -18,16 +18,16 @@ export default function Home() {
   return (
       <div className=" w-full overflow-x-hidden font-[family-name:var(--font-geist-sans)] ">
         <Navbar />
-        <Hero/>
-        <SmartPackExchangeSection/>
-        <Problem/>
-        <Solution/>
-        <ApproachSection/>
+        <section id="hero"><Hero/></section>
+        <section id="about"><SmartPackExchangeSection/></section>
+        <section id="problem"><Problem/></section>
+        <section id="solution"><Solution/></section>
+        <section id="how-it-works"><ApproachSection/></section>
         <ProductSales/>
-        <Plans/>
-          <FAQSection/>
+        <section id="plans"><Plans/></section>
+        <section id="faq"><FAQSection/></section>
         <CTA/>
-        <Pilot/>
+        <section id="pilot"><Pilot/></section>
         <Partners/>
         <Vendor/>
         <Footer/>

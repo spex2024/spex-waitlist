@@ -1,262 +1,116 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
-import { motion, AnimatePresence, useAnimation } from "framer-motion"
 import { Package, ShoppingCart, UtensilsCrossed, Recycle } from "lucide-react"
 
-const spexContent = [
+const steps = [
     {
         id: "01",
-        step: 1,
         title: "Enterprise & Vendor Onboarding",
-        description:
-            "Enterprises and their Food Vendors are onboarded onto the Spex Platform. Spex delivers reusable food containers (Smartpacks) to restaurants and food vendors on behalf of subscribed Enterprises and Users.",
-        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1746625087/agency/ent-1_slekkd.png",
+        description: "Enterprises and their Food Vendors are onboarded onto the Spex Platform. Spex delivers reusable food containers (Smartpacks) to restaurants and food vendors on behalf of subscribed Enterprises and Users.",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/f_auto,q_auto/v1746625087/agency/ent-1_slekkd.png",
         icon: Package,
     },
     {
         id: "02",
-        step: 2,
         title: "Platform Access & Ordering",
-        description:
-            "Enterprises and Users access take-out meals on the Spex Platform from their preferred food vendors and restaurants.",
-        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1746623972/agency/Spex-Africa-Employee-Interface-plan_iipkmg.png",
+        description: "Enterprises and Users access take-out meals on the Spex Platform from their preferred food vendors and restaurants.",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/f_auto,q_auto/v1746623972/agency/Spex-Africa-Employee-Interface-plan_iipkmg.png",
         icon: ShoppingCart,
     },
     {
         id: "03",
-        step: 3,
         title: "Order Preparation",
-        description:
-            "Food Vendors and Restaurants receive orders on the Spex platform and prepare take-out meals for delivery using our Smartpacks (reusable food containers).",
-        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1746624550/agency/meal-prep_lqqvyz.png",
+        description: "Food Vendors and Restaurants receive orders on the Spex platform and prepare take-out meals for delivery using our Smartpacks (reusable food containers).",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/f_auto,q_auto/v1746624550/agency/meal-prep_lqqvyz.png",
         icon: UtensilsCrossed,
     },
     {
         id: "04",
-        step: 4,
         title: "Delivery & Smartpack Exchange",
-        description:
-            "Food vendors deliver take-out meals in Smartpacks in exchange for used and cleaned Smartpacks from Users for Redistribution and Reuse.",
-        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1746624645/agency/deliver_xoc3xs.png",
+        description: "Food vendors deliver take-out meals in Smartpacks in exchange for used and cleaned Smartpacks from Users for Redistribution and Reuse.",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/f_auto,q_auto/v1746624645/agency/deliver_xoc3xs.png",
         icon: Recycle,
     },
 ]
 
 export default function Approach() {
-    const [activeTab, setActiveTab] = useState("01")
-    const [previousTab, setPreviousTab] = useState("")
-    const controls = useAnimation()
-
-    const handleTabChange = (tabId: string) => {
-        setPreviousTab(activeTab)
-        setActiveTab(tabId)
-    }
-
-    useEffect(() => {
-        controls.start({
-            scale: [1, 1.02, 1],
-            transition: { duration: 0.5 },
-        })
-    }, [activeTab, controls])
-
-    const activeContent = spexContent.find((tab) => tab.id === activeTab)
-    const activeIndex = spexContent.findIndex((tab) => tab.id === activeTab)
-    const prevIndex = spexContent.findIndex((tab) => tab.id === previousTab)
-    const direction = prevIndex > activeIndex ? -1 : 1
+    const [active, setActive] = useState("01")
+    const activeStep = steps.find(s => s.id === active)!
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-white to-[#f0f8eb]">
-            {/* Main Content */}
-            <main className="container mx-auto px-4 md:px-8 lg:px-24 py-16">
-                <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
-                    {/* Left Column - Process Steps */}
-                    <div className="order-2 md:order-1">
-                        <div className="flex items-center mb-8">
-                            <motion.div
-                                initial={{ x: -20, opacity: 0 }}
-                                animate={{ x: 0, opacity: 1 }}
-                                className="h-1 w-12 bg-[#71bc44] mr-4"
-                            />
-                            <motion.h2
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.2 }}
-                                className="text-3xl md:text-4xl font-bold text-[#71bc44]"
-                            >
-                                How It Works
-                            </motion.h2>
-                        </div>
+        <section id="how-it-works" className="bg-black border-t-4 border-black font-[family-name:var(--font-geist-sans)]">
 
-                        <div className="space-y-4">
-                            {/* Tabs */}
-                            {spexContent.map((tab, index) => {
-                                const IconComponent = tab.icon
-                                const isActive = activeTab === tab.id
+            {/* Header */}
+            <div className="border-b-4 border-white/20">
+                <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+                    <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#71bc44] mb-3">— Process</p>
+                        <h2 className="text-6xl md:text-8xl font-black text-white uppercase leading-[0.88] tracking-[-0.04em]">
+                            How It<br />Works.
+                        </h2>
+                    </div>
+                    <p className="text-white/40 text-sm font-medium max-w-xs leading-relaxed border-l-4 border-[#71bc44] pl-4">
+                        Spex connects Enterprises with Food Vendors through our sustainable food delivery platform.
+                    </p>
+                </div>
+            </div>
 
-                                return (
-                                    <motion.div
-                                        key={tab.id}
-                                        className={`rounded-xl p-5 cursor-pointer transition-all duration-300 border-2 ${
-                                            isActive
-                                                ? "bg-[#71bc44] text-white border-[#71bc44] shadow-lg shadow-[#71bc44]/20"
-                                                : "bg-white border-gray-100 hover:border-[#71bc44]/30"
-                                        }`}
-                                        onClick={() => handleTabChange(tab.id)}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{
-                                            opacity: 1,
-                                            y: 0,
-                                            scale: isActive ? 1 : 0.98,
-                                        }}
-                                        transition={{
-                                            delay: index * 0.1,
-                                            duration: 0.3,
-                                        }}
-                                        whileHover={{
-                                            scale: 1.02,
-                                            boxShadow: isActive
-                                                ? "0 10px 25px -5px rgba(113, 188, 68, 0.3)"
-                                                : "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
-                                        }}
-                                        whileTap={{ scale: 0.98 }}
-                                        layout
-                                    >
-                                        <div className="flex items-start">
-                                            <motion.div
-                                                className={`w-14 h-14 rounded-xl flex items-center justify-center mr-4 ${
-                                                    isActive ? "bg-white/20" : "bg-[#e8f5e0]"
-                                                }`}
-                                                animate={
-                                                    isActive
-                                                        ? {
-                                                            rotate: [0, 10, -10, 0],
-                                                            transition: {
-                                                                duration: 0.5,
-                                                                delay: 0.2,
-                                                            },
-                                                        }
-                                                        : {}
-                                                }
-                                            >
-                                                <IconComponent className={`h-7 w-7 ${isActive ? "text-white" : "text-[#71bc44]"}`} />
-                                            </motion.div>
-                                            <div className="flex-1">
-                                                <div className={`text-sm font-medium mb-1 ${isActive ? "text-white/80" : "text-[#71bc44]"}`}>
-                                                    Step {tab.step}
-                                                </div>
-                                                <h3 className={`text-xl font-bold mb-2 ${isActive ? "text-white" : "text-gray-800"}`}>
-                                                    {tab.title}
-                                                </h3>
-                                                <motion.div
-                                                    initial={isActive ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
-                                                    animate={isActive ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
-                                                    transition={{ duration: 0.3 }}
-                                                    className="overflow-hidden"
-                                                >
-                                                    <p className="text-sm md:text-base">{tab.description}</p>
-                                                </motion.div>
-                                            </div>
+            {/* Main content */}
+            <div className="max-w-7xl mx-auto px-6 md:px-10 py-12">
+                <div className="grid md:grid-cols-2 gap-0 border-2 border-white/20">
+
+                    {/* Left: Steps */}
+                    <div className="border-r-2 border-white/20">
+                        {steps.map((step) => {
+                            const Icon = step.icon
+                            const isActive = active === step.id
+                            return (
+                                <button
+                                    key={step.id}
+                                    onClick={() => setActive(step.id)}
+                                    className={`w-full text-left p-8 border-b-2 border-white/10 last:border-b-0 flex items-start gap-5 transition-all duration-100 ${isActive ? "bg-[#71bc44]" : "hover:bg-white/5"}`}
+                                >
+                                    <div className={`w-12 h-12 border-2 flex items-center justify-center shrink-0 ${isActive ? "border-black bg-black" : "border-white/30"}`}>
+                                        <Icon className={`w-5 h-5 ${isActive ? "text-[#71bc44]" : "text-white/50"}`} />
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                        <div className={`text-[10px] font-black uppercase tracking-[0.3em] mb-1 ${isActive ? "text-black" : "text-[#71bc44]"}`}>
+                                            Step {step.id}
                                         </div>
-                                    </motion.div>
-                                )
-                            })}
-                        </div>
+                                        <h3 className={`text-lg font-black uppercase tracking-tight ${isActive ? "text-black" : "text-white"}`}>
+                                            {step.title}
+                                        </h3>
+                                        {isActive && (
+                                            <p className="text-black/70 text-sm font-medium leading-relaxed mt-3">
+                                                {step.description}
+                                            </p>
+                                        )}
+                                    </div>
+                                </button>
+                            )
+                        })}
                     </div>
 
-                    {/* Right Column - Description and Image */}
-                    <div className="order-1 md:order-2">
-                        <motion.div
-                            className="mb-8 bg-white p-6 rounded-xl shadow-lg border border-gray-100"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.3 }}
-                        >
-                            <p className="text-gray-700 text-lg leading-relaxed">
-                                Spex connects Enterprises with Food Vendors through our sustainable food delivery platform. Our
-                                Smartpack reusable container system reduces waste while providing convenient, eco-friendly food delivery
-                                solutions.
-                            </p>
-                        </motion.div>
-
-                        <motion.div className="rounded-xl overflow-hidden shadow-2xl relative" animate={controls}>
-                            <AnimatePresence mode="wait">
-                                <motion.div
-                                    key={activeTab}
-                                    initial={{
-                                        opacity: 0,
-                                        x: direction * 100,
-                                        scale: 0.9,
-                                        rotateY: direction * 15,
-                                    }}
-                                    animate={{
-                                        opacity: 1,
-                                        x: 0,
-                                        scale: 1,
-                                        rotateY: 0,
-                                    }}
-                                    exit={{
-                                        opacity: 0,
-                                        x: -direction * 100,
-                                        scale: 0.9,
-                                        rotateY: -direction * 15,
-                                    }}
-                                    transition={{
-                                        type: "spring",
-                                        stiffness: 300,
-                                        damping: 30,
-                                    }}
-                                    className="aspect-[4/3] relative w-full"
-                                >
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#71bc44]/80 to-transparent z-10 opacity-60" />
-                                    <Image
-                                        src={activeContent?.image || "/images/hero-1.jpg"}
-                                        alt={`${activeContent?.title} illustration`}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                    <motion.div
-                                        className="absolute bottom-0 left-0 right-0 p-6 z-20"
-                                        initial={{ y: 20, opacity: 0 }}
-                                        animate={{ y: 0, opacity: 1 }}
-                                        transition={{ delay: 0.4 }}
-                                    >
-                                        <div className="inline-block bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
-                                            <span className="text-[#71bc44] font-bold">Step {activeContent?.step}: </span>
-                                            <span className="text-gray-800 font-medium">{activeContent?.title}</span>
-                                        </div>
-                                    </motion.div>
-                                </motion.div>
-                            </AnimatePresence>
-
-                            {/* Step indicators */}
-                            <div className="absolute top-4 right-4 z-20 flex space-x-2">
-                                {spexContent.map((tab) => (
-                                    <motion.div
-                                        key={tab.id}
-                                        className={`h-2 w-2 rounded-full ${activeTab === tab.id ? "bg-white" : "bg-white/40"}`}
-                                        whileHover={{ scale: 1.5 }}
-                                        onClick={() => handleTabChange(tab.id)}
-                                        animate={
-                                            activeTab === tab.id
-                                                ? {
-                                                    scale: [1, 1.5, 1],
-                                                    transition: {
-                                                        repeat: Number.POSITIVE_INFINITY,
-                                                        repeatType: "reverse",
-                                                        duration: 1.5,
-                                                    },
-                                                }
-                                                : {}
-                                        }
-                                    />
-                                ))}
-                            </div>
-                        </motion.div>
+                    {/* Right: Image */}
+                    <div className="relative aspect-square md:aspect-auto">
+                        <Image
+                            key={activeStep.id}
+                            src={activeStep.image}
+                            alt={activeStep.title}
+                            fill
+                            className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/40" />
+                        <div className="absolute bottom-0 left-0 right-0 bg-[#71bc44] px-6 py-4 flex items-center gap-4">
+                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-black">Step {activeStep.id}</span>
+                            <span className="w-px h-4 bg-black/30" />
+                            <span className="text-sm font-black text-black uppercase tracking-tight">{activeStep.title}</span>
+                        </div>
                     </div>
                 </div>
-            </main>
-        </div>
+            </div>
+        </section>
     )
 }

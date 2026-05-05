@@ -1,138 +1,95 @@
 "use client"
 
-import type React from "react"
+import React from "react"
 
-import { useEffect, useState } from "react"
-import { AlertTriangle, DollarSign, Recycle, Fish } from "lucide-react"
+const problems = [
+    {
+        number: "01",
+        title: "Plastic Waste in African Oceans",
+        stat: "17M MT",
+        desc: "Mismanaged plastic waste found in oceans and off the coast of Africa annually.",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/f_auto,q_auto/v1720541790/sup_pceezp.jpg",
+        span: 1,
+    },
+    {
+        number: "02",
+        title: "African Governments Spend",
+        stat: "$5 Billion",
+        desc: "Managing plastic waste in Africa costs $5 billion annually.",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/f_auto,q_auto/v1720541790/spu_rxfz15.jpg",
+        span: 2,
+    },
+    {
+        number: "03",
+        title: "Under 10% Recycled",
+        stat: "<10%",
+        desc: "Single-use plastic packages with less than 10% ever recycled.",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/f_auto,q_auto/v1720541789/resup_rzdrur.jpg",
+        span: 2,
+    },
+    {
+        number: "04",
+        title: "Oceans Polluted",
+        stat: "NOW",
+        desc: "Marine life and coastal communities affected by plastic pollution.",
+        image: "https://res.cloudinary.com/ddwet1dzj/image/upload/f_auto,q_auto/v1720541790/fish-plastic2_gagfxk.jpg",
+        span: 1,
+    },
+]
 
-// Define the CardData type
-interface CardData {
-    id: string
-    title: string
-    content: string[]
-    image: string
-    icon: React.ReactNode
-}
-
-export default function DesignAgencyFeatures() {
-    const [isVisible, setIsVisible] = useState(false)
-
-    useEffect(() => {
-        setIsVisible(true)
-    }, [])
-
-    // Use the provided data with added icons
-    const cardsData: CardData[] = [
-        {
-            id: "accordion-flush-body-1",
-            title: "Plastic Waste in African Oceans",
-            content: [
-                "An Estimated 17 million MT of Mismanaged plastic waste found in oceans and off the coast of Africa annually.",
-            ],
-            image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541790/sup_pceezp.jpg",
-            icon: <AlertTriangle className="w-8 h-8" />,
-        },
-        {
-            id: "accordion-flush-body-2",
-            title: "African Governments spend $5 Billion",
-            content: ["Managing plastic waste in Africa costs $5 billion annually."],
-            image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541790/spu_rxfz15.jpg",
-            icon: <DollarSign className="w-8 h-8" />,
-        },
-        {
-            id: "accordion-flush-body-3",
-            title: "Under 10% Recycled",
-            content: ["Single-Use plastic packages with less than 10% recycled."],
-            image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541789/resup_rzdrur.jpg",
-            icon: <Recycle className="w-8 h-8" />,
-        },
-        {
-            id: "accordion-flush-body-4",
-            title: "Oceans Polluted",
-            content: ["Marine life and coastal communities affected by plastic pollution."],
-            image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1720541790/fish-plastic2_gagfxk.jpg",
-            icon: <Fish className="w-8 h-8" />,
-        },
-    ]
-
-    const primaryColor = "#71bc44"
-
+export default function Problem() {
     return (
-        <div className="max-w-7xl mx-auto px-4 py-12 mt-16">
-            {/* Title and Subtitle Section */}
-            <div
-                className={`text-center mb-16 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-                style={{ transition: "all 0.7s ease-out", transitionDelay: "100ms" }}
-            >
-                <h1 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight" style={{ color: primaryColor }}>
-                    The Problem
-                </h1>
-                {/*<div className="w-24 h-1 mx-auto mb-6 rounded-full opacity-80" style={{ backgroundColor: primaryColor }}></div>*/}
-                <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light text-primary" >
-                    Exploring the critical issues of plastic waste in Africa and its impact on our oceans.
-                </p>
+        <section id="problem" className="bg-black border-t-4 border-black font-[family-name:var(--font-geist-sans)]">
+
+            {/* Section header */}
+            <div className="border-b-4 border-white/20">
+                <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+                    <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#71bc44] mb-3">— The Problem</p>
+                        <h2 className="text-6xl md:text-8xl font-black text-white uppercase leading-[0.88] tracking-[-0.04em]">
+                            The Crisis.
+                        </h2>
+                    </div>
+                    <p className="text-white/50 text-sm font-medium max-w-xs leading-relaxed border-l-4 border-[#71bc44] pl-4">
+                        Exploring the critical issues of plastic waste in Africa and its devastating impact on our oceans.
+                    </p>
+                </div>
             </div>
 
-            {/* Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {cardsData.map((card, index) => {
-                    // Determine column span based on index (first and last are smaller)
-                    const colSpan = index === 0 || index === 3 ? "md:col-span-1" : "md:col-span-2"
-                    // Staggered animation delay
-                    const animationDelay = `${(index + 2) * 150}ms`
-
-                    return (
+            {/* Cards grid */}
+            <div className="max-w-7xl mx-auto px-6 md:px-10 py-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {problems.map((p) => (
                         <div
-                            key={card.id}
-                            className={`rounded-3xl overflow-hidden relative ${colSpan} aspect-square md:aspect-auto transition-all duration-700 group ${
-                                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                            }`}
-                            style={{
-                                transitionDelay: animationDelay,
-                                minHeight: "320px",
-                            }}
+                            key={p.number}
+                            className={`relative overflow-hidden border-2 border-white/20 hover:border-[#71bc44] group transition-all duration-150 ${p.span === 2 ? "md:col-span-2" : ""}`}
+                            style={{ minHeight: "320px" }}
                         >
-                            {/* Background image with zoom effect */}
+                            {/* Background image */}
                             <div
-                                className="absolute inset-0 w-full h-full transition-transform duration-700 ease-in-out group-hover:scale-110"
-                                style={{
-                                    backgroundImage: `url(${card.image})`,
-                                    backgroundSize: "cover",
-                                    backgroundPosition: "center",
-                                }}
-                            ></div>
+                                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                style={{ backgroundImage: `url(${p.image})` }}
+                            />
+                            <div className="absolute inset-0 bg-black/70 group-hover:bg-black/55 transition-all duration-150" />
 
-                            {/* Gradient overlay - lighter by default, darker on hover */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/10 p-8 flex flex-col justify-end transition-all duration-500 group-hover:via-black/50 group-hover:to-black/40">
-                                {/* Icon in top-right corner */}
-                                <div className="absolute top-6 right-6 bg-white/20 backdrop-blur-sm p-3 rounded-full text-white">
-                                    {card.icon}
+                            {/* Content */}
+                            <div className="relative z-10 h-full flex flex-col justify-between p-8" style={{ minHeight: "320px" }}>
+                                <div className="flex items-start justify-between">
+                                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#71bc44]">{p.number}</span>
+                                    <span className="text-4xl font-black text-white leading-none">{p.stat}</span>
                                 </div>
-
-                                {/* Content container */}
-                                <div className="relative z-10">
-                                    {/* Hidden content that shows on hover */}
-                                    <div className="opacity-0 max-h-0 overflow-hidden transition-all duration-500 group-hover:opacity-100 group-hover:max-h-40 mb-4">
-                                        {card.content.map((paragraph, idx) => (
-                                            <p key={idx} className="text-white text-lg leading-relaxed">
-                                                {paragraph}
-                                            </p>
-                                        ))}
-                                    </div>
-
-                                    {/* Title always at bottom */}
-                                    <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight transition-all duration-500">
-                                        {card.title}
-                                    </h2>
+                                <div>
+                                    <h3 className="text-xl font-black text-white uppercase tracking-tight mb-2">{p.title}</h3>
+                                    <p className="text-white/60 text-sm font-medium leading-relaxed">{p.desc}</p>
                                 </div>
                             </div>
 
-                            {/* Border glow effect */}
-                            <div className="absolute inset-0 border border-white/20 rounded-3xl pointer-events-none"></div>
+                            {/* Bottom accent */}
+                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#71bc44] scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
                         </div>
-                    )
-                })}
+                    ))}
+                </div>
             </div>
-        </div>
+        </section>
     )
 }

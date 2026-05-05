@@ -1,156 +1,120 @@
 'use client'
 
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
+import { useState } from 'react'
+import { ArrowRight, X } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-import {Input} from "@/components/ui/input";
 
-const formSchema = z.object({
-    name: z.string().min(1, { message: "Full name is required" }),
-    email: z.string().email({ message: "Invalid email address" }),
-    business: z.string().min(1, { message: "Business name is required" }),
-    phone: z.string().min(1, { message: "Phone number is required" }),
-    location: z.string().min(1, { message: "Location is required" }),
+const schema = z.object({
+    name:     z.string().min(1, "Full name is required"),
+    email:    z.string().email("Invalid email address"),
+    business: z.string().min(1, "Business name is required"),
+    phone:    z.string().min(1, "Phone number is required"),
+    location: z.string().min(1, "Location is required"),
 })
-
-type FormData = z.infer<typeof formSchema>
+type FormData = z.infer<typeof schema>
 
 export default function Vendor() {
-    const [isDialogOpen, setIsDialogOpen] = useState(false)
-    const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
-        resolver: zodResolver(formSchema)
-    })
+    const [open, setOpen] = useState(false)
+    const [submitted, setSubmitted] = useState(false)
+    const { register, handleSubmit, formState: { errors } } = useForm<FormData>({ resolver: zodResolver(schema) })
 
     const onSubmit = (data: FormData) => {
         console.log(data)
-        // Here you would typically send the data to your backend
-        setIsDialogOpen(false)
+        setSubmitted(true)
+        setTimeout(() => { setOpen(false); setSubmitted(false) }, 2000)
     }
 
     return (
-        <div className="bg-gradient-to-br from-[#71bc44] via-[#5a9636] to-[#437026] min-h-screen text-white font-sans py-16 px-4 sm:px-6 lg:px-32 overflow-hidden">
-            <div className="w-full max-w-9xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-                <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="space-y-8 z-10"
-                >
-                    <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-white">
-                        Ready to Grow Your Food Business with SPEX?
-                    </h1>
-                    <p className="text-xl text-gray-100 max-w-2xl">
-                        Join our exclusive network and connect with enterprises seeking sustainable meal packaging solutions. It&#39;s time to expand your reach and boost your sales!
-                    </p>
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        onClick={() => setIsDialogOpen(true)}
-                        className="bg-white text-[#71bc44] text-xl font-bold py-4 px-8 rounded-full inline-flex items-center space-x-3 hover:bg-gray-100 transition duration-300"
-                    >
-                        <span>Join Now</span>
-                        <ArrowRight className="w-6 h-6" />
-                    </motion.button>
-                    {/*<motion.div*/}
-                    {/*    initial={{ opacity: 0, y: 20 }}*/}
-                    {/*    animate={{ opacity: 1, y: 0 }}*/}
-                    {/*    transition={{ duration: 0.5, delay: 0.5 }}*/}
-                    {/*    className="flex items-center space-x-4 text-white"*/}
-                    {/*>*/}
-                    {/*    <ArrowRight className="w-6 h-6" />*/}
-                    {/*    <span className="text-lg font-semibold">Join 10,000+ food vendors already onboard</span>*/}
-                    {/*</motion.div>*/}
-                </motion.div>
-                <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl transform -rotate-3">
-                    <img
-                        src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1721310322/waakye_lifucw.webp"
-                        alt="Delicious local food prepared by vendors"
-                        className="w-full h-full object-cover"
-                    />
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.3 }}
-                        className="absolute inset-0 bg-gradient-to-t from-[#71bc44]/80 via-[#71bc44]/50 to-transparent flex flex-col justify-end p-8"
-                    >
-                        <p className="text-white text-3xl font-bold mb-4">
-                            Spex is empowering <span className="bg-white text-[#71bc44] px-2 py-1 rounded-md">10,000 local food vendors</span>
-                        </p>
-                        <h2 className="text-white text-5xl font-extrabold mb-6">
-                            Be Part of the Revolution!
+        <section className="bg-[#71bc44] border-t-4 border-black font-[family-name:var(--font-geist-sans)]">
+            <div className="max-w-7xl mx-auto px-6 md:px-10 py-20 md:py-28">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+                    {/* Left copy */}
+                    <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.4em] text-black/50 mb-6">— Vendors</p>
+                        <h2 className="text-[clamp(40px,6vw,80px)] font-black text-black uppercase leading-[0.9] tracking-[-0.03em] mb-8">
+                            Ready to Grow<br />Your Food<br />Business?
                         </h2>
-                    </motion.div>
+                        <p className="text-base text-black/70 font-medium leading-relaxed mb-10 max-w-md border-l-4 border-black pl-5">
+                            Join our exclusive network and connect with enterprises seeking sustainable meal packaging solutions. Expand your reach and boost your sales!
+                        </p>
+                        <button
+                            onClick={() => setOpen(true)}
+                            className="inline-flex items-center gap-3 bg-black text-white text-sm font-black uppercase tracking-widest px-8 py-4 border-2 border-black shadow-[5px_5px_0px_#fff] hover:shadow-none hover:translate-x-[5px] hover:translate-y-[5px] transition-all duration-100"
+                        >
+                            Join Now <ArrowRight className="w-4 h-4" />
+                        </button>
+                    </div>
+
+                    {/* Right image */}
+                    <div className="relative border-4 border-black shadow-[8px_8px_0px_#000] overflow-hidden">
+                        <img
+                            src="https://res.cloudinary.com/ddwet1dzj/image/upload/f_auto,q_auto/v1721310322/waakye_lifucw.webp"
+                            alt="Local food vendor"
+                            className="w-full h-80 md:h-[440px] object-cover"
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 bg-black px-6 py-4 border-t-4 border-black">
+                            <p className="text-white text-sm font-black uppercase tracking-wide">
+                                Spex is empowering <span className="text-[#71bc44]">10,000 local food vendors</span> — Be Part of the Revolution!
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-                <DialogContent className="sm:max-w-[425px]">
-                    <DialogHeader>
-                        <DialogTitle>Join SPEX Network</DialogTitle>
-                        <DialogDescription>
-                            Fill out this form to join our exclusive network of food vendors. Please provide your business details, including location.
-                        </DialogDescription>
-                    </DialogHeader>
-                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                        <div className="space-y-2">
-                            <Label htmlFor="name">Full Name</Label>
-                            <Input
-                                id="name"
-                                {...register("name")}
-                                aria-invalid={errors.name ? "true" : "false"}
-                            />
-                            {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+            {/* Modal */}
+            {open && (
+                <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4">
+                    <div className="bg-white border-4 border-black shadow-[8px_8px_0px_#71bc44] w-full max-w-md">
+
+                        {/* Modal header */}
+                        <div className="flex items-center justify-between px-8 py-5 border-b-4 border-black bg-[#71bc44]">
+                            <h3 className="text-lg font-black uppercase tracking-tight text-black">Join SPEX Network</h3>
+                            <button onClick={() => setOpen(false)} className="w-8 h-8 border-2 border-black flex items-center justify-center hover:bg-black hover:text-white transition-all duration-100">
+                                <X className="w-4 h-4" />
+                            </button>
                         </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="email">Email</Label>
-                            <Input
-                                id="email"
-                                type="email"
-                                {...register("email")}
-                                aria-invalid={errors.email ? "true" : "false"}
-                            />
-                            {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="business">Business Name</Label>
-                            <Input
-                                id="business"
-                                {...register("business")}
-                                aria-invalid={errors.business ? "true" : "false"}
-                            />
-                            {errors.business && <p className="text-red-500 text-sm">{errors.business.message}</p>}
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="phone">Phone Number</Label>
-                            <Input
-                                id="phone"
-                                type="tel"
-                                {...register("phone")}
-                                aria-invalid={errors.phone ? "true" : "false"}
-                            />
-                            {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="location">Location</Label>
-                            <Input
-                                id="location"
-                                {...register("location")}
-                                aria-invalid={errors.location ? "true" : "false"}
-                            />
-                            {errors.location && <p className="text-red-500 text-sm">{errors.location.message}</p>}
-                        </div>
-                        <Button type="submit" className="w-full bg-[#71bc44] hover:bg-[#5a9636] text-white">
-                            Submit Application
-                        </Button>
-                    </form>
-                </DialogContent>
-            </Dialog>
-        </div>
+
+                        {submitted ? (
+                            <div className="px-8 py-16 text-center">
+                                <p className="text-2xl font-black uppercase text-[#71bc44]">Application Submitted!</p>
+                                <p className="text-sm text-black/60 font-medium mt-2">We'll be in touch soon.</p>
+                            </div>
+                        ) : (
+                            <form onSubmit={handleSubmit(onSubmit)} className="px-8 py-8 space-y-4">
+                                {[
+                                    { id: "name",     label: "Full Name",     type: "text" },
+                                    { id: "email",    label: "Email",         type: "email" },
+                                    { id: "business", label: "Business Name", type: "text" },
+                                    { id: "phone",    label: "Phone Number",  type: "tel" },
+                                    { id: "location", label: "Location",      type: "text" },
+                                ].map(({ id, label, type }) => (
+                                    <div key={id}>
+                                        <label htmlFor={id} className="block text-[10px] font-black uppercase tracking-[0.2em] text-black mb-1">{label}</label>
+                                        <input
+                                            id={id}
+                                            type={type}
+                                            {...register(id as keyof FormData)}
+                                            className="w-full border-2 border-black px-4 py-2.5 text-sm font-medium focus:outline-none focus:border-[#71bc44] focus:shadow-[3px_3px_0px_#71bc44] transition-all"
+                                        />
+                                        {errors[id as keyof FormData] && (
+                                            <p className="text-red-600 text-xs font-bold mt-1">{errors[id as keyof FormData]?.message}</p>
+                                        )}
+                                    </div>
+                                ))}
+                                <button
+                                    type="submit"
+                                    className="w-full bg-[#71bc44] text-black text-sm font-black uppercase tracking-widest py-3.5 border-2 border-black shadow-[4px_4px_0px_#000] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all duration-100 mt-2"
+                                >
+                                    Submit Application
+                                </button>
+                            </form>
+                        )}
+                    </div>
+                </div>
+            )}
+        </section>
     )
 }
