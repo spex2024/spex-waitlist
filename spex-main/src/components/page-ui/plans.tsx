@@ -132,9 +132,14 @@ export default function Plans() {
                                     </div>
 
                                     {/* CTA */}
-                                    <button className={`w-full py-3 text-sm font-black uppercase tracking-widest border-2 border-black mb-8 shadow-[4px_4px_0px_#000] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all duration-100 ${plan.popular ? "bg-black text-[#71bc44]" : "bg-[#71bc44] text-black"}`}>
+                                    <a
+                                        href="https://enterprise.spexafrica.app/login"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`w-full py-3 text-sm font-black uppercase tracking-widest border-2 border-black mb-8 shadow-[4px_4px_0px_#000] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all duration-100 flex items-center justify-center ${plan.popular ? "bg-black text-[#71bc44]" : "bg-[#71bc44] text-black"}`}
+                                    >
                                         Choose Plan
-                                    </button>
+                                    </a>
 
                                     {/* Features */}
                                     <ul className="space-y-3 flex-1">

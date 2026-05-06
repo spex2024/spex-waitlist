@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
+import dynamic from "next/dynamic"
 import { Package, ShoppingCart, UtensilsCrossed, Recycle } from "lucide-react"
 
 const steps = [
@@ -34,6 +34,25 @@ const steps = [
         icon: Recycle,
     },
 ]
+
+function ImageSkeleton() {
+    return (
+        <div className="absolute inset-0 bg-black/80 flex items-center justify-center">
+            <div className="flex flex-col items-center gap-3">
+                <div className="w-10 h-10 border-2 border-[#71bc44]/40 animate-pulse" />
+                <div className="w-28 h-2 bg-white/10 animate-pulse" />
+                <div className="w-16 h-2 bg-white/10 animate-pulse" />
+            </div>
+        </div>
+    )
+}
+
+// ssr: false ensures this component is never included in server HTML,
+// completely eliminating the sizes/srcSet hydration mismatch.
+const ApproachImage = dynamic(() => import("./approach-image"), {
+    ssr: false,
+    loading: ImageSkeleton,
+})
 
 export default function Approach() {
     const [active, setActive] = useState("01")
@@ -93,21 +112,14 @@ export default function Approach() {
                         })}
                     </div>
 
-                    {/* Right: Image */}
+                    {/* Right: Image panel — client-only via dynamic import */}
                     <div className="relative aspect-square md:aspect-auto">
-                        <Image
-                            key={activeStep.id}
+                        <ApproachImage
                             src={activeStep.image}
                             alt={activeStep.title}
-                            fill
-                            className="object-cover"
+                            stepId={activeStep.id}
+                            stepTitle={activeStep.title}
                         />
-                        <div className="absolute inset-0 bg-black/40" />
-                        <div className="absolute bottom-0 left-0 right-0 bg-[#71bc44] px-6 py-4 flex items-center gap-4">
-                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-black">Step {activeStep.id}</span>
-                            <span className="w-px h-4 bg-black/30" />
-                            <span className="text-sm font-black text-black uppercase tracking-tight">{activeStep.title}</span>
-                        </div>
                     </div>
                 </div>
             </div>

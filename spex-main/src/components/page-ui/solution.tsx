@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 
 const cards = [
@@ -31,7 +34,22 @@ const cards = [
     },
 ]
 
+function CardSkeleton() {
+    return (
+        <div className="absolute inset-0 z-10 bg-black/80 flex items-center justify-center">
+            <div className="flex flex-col items-center gap-3">
+                <div className="w-10 h-10 border-2 border-white/20 animate-pulse" />
+                <div className="w-24 h-2 bg-white/10 animate-pulse" />
+                <div className="w-16 h-2 bg-white/10 animate-pulse" />
+            </div>
+        </div>
+    )
+}
+
 export default function Solution() {
+    const [loaded, setLoaded] = useState<boolean[]>(new Array(cards.length).fill(false))
+    const mark = (i: number) => setLoaded(prev => { const n = [...prev]; n[i] = true; return n })
+
     return (
         <section id="solution" className="bg-white border-t-4 border-black font-[family-name:var(--font-geist-sans)]">
 
@@ -57,7 +75,13 @@ export default function Solution() {
                     {/* Card 1 — big left */}
                     <div className="relative overflow-hidden border-2 border-black group md:row-span-2">
                         <div className="absolute inset-0">
-                            <Image src={cards[0].image} alt={cards[0].title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                            {!loaded[0] && <CardSkeleton />}
+                            <Image
+                                src={cards[0].image} alt={cards[0].title} fill
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                onLoad={() => mark(0)}
+                            />
                             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/45 transition-all" />
                         </div>
                         <div className="relative z-10 h-full flex flex-col justify-between p-8" style={{ minHeight: "300px" }}>
@@ -73,7 +97,13 @@ export default function Solution() {
                     {/* Card 2 */}
                     <div className="relative overflow-hidden border-2 border-black group">
                         <div className="absolute inset-0">
-                            <Image src={cards[1].image} alt={cards[1].title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                            {!loaded[1] && <CardSkeleton />}
+                            <Image
+                                src={cards[1].image} alt={cards[1].title} fill
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                onLoad={() => mark(1)}
+                            />
                             <div className="absolute inset-0 bg-black/65 group-hover:bg-black/50 transition-all" />
                         </div>
                         <div className="relative z-10 h-full flex flex-col justify-between p-8" style={{ minHeight: "280px" }}>
@@ -89,7 +119,13 @@ export default function Solution() {
                     {/* Card 3 */}
                     <div className="relative overflow-hidden border-2 border-black group">
                         <div className="absolute inset-0">
-                            <Image src={cards[2].image} alt={cards[2].title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                            {!loaded[2] && <CardSkeleton />}
+                            <Image
+                                src={cards[2].image} alt={cards[2].title} fill
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                onLoad={() => mark(2)}
+                            />
                             <div className="absolute inset-0 bg-black/65 group-hover:bg-black/50 transition-all" />
                         </div>
                         <div className="relative z-10 h-full flex flex-col justify-between p-8" style={{ minHeight: "280px" }}>
@@ -105,7 +141,13 @@ export default function Solution() {
                     {/* Card 4 — spans 2 cols */}
                     <div className="relative overflow-hidden border-2 border-black group md:col-span-2">
                         <div className="absolute inset-0">
-                            <Image src={cards[3].image} alt={cards[3].title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                            {!loaded[3] && <CardSkeleton />}
+                            <Image
+                                src={cards[3].image} alt={cards[3].title} fill
+                                sizes="(max-width: 768px) 100vw, 66vw"
+                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                onLoad={() => mark(3)}
+                            />
                             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/45 transition-all" />
                         </div>
                         <div className="relative z-10 h-full flex flex-col justify-between p-8" style={{ minHeight: "260px" }}>

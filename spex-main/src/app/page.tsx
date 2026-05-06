@@ -12,11 +12,16 @@ import Footer from "@/components/page-ui/footer";
 import FAQSection from "@/components/page-ui/faq";
 import {Navbar} from "@/components/page-ui/nav";
 import ProductSales from "@/components/page-ui/product-sales";
+import ReloadButton from "@/components/ui/reload-button";
+import BackToTop from "@/components/ui/back-to-top";
+import Preloader from "@/components/ui/preloader";
+import WhatsAppButton from "@/components/ui/whatsapp-button";
 
 
 export default function Home() {
   return (
       <div className=" w-full overflow-x-hidden font-[family-name:var(--font-geist-sans)] ">
+        <Preloader />
         <Navbar />
         <section id="hero"><Hero/></section>
         <section id="about"><SmartPackExchangeSection/></section>
@@ -31,6 +36,11 @@ export default function Home() {
         <Partners/>
         <Vendor/>
         <Footer/>
+        <WhatsAppButton />
+        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2">
+          <BackToTop />
+          <ReloadButton />
+        </div>
       </div>
   );
 }

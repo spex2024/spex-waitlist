@@ -28,6 +28,7 @@ function openVideoModal() {
 export default function Hero() {
     const videoRef = useRef<HTMLVideoElement>(null)
     const [isPlaying, setIsPlaying] = useState(true)
+    const [videoReady, setVideoReady] = useState(false)
 
     useEffect(() => {
         if (videoRef.current) {
@@ -104,10 +105,25 @@ export default function Hero() {
 
             {/* ── RIGHT VIDEO PANEL ── */}
             <div className="relative w-full lg:flex-1 h-[50vh] lg:h-auto overflow-hidden">
+
+                {/* Skeleton — visible until video can play */}
+                {!videoReady && (
+                    <div className="absolute inset-0 z-20 bg-black flex flex-col items-center justify-center gap-4">
+                        <div className="w-16 h-16 border-2 border-white/20 flex items-center justify-center animate-pulse">
+                            <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[18px] border-l-white/30 ml-1" />
+                        </div>
+                        <div className="flex flex-col items-center gap-2">
+                            <div className="w-32 h-2 bg-white/10 animate-pulse" />
+                            <div className="w-20 h-2 bg-white/10 animate-pulse" />
+                        </div>
+                    </div>
+                )}
+
                 <video
                     ref={videoRef}
                     autoPlay muted loop playsInline preload="auto"
                     poster="https://res.cloudinary.com/ddwet1dzj/image/upload/f_auto,q_auto/v1720549684/office-1_delwsn.jpg"
+                    onCanPlay={() => setVideoReady(true)}
                     className="absolute inset-0 w-full h-full object-cover"
                 >
                     <source src="https://res.cloudinary.com/ddwet1dzj/video/upload/q_auto/v1720540324/spexvid_cqrhog.mp4" type="video/mp4" />

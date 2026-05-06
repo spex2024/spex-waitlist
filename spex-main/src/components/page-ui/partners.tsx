@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 
 const partners = [
@@ -12,6 +15,11 @@ const partners = [
 ]
 
 export default function Partners() {
+    const [loaded, setLoaded] = useState<boolean[]>(new Array(partners.length).fill(false))
+
+    const markLoaded = (i: number) =>
+        setLoaded(prev => { const next = [...prev]; next[i] = true; return next })
+
     return (
         <section className="bg-white border-t-4 border-black font-[family-name:var(--font-geist-sans)]">
 
@@ -38,12 +46,16 @@ export default function Partners() {
                             key={i}
                             className="relative h-32 border-r-2 border-b-2 border-black last:border-r-0 [&:nth-child(4n)]:border-r-0 [&:nth-child(n+5)]:border-b-0 flex items-center justify-center p-6 group hover:bg-[#71bc44] transition-colors duration-150"
                         >
+                            {!loaded[i] && (
+                                <div className="absolute inset-0 bg-gray-100 animate-pulse" />
+                            )}
                             <Image
                                 src={p.logo}
                                 alt={p.name}
                                 fill
                                 className="object-contain p-4 grayscale group-hover:grayscale-0 transition-all duration-150"
                                 sizes="200px"
+                                onLoad={() => markLoaded(i)}
                             />
                         </div>
                     ))}
