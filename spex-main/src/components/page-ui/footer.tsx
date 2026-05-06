@@ -27,7 +27,6 @@ export default function Footer() {
             {/* Top strip */}
             <div className="bg-[#71bc44] border-b-4 border-black px-6 md:px-10 py-4 flex items-center justify-between">
                 <span className="text-[10px] font-black uppercase tracking-[0.4em] text-black">Africa's First Circular Meal Marketplace</span>
-                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-black">Est. 2024 · Ghana</span>
             </div>
 
             {/* Main grid */}
