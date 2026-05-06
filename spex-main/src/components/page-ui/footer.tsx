@@ -13,9 +13,6 @@ const links = [
     { name: "User Interface",       href: "https://user.spexafrica.app" },
     { name: "Vendor Interface",     href: "https://vendor.spexafrica.app" },
     { name: "Enterprise Interface", href: "https://enterprise.spexafrica.app" },
-    { name: "About Us",             href: "/about" },
-    { name: "Our Services",         href: "/services" },
-    { name: "Blog",                 href: "/blog" },
 ]
 
 export default function Footer() {
@@ -70,21 +67,6 @@ export default function Footer() {
                                         className="text-sm font-bold text-black hover:text-[#71bc44] hover:underline transition-colors uppercase tracking-wide">
                                         {l.name}
                                     </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Company links */}
-                    <div className="md:col-span-2 border-r-4 border-black py-12 px-10">
-                        <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-[#71bc44] mb-8">Company</h3>
-                        <ul className="space-y-3">
-                            {links.slice(3).map((l) => (
-                                <li key={l.name}>
-                                    <Link href={l.href}
-                                        className="text-sm font-bold text-black hover:text-[#71bc44] hover:underline transition-colors uppercase tracking-wide">
-                                        {l.name}
-                                    </Link>
                                 </li>
                             ))}
                         </ul>
