@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
 
-const WORDS = ["Eat.", "Swap.", "Earn."]
+const WORDS = ["Eat.", "Swap.", "Reuse."]
 const PHASE_MS = 900   // ms each word is shown
 
 export default function Preloader() {

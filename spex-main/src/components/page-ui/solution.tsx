@@ -12,8 +12,8 @@ const cards = [
         big: true,
     },
     {
-        title: "Earn with Your Carbon Point",
-        desc: "Reduce your carbon footprint with every pack exchange and Earn good money.",
+        title: "Reuse with Your Carbon Point",
+        desc: "Reduce your carbon footprint with every pack exchange and reuse good money.",
         image: "https://res.cloudinary.com/ddwet1dzj/image/upload/f_auto,q_auto/v1720541340/carbon_t19akr.jpg",
         tag: "02",
         big: false,

@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react"
 const steps = [
     { number: "01", title: "Savor the Quality", desc: "Browse a curated selection of premium local vendors serving quality food in our signature reusable packs." },
     { number: "02", title: "Effortless Exchange", desc: "Simply drop off your used packs at any designated station in your office. Focus on work, not waste." },
-    { number: "03", title: "Earn the Value", desc: "Track your plastic reduction in real-time and earn points that translate to exclusive rewards and enterprise perks." },
+    { number: "03", title: "Reuse the Value", desc: "Track your plastic reduction in real-time and reuse points that translate to exclusive rewards and enterprise perks." },
 ]
 
 export default function SmartPackExchangeSection() {
@@ -21,7 +21,7 @@ export default function SmartPackExchangeSection() {
                         <h2 className="text-[clamp(52px,9vw,120px)] font-black text-black leading-[0.88] tracking-[-0.04em] uppercase">
                             Eat.<br />
                             Swap.<br />
-                            <span className="text-[#71bc44]">Earn.</span>
+                            <span className="text-[#71bc44]">Reuse.</span>
                         </h2>
                     </div>
                     <div className="max-w-md border-l-4 border-black pl-8">
@@ -66,7 +66,7 @@ export default function SmartPackExchangeSection() {
                         <span className="text-[#71bc44]">Zero Friction.</span>
                     </h3>
                     <div className="flex flex-wrap gap-12">
-                        {[["10k+","Packs Exchanged"],["98%","Waste Avoidance"],["50+","Active Vendors"]].map(([val, label]) => (
+                        {[["10k+", "Packs Exchanged"], ["98%", "Waste Avoidance"], ["50+", "Active Vendors"]].map(([val, label]) => (
                             <div key={label} className="flex flex-col border-l-4 border-[#71bc44] pl-5">
                                 <span className="text-4xl font-black text-white leading-none">{val}</span>
                                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#71bc44] mt-2">{label}</span>
